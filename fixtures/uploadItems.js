@@ -1,12 +1,10 @@
 const fs = require('fs/promises'); // Node.js built-in module for file operations
 const path = require('path'); // Node.js built-in module for working with file paths
-
-// Require node-fetch using a relative path
-const fetch = require(path.join(__dirname, '..', 'node_modules', 'node-fetch'));
+const fetch = require(path.join(__dirname, '..', 'node_modules', 'node-fetch')); // Require node-fetch using a relative path
 
 const apiUrl = 'https://api.rebill.dev/v2/item'; // Replace with your API endpoint URL
 const responsesFilePath = 'responses.json'; // Path to store responses JSON file
-const API_KEY = 'API_KEY_e6360079-7723-48dd-b2df-bc00cce48b2d';
+const API_KEY = 'API_KEY_e6360079-7723-48dd-b2df-bc00cce48b2d';// Replace with your Rebill API key
 const authHeader = 'Bearer ' + API_KEY;
 
 (async () => {
