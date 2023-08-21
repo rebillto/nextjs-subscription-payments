@@ -1,0 +1,170 @@
+[
+  {
+    "name": "Hobby",
+    "description": "Hobby product description",
+    "prices": [
+      {
+        "type": "fixed",
+        "frequency": {
+          "type": "months",
+          "quantity": 1
+        },
+        "amount": "7000",
+        "currency": "ARS",
+        "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+        "repetitions": 2,
+        "description": "ARS-MONTH",
+        "enabled": true
+      },
+       {
+        "type": "fixed",
+        "frequency": {
+          "type": "years",
+          "quantity": 1
+        },
+        "amount": "70000",
+        "currency": "ARS",
+        "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+        "repetitions": 2,
+        "description": "ARS-YEAR",
+        "enabled": true
+      },
+      {
+        "type": "fixed",
+        "frequency": {
+          "type": "months",
+          "quantity": 1
+        },
+        "amount": "10",
+        "currency": "USD",
+        "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+        "repetitions": 2,
+        "description": "USD-MONTH",
+        "enabled": true
+      },
+       {
+        "type": "fixed",
+        "frequency": {
+          "type": "years",
+          "quantity": 1
+        },
+        "amount": "100",
+        "currency": "USD",
+        "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+        "repetitions": 2,
+        "description": "USD-YEAR",
+        "enabled": true
+      },
+      {
+        "type": "fixed",
+        "frequency": {
+          "type": "months",
+          "quantity": 1
+        },
+        "amount": "50",
+        "currency": "BRL",
+        "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+        "repetitions": 2,
+        "description": "BRL-MONTH",
+        "enabled": true
+      },
+       {
+        "type": "fixed",
+        "frequency": {
+          "type": "years",
+          "quantity": 1
+        },
+        "amount": "500",
+        "currency": "BRL",
+        "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+        "repetitions": 2,
+        "description": "BRL-YEAR",
+        "enabled": true
+      }
+    ]
+  },
+  {
+    "name": "Freelancer",
+    "description": "Freelancer product description",
+    "prices": [
+      {
+        "type": "fixed",
+        "frequency": {
+          "type": "months",
+          "quantity": 1
+        },
+        "amount": "7000",
+        "currency": "ARS",
+        "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+        "repetitions": 2,
+        "description": "ARS-MONTH",
+        "enabled": true
+      },
+       {
+        "type": "fixed",
+        "frequency": {
+          "type": "years",
+          "quantity": 1
+        },
+        "amount": "70000",
+        "currency": "ARS",
+        "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+        "repetitions": 2,
+        "description": "ARS-YEAR",
+        "enabled": true
+      },
+      {
+        "type": "fixed",
+        "frequency": {
+          "type": "months",
+          "quantity": 1
+        },
+        "amount": "10",
+        "currency": "USD",
+        "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+        "repetitions": 2,
+        "description": "USD-MONTH",
+        "enabled": true
+      },
+       {
+        "type": "fixed",
+        "frequency": {
+          "type": "years",
+          "quantity": 1
+        },
+        "amount": "100",
+        "currency": "USD",
+        "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+        "repetitions": 2,
+        "description": "USD-YEAR",
+        "enabled": true
+      },
+      {
+        "type": "fixed",
+        "frequency": {
+          "type": "months",
+          "quantity": 1
+        },
+        "amount": "50",
+        "currency": "BRL",
+        "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+        "repetitions": 2,
+        "description": "BRL-MONTH",
+        "enabled": true
+      },
+       {
+        "type": "fixed",
+        "frequency": {
+          "type": "years",
+          "quantity": 1
+        },
+        "amount": "500",
+        "currency": "BRL",
+        "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+        "repetitions": 2,
+        "description": "BRL-YEAR",
+        "enabled": true
+      }
+    ]
+  }
+]
