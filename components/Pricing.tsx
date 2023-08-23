@@ -1,50 +1,41 @@
 'use client';
 
+import { useUser } from '@auth0/nextjs-auth0/client';
 import Button from '@/components/ui/Button';
 
 import cn from 'classnames';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
-type Product = any;
-
-type User = any;
-
-
-interface Props {
-  user:  User | null | undefined;
-  products: Product[];
-}
-
-type BillingInterval = 'lifetime' | 'year' | 'month';
-
 export default function Pricing({
-  user,
   products,
 }: Props) {
   const intervals = Array.from(
     new Set(
       products.flatMap((product) =>
-        product?.prices?.map((price: any) => price?.interval)
+        product?.prices?.map((price: any) => price?.frequency?.type)
       )
     )
   );
+
   const router = useRouter();
+  const { user, error, isLoading } = useUser();
   const [billingInterval, setBillingInterval] =
-    useState<BillingInterval>('month');
+    useState<BillingInterval>('months');
   const [priceIdLoading, setPriceIdLoading] = useState<string>();
 
-  //change to oauth subscription user metadata, boolean for test.
-  const subscription = false;
+  //todo change to oauth subscription user metadata
+  const subscription = '';
 
   const handleCheckout = async (price: any) => {
     setPriceIdLoading(price.id);
     if (!user) {
       return router.push('/signin');
     }
-    /*   if (subscription) {
+    if (subscription) {
+      //todo create manage subscription flow. 
       return router.push('/account');
-    } */
+    }
   };
 
   if (!products.length)
@@ -84,7 +75,7 @@ export default function Pricing({
             <div className="relative flex self-center mt-12 border rounded-lg bg-zinc-900 border-zinc-800">
               <div className="border border-pink-500 border-opacity-50 divide-y rounded-lg shadow-sm bg-zinc-900 divide-zinc-600">
                 <div className="p-6 py-2 m-1 text-2xl font-medium text-white rounded-md shadow-sm border-zinc-800 whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-opacity-50 focus:z-10 sm:w-auto sm:px-8">
-                  {products[0].name}
+                  {products[0].item.name}
                 </div>
               </div>
             </div>
@@ -96,7 +87,7 @@ export default function Pricing({
                     style: 'currency',
                     currency: price.currency!,
                     minimumFractionDigits: 0
-                  }).format(price.unit_amount / 100);
+                  }).format(price.amount);
 
                 return (
                   <div
@@ -121,7 +112,7 @@ export default function Pricing({
                         onClick={() => handleCheckout(price)}
                         className="block w-full py-2 mt-12 text-sm font-semibold text-center text-white rounded-md hover:bg-zinc-900 "
                       >
-                        {products[0].name === subscription
+                        {products[0].item.name === subscription
                           ? 'Manage'
                           : 'Subscribe'}
                       </Button>
@@ -148,12 +139,12 @@ export default function Pricing({
             plans unlock additional features.
           </p>
           <div className="relative self-center mt-6 bg-zinc-900 rounded-lg p-0.5 flex sm:mt-8 border border-zinc-800">
-            {intervals.includes('month') && (
+            {intervals.includes('months') && (
               <button
-                onClick={() => setBillingInterval('month')}
+                onClick={() => setBillingInterval('months')}
                 type="button"
                 className={`${
-                  billingInterval === 'month'
+                  billingInterval === 'months'
                     ? 'relative w-1/2 bg-zinc-700 border-zinc-800 shadow-sm text-white'
                     : 'ml-0.5 relative w-1/2 border border-transparent text-zinc-400'
                 } rounded-md m-1 py-2 text-sm font-medium whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-opacity-50 focus:z-10 sm:w-auto sm:px-8`}
@@ -161,12 +152,12 @@ export default function Pricing({
                 Monthly billing
               </button>
             )}
-            {intervals.includes('year') && (
+            {intervals.includes('years') && (
               <button
-                onClick={() => setBillingInterval('year')}
+                onClick={() => setBillingInterval('years')}
                 type="button"
                 className={`${
-                  billingInterval === 'year'
+                  billingInterval === 'years'
                     ? 'relative w-1/2 bg-zinc-700 border-zinc-800 shadow-sm text-white'
                     : 'ml-0.5 relative w-1/2 border border-transparent text-zinc-400'
                 } rounded-md m-1 py-2 text-sm font-medium whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-opacity-50 focus:z-10 sm:w-auto sm:px-8`}
@@ -179,31 +170,31 @@ export default function Pricing({
         <div className="mt-12 space-y-4 sm:mt-16 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-6 lg:max-w-4xl lg:mx-auto xl:max-w-none xl:mx-0 xl:grid-cols-3">
           {products.map((product) => {
             const price = product?.prices?.find(
-              (price: any) => price.interval === billingInterval
+              (price: any) => price.frequency.type === billingInterval
             );
             if (!price) return null;
             const priceString = new Intl.NumberFormat('en-US', {
               style: 'currency',
               currency: price.currency!,
               minimumFractionDigits: 0
-            }).format((price?.unit_amount || 0) / 100);
+            }).format((parseInt(price?.amount) || 0));
             return (
               <div
-                key={product.id}
+                key={product?.item.id}
                 className={cn(
                   'rounded-lg shadow-sm divide-y divide-zinc-600 bg-zinc-900',
                   {
                     'border border-pink-500': subscription
-                      ? product.name === subscription
-                      : product.name === 'Freelancer'
+                      ? product.item.name === subscription
+                      : product.item.name === 'Freelancer'
                   }
                 )}
               >
                 <div className="p-6">
                   <h2 className="text-2xl font-semibold leading-6 text-white">
-                    {product.name}
+                    {product.item.name}
                   </h2>
-                  <p className="mt-4 text-zinc-300">{product.description}</p>
+                  <p className="mt-4 text-zinc-300">{product.item.description}</p>
                   <p className="mt-8">
                     <span className="text-5xl font-extrabold white">
                       {priceString}
@@ -272,3 +263,54 @@ function LogoCloud() {
   );
 }
 
+interface Gateway {
+  id: string;
+  type: string;
+  country: string;
+  description: string;
+  status: string;
+  publicKey: string;
+}
+
+interface Frequency {
+  type: string;
+  quantity: number;
+}
+
+interface Price {
+  id: string;
+  gateway: Gateway;
+  frequency: Frequency;
+  repetitions: number;
+  description: string;
+  currency: string;
+  enabled: boolean;
+  priceSetting: any; // You can replace 'any' with the appropriate type if needed
+  parent: any; // You can replace 'any' with the appropriate type if needed
+  itemId: string;
+  amount: string;
+  type: string;
+  debitDay: any; // You can replace 'any' with the appropriate type if needed
+  debitType: any; // You can replace 'any' with the appropriate type if needed
+}
+
+interface Item {
+  id: string;
+  name: string;
+  description: string;
+  metadata: any; // You can replace 'any' with the appropriate type if needed
+  createdAt: string;
+  itemFamilyId: any; // You can replace 'any' with the appropriate type if needed
+  enabled: boolean;
+}
+
+interface Product {
+  item: Item;
+  prices: Price[];
+}
+
+interface Props {
+  products: Product[];
+}
+
+type BillingInterval = 'years' | 'months';

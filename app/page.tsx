@@ -1,20 +1,18 @@
 import Pricing from '@/components/Pricing';
+import products from '../fixtures/responses.json';
 
 export default async function PricingPage() {
 
-  //todo update with Auth0
-  const user = null;
 
   return (
     <Pricing
-      user={user}
-      products={mockProducts}
+      products={products}
     />
   );
 }
 
-
-const mockProducts = [
+//todo clean mock products stripe. 
+const mockProductsStripe = [
   {
       "id": "prod_OQ2GGiSkBTo81w",
       "active": true,
