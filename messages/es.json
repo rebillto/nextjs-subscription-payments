@@ -1,0 +1,28 @@
+{
+  "pricing": {
+    "NoPlansFoundMessage": "No se encontraron planes de precios de suscripción. Créalos en tu Panel de Control de Rebill.",
+    "PlansHeader": "Planes de Precios",
+    "PlansDescription": "Comienza a construir de forma gratuita, luego agrega un plan para ponerlo en funcionamiento. Los planes de cuenta desbloquean características adicionales.",
+    "ManageButton": "Gestionar",
+    "SubscribeButton": "Suscribir",
+    "MonthlyBilling": "Facturación mensual",
+    "YearlyBilling": "Facturación anual",
+    "BroughtToYouBy": "Presentado por"
+  },
+  "nav": {
+    "skipToContent": "Saltar al contenido",
+    "pricing": "Precios",
+    "account": "Cuenta",
+    "signOut": "Cerrar sesión",
+    "signIn": "Iniciar sesión"
+  },
+  "footer": {
+    "home": "Inicio",
+    "about": "Acerca de",
+    "careers": "Carreras",
+    "blog": "Blog",
+    "legal": "Legal",
+    "privacyPolicy": "Política de Privacidad",
+    "termsOfUse": "Términos de Uso"
+  }
+}

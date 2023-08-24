@@ -6,14 +6,16 @@ import { useUser } from '@auth0/nextjs-auth0/client';
 import Logo from '@/components/icons/Logo';
 
 import s from './Navbar.module.css';
+import {useTranslations} from 'next-intl';
 
 export default function Navbar() {
   const { user, error, isLoading } = useUser();
+  const t = useTranslations('nav');
 
   return (
     <nav className={s.root}>
       <a href="#skip" className="sr-only focus:not-sr-only">
-        Skip to content
+        {t("skipToContent")}
       </a>
       <div className="max-w-6xl px-6 mx-auto">
         <div className="relative flex flex-row justify-between py-4 align-center md:py-6">
@@ -23,11 +25,11 @@ export default function Navbar() {
             </Link>
             <nav className="hidden ml-6 space-x-2 lg:block">
               <Link href="/" className={s.link}>
-                Pricing
+                {t("pricing")}
               </Link>
               {user && (
                 <Link href="/account" className={s.link}>
-                  Account
+                  {t("account")}
                 </Link>
               )}
             </nav>
@@ -35,11 +37,11 @@ export default function Navbar() {
           <div className="flex justify-end flex-1 space-x-8">
             {user ? (
             <a href="/api/auth/logout" className={s.link}>
-              Sign Out
+              {t("signOut")}
             </a>
             ) : (
               <a href="/api/auth/login" className={s.link}>
-                Sign in
+                {t("signIn")}
               </a>
             )}
           </div>

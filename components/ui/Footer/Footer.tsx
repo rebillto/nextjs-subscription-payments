@@ -1,9 +1,17 @@
+'use client';
+
 import Link from 'next/link';
+import {useTranslations, useLocale} from 'next-intl';
+import { useRouter, usePathname } from 'next-intl/client';
+import { useSearchParams } from 'next/navigation';
+import { useState } from 'react';
 
 import Logo from '@/components/icons/Logo';
 import GitHub from '@/components/icons/GitHub';
 
 export default function Footer() {
+  const t = useTranslations('footer');
+
   return (
     <footer className="mx-auto max-w-[1920px] px-6 bg-zinc-900">
       <div className="grid grid-cols-1 gap-8 py-12 text-white transition-colors duration-150 border-b lg:grid-cols-12 border-zinc-600 bg-zinc-900">
@@ -25,7 +33,7 @@ export default function Footer() {
                 href="/"
                 className="text-white transition duration-150 ease-in-out hover:text-zinc-200"
               >
-                Home
+                {t("home")}
               </Link>
             </li>
             <li className="py-3 md:py-0 md:pb-4">
@@ -33,7 +41,7 @@ export default function Footer() {
                 href="/"
                 className="text-white transition duration-150 ease-in-out hover:text-zinc-200"
               >
-                About
+                {t("about")}
               </Link>
             </li>
             <li className="py-3 md:py-0 md:pb-4">
@@ -41,7 +49,7 @@ export default function Footer() {
                 href="/"
                 className="text-white transition duration-150 ease-in-out hover:text-zinc-200"
               >
-                Careers
+                {t("careers")}
               </Link>
             </li>
             <li className="py-3 md:py-0 md:pb-4">
@@ -49,7 +57,7 @@ export default function Footer() {
                 href="/"
                 className="text-white transition duration-150 ease-in-out hover:text-zinc-200"
               >
-                Blog
+                {t("blog")}
               </Link>
             </li>
           </ul>
@@ -58,7 +66,7 @@ export default function Footer() {
           <ul className="flex flex-col flex-initial md:flex-1">
             <li className="py-3 md:py-0 md:pb-4">
               <p className="font-bold text-white transition duration-150 ease-in-out hover:text-zinc-200">
-                LEGAL
+                {t("legal")}
               </p>
             </li>
             <li className="py-3 md:py-0 md:pb-4">
@@ -66,7 +74,7 @@ export default function Footer() {
                 href="/"
                 className="text-white transition duration-150 ease-in-out hover:text-zinc-200"
               >
-                Privacy Policy
+                {t("privacyPolicy")}
               </Link>
             </li>
             <li className="py-3 md:py-0 md:pb-4">
@@ -74,8 +82,11 @@ export default function Footer() {
                 href="/"
                 className="text-white transition duration-150 ease-in-out hover:text-zinc-200"
               >
-                Terms of Use
+                {t("termsOfUse")}
               </Link>
+            </li>
+            <li className="py-3 md:py-0 md:pb-4">
+             <LanguageSelector />
             </li>
           </ul>
         </div>
@@ -110,3 +121,32 @@ export default function Footer() {
     </footer>
   );
 }
+
+const LanguageSelector = () => {
+  const router = useRouter();
+  const pathName = usePathname();
+  const locale = useLocale();
+  const [selectedLanguage, setSelectedLanguage] = useState(locale);
+  
+
+  const handleLanguageChange = (event: any) => {
+    event.preventDefault();
+    setSelectedLanguage(event.target.value);
+    const url = (`${pathName}`);
+    router.push(url, {locale: event?.target.value})
+  };
+
+  return (
+    <div className="flex items-center space-x-2">
+      <select
+        value={selectedLanguage}
+        onChange={handleLanguageChange}
+        className="border border-gray-300 rounded p-1 text-pink-600"
+      >
+        <option value="en" className="text-pink-600">EN</option>
+        <option value="es" className="text-pink-600">ES</option>
+        <option value="pt" className="text-pink-600">PT</option>
+      </select>
+    </div>
+  );
+};
