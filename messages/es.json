@@ -15,5 +15,14 @@
     "account": "Cuenta",
     "signOut": "Cerrar sesión",
     "signIn": "Iniciar sesión"
+  },
+  "footer": {
+    "home": "Inicio",
+    "about": "Acerca de",
+    "careers": "Carreras",
+    "blog": "Blog",
+    "legal": "Legal",
+    "privacyPolicy": "Política de Privacidad",
+    "termsOfUse": "Términos de Uso"
   }
 }

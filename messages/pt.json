@@ -15,5 +15,14 @@
     "account": "Conta",
     "signOut": "Sair",
     "signIn": "Entrar"
+  },
+  "footer": {
+    "home": "Inicio",
+    "about": "Acerca de",
+    "careers": "Carreras",
+    "blog": "Blog",
+    "legal": "Legal",
+    "privacyPolicy": "Política de Privacidade",
+    "termsOfUse": "Termos de Uso"
   }
 }
