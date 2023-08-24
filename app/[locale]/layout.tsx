@@ -1,7 +1,10 @@
 import { UserProvider } from '@auth0/nextjs-auth0/client';
 import Footer from '@/components/ui/Footer';
 import Navbar from '@/components/ui/Navbar';
-import { PropsWithChildren } from 'react';
+import { PropsWithChildren, ReactNode } from 'react';
+import {NextIntlClientProvider} from 'next-intl';
+import {notFound} from 'next/navigation';
+
 import 'styles/main.css';
 
 const meta = {
@@ -40,13 +43,31 @@ export const metadata = {
   }
 };
 
-export default function RootLayout({
+interface RootLayoutProps {
+  children: ReactNode;
+  params: {
+    locale: string; // Define the type for the 'locale' property
+  };
+}
+
+export function generateStaticParams() {
+  return [{locale: 'en'}, {locale: 'es'}, {locale: 'pt'}];
+}
+
+export default async function RootLayout({
   // Layouts must accept a children prop.
   // This will be populated with nested layouts or pages
-  children
-}: PropsWithChildren) {
+  children,
+  params: {locale}
+}: RootLayoutProps) {
+  let messages;
+  try {
+    messages = (await import(`../../messages/${locale}.json`)).default;
+  } catch (error) {
+    notFound();
+  }
   return (
-    <html lang="en">
+    <html lang={locale}>
       <body className="bg-black loading">
           <UserProvider>
             <Navbar />
@@ -54,7 +75,9 @@ export default function RootLayout({
               id="skip"
               className="min-h-[calc(100dvh-4rem)] md:min-h[calc(100dvh-5rem)]"
             >
+            <NextIntlClientProvider locale={locale} messages={messages}>
               {children}
+            </NextIntlClientProvider>
             </main>
             <Footer />
           </UserProvider>

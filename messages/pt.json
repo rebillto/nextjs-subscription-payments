@@ -1,0 +1,12 @@
+{
+  "Pricing": {
+    "NoPlansFoundMessage": "Nenhum plano de preços por assinatura encontrado. Crie-os no painel da sua Rebill.",
+    "PlansHeader": "Planos de Preços",
+    "PlansDescription": "Comece a construir gratuitamente e depois adicione um plano para ir ao ar. Planos de conta desbloqueiam recursos adicionais.",
+    "ManageButton": "Gerenciar",
+    "SubscribeButton": "Assinar",
+    "MonthlyBilling": "Cobrança mensal",
+    "YearlyBilling": "Cobrança anual",
+    "BroughtToYouBy": "Apresentado por"
+  }
+}
