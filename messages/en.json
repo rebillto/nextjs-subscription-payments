@@ -1,5 +1,5 @@
 {
-  "Pricing": {
+  "pricing": {
     "NoPlansFoundMessage": "No subscription pricing plans found. Create them in your Rebill Dashboard.",
     "PlansHeader": "Pricing Plans",
     "PlansDescription": "Start building for free, then add a site plan to go live. Account plans unlock additional features.",
@@ -8,5 +8,12 @@
     "MonthlyBilling": "Monthly billing",
     "YearlyBilling": "Yearly billing",
     "BroughtToYouBy": "Brought to you by"
+  },
+  "nav": {
+    "skipToContent": "Skip to content",
+    "pricing": "Pricing",
+    "account": "Account",
+    "signOut": "Sign Out",
+    "signIn": "Sign in"
   }
 }

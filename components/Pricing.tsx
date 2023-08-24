@@ -20,7 +20,7 @@ export default function Pricing({
     )
   );
 
-  const t = useTranslations('Pricing');
+  const t = useTranslations('pricing');
   const router = useRouter();
   const { user, error, isLoading } = useUser();
   const [billingInterval, setBillingInterval] =
@@ -212,7 +212,7 @@ export default function Pricing({
                     onClick={() => handleCheckout(price)}
                     className="block w-full py-2 mt-8 text-sm font-semibold text-center text-white rounded-md hover:bg-zinc-900"
                   >
-                    {subscription ? 'Manage' : 'Subscribe'}
+                    {subscription ? t("ManageButton"): t("SubscribeButton")}
                   </Button>
                 </div>
               </div>
@@ -226,7 +226,7 @@ export default function Pricing({
 }
 
 function LogoCloud() {
-  const t = useTranslations('Pricing');
+  const t = useTranslations('pricing');
 
   return (
     <div>

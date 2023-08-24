@@ -70,16 +70,16 @@ export default async function RootLayout({
     <html lang={locale}>
       <body className="bg-black loading">
           <UserProvider>
-            <Navbar />
-            <main
-              id="skip"
-              className="min-h-[calc(100dvh-4rem)] md:min-h[calc(100dvh-5rem)]"
-            >
             <NextIntlClientProvider locale={locale} messages={messages}>
-              {children}
+              <Navbar />
+              <main
+                id="skip"
+                className="min-h-[calc(100dvh-4rem)] md:min-h[calc(100dvh-5rem)]"
+              >
+                {children}
+              </main>
+              <Footer />
             </NextIntlClientProvider>
-            </main>
-            <Footer />
           </UserProvider>
       </body>
     </html>
