@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import {useTranslations, useLocale} from 'next-intl';
 import { useRouter, usePathname } from 'next-intl/client';
-import { useSearchParams } from 'next/navigation';
 import { useState } from 'react';
 
 import Logo from '@/components/icons/Logo';

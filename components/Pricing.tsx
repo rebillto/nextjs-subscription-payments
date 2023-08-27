@@ -1,17 +1,18 @@
 'use client';
 
 import { useUser } from '@auth0/nextjs-auth0/client';
-import Button from '@/components/ui/Button';
-
 import cn from 'classnames';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import {useTranslations} from 'next-intl';
 
+import Button from '@/components/ui/Button';
+import { useStore } from '@/contexts/defaultStore';
 
 export default function Pricing({
   products,
 }: Props) {
+
   const intervals = Array.from(
     new Set(
       products.flatMap((product) =>
@@ -20,6 +21,7 @@ export default function Pricing({
     )
   );
 
+  const { updateData } = useStore();
   const t = useTranslations('pricing');
   const router = useRouter();
   const { user, error, isLoading } = useUser();
@@ -32,6 +34,9 @@ export default function Pricing({
 
   const handleCheckout = async (price: any) => {
     setPriceIdLoading(price.id);
+    updateData({
+      selectedPriceId: price.id
+    })
     if (!user) {
       return router.push('/signin');
     }
@@ -39,6 +44,7 @@ export default function Pricing({
       //todo create manage subscription flow. 
       return router.push('/account');
     }
+    return router.push('/checkout')
   };
 
   if (!products.length)

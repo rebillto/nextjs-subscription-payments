@@ -1,11 +1,14 @@
 import { UserProvider } from '@auth0/nextjs-auth0/client';
-import Footer from '@/components/ui/Footer';
-import Navbar from '@/components/ui/Navbar';
-import { PropsWithChildren, ReactNode } from 'react';
+import { ReactNode } from 'react';
 import {NextIntlClientProvider} from 'next-intl';
 import {notFound} from 'next/navigation';
 
+import Footer from '@/components/ui/Footer';
+import Navbar from '@/components/ui/Navbar';
+import StoreProvider, { useStore } from '../../contexts/defaultStore';
 import 'styles/main.css';
+import Head from 'next/head';
+import Script from 'next/script';
 
 const meta = {
   title: 'Next.js Rebill Subscription Starter',
@@ -68,6 +71,7 @@ export default async function RootLayout({
   }
   return (
     <html lang={locale}>
+      <Script src="https://sdk.rebill.to/v2/rebill.min.js" />
       <body className="bg-black loading">
           <UserProvider>
             <NextIntlClientProvider locale={locale} messages={messages}>
@@ -76,7 +80,9 @@ export default async function RootLayout({
                 id="skip"
                 className="min-h-[calc(100dvh-4rem)] md:min-h[calc(100dvh-5rem)]"
               >
-                {children}
+                 <StoreProvider>
+                  {children}
+                </StoreProvider>
               </main>
               <Footer />
             </NextIntlClientProvider>
