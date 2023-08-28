@@ -3,7 +3,7 @@
 import { useStore } from "@/contexts/defaultStore";
 
 const organization_id = process?.env?.NEXT_PUBLIC_REBILL_ORG_ID;
-const api_key = process?.env?.NEXT_PUBLIC_API_KEY;
+const api_key = process?.env?.NEXT_PUBLIC_REBILL_API_KEY;
 const api_url = process?.env?.NEXT_PUBLIC_REBILL_API_URL;
 
 declare global {
