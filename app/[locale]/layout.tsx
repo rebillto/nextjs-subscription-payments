@@ -7,7 +7,6 @@ import Footer from '@/components/ui/Footer';
 import Navbar from '@/components/ui/Navbar';
 import StoreProvider, { useStore } from '../../contexts/defaultStore';
 import 'styles/main.css';
-import Head from 'next/head';
 import Script from 'next/script';
 
 const meta = {

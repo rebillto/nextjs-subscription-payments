@@ -126,11 +126,15 @@ export default function Checkout() {
   }
     
   return (
-    <>
-      <h1 onClick={() => {
-       sdkLoad(); 
-      }}>{data?.selectedPriceId}</h1>
-      <div id="rebill_elements"></div>
-    </>
+    <section className="bg-black">
+      <div className="max-w-6xl px-4 py-8 mx-auto sm:py-24 sm:px-6 lg:px-8 bg-slate-400 flex-col flex items-center">
+        <h1 onClick={() => {
+        sdkLoad(); 
+        }}>
+          {data?.selectedPriceId}
+        </h1>
+        <div id="rebill_elements"></div>
+      </div>
+    </section>
   );
 }

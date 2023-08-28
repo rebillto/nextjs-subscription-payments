@@ -4,7 +4,8 @@ import { useUser } from '@auth0/nextjs-auth0/client';
 import cn from 'classnames';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
-import {useTranslations} from 'next-intl';
+import {useTranslations, useLocale} from 'next-intl';
+
 
 import Button from '@/components/ui/Button';
 import { useStore } from '@/contexts/defaultStore';
@@ -28,6 +29,20 @@ export default function Pricing({
   const [billingInterval, setBillingInterval] =
     useState<BillingInterval>('months');
   const [priceIdLoading, setPriceIdLoading] = useState<string>();
+
+  type Locale = 'es' | 'en' | 'pt';
+  type Currency = 'ARS' | 'USD' | 'BRL';
+  
+  const localeToCurrency: Record<Locale, Currency> = {
+    'es': 'ARS',
+    'en': 'USD',
+    'pt': 'BRL'
+  };
+  
+  const locale = useLocale();
+  
+  const currency = localeToCurrency[locale as Locale];
+
 
   //todo change to oauth subscription user metadata
   const subscription = '';
@@ -177,10 +192,10 @@ export default function Pricing({
         <div className="mt-12 space-y-4 sm:mt-16 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-6 lg:max-w-4xl lg:mx-auto xl:max-w-none xl:mx-0 xl:grid-cols-3">
           {products.map((product) => {
             const price = product?.prices?.find(
-              (price: any) => price.frequency.type === billingInterval
+              (price: any) => (price.frequency.type === billingInterval && price.currency === currency)
             );
             if (!price) return null;
-            const priceString = new Intl.NumberFormat('en-US', {
+            const priceString = new Intl.NumberFormat(locale, {
               style: 'currency',
               currency: price.currency!,
               minimumFractionDigits: 0
