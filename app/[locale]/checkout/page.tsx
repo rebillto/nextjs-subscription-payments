@@ -2,6 +2,10 @@
 
 import { useStore } from "@/contexts/defaultStore";
 
+const organization_id = process?.env?.NEXT_PUBLIC_REBILL_ORG_ID;
+const api_key = process?.env?.NEXT_PUBLIC_API_KEY;
+const api_url = process?.env?.NEXT_PUBLIC_REBILL_API_URL;
+
 declare global {
   interface Window {
     Rebill: any;
@@ -60,9 +64,9 @@ export default function Checkout() {
   const { data } = useStore(); 
   const sdkLoad = () => {
       const initialization = {
-        organization_id: '0a6a53ce-1220-47f9-b024-e61da6d41483' /* your organization ID */,
-        api_key: 'API_KEY_e6360079-7723-48dd-b2df-bc00cce48b2d',
-        api_url: 'https://api.rebill.dev/v2' /* Rebill API target */,
+        organization_id,
+        api_key,
+        api_url
       }
 
       const rebill_checkout =  new window.Rebill.PhantomSDK(initialization);
@@ -105,7 +109,6 @@ export default function Checkout() {
         },
       })
 
-
       rebill_checkout.setText({
         card_number: 'Card Number',
         pay_button: 'Pay',
@@ -131,10 +134,90 @@ export default function Checkout() {
         <h1 onClick={() => {
         sdkLoad(); 
         }}>
-          {data?.selectedPriceId}
+          {data?.selectedPriceId}  
         </h1>
         <div id="rebill_elements"></div>
       </div>
     </section>
   );
 }
+
+/*
+//Succesfull response
+{
+  "invoice": null,
+  "pendingTransaction": null,
+  "failedTransaction": {
+      "id": "1853223c-7df7-4d2d-b481-56573fd077da",
+      "cartId": "07658829-ba0b-4438-8e84-b6b325e5697a",
+      "organizationId": "0a6a53ce-1220-47f9-b024-e61da6d41483",
+      "paidBags": [
+          {
+              "payment": {
+                  "amount": "7000",
+                  "id": "f4e069e1-e9e2-44a1-9720-bace84b004cd",
+                  "currency": "ARS",
+                  "status": "FAILED",
+                  "gateway": {
+                      "id": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+                      "type": "rebill_gateway",
+                      "country": "I",
+                      "description": "Sandbox",
+                      "status": "ACCEPTED",
+                      "publicKey": "k-eFyvBF_eCtU46H5TOB02_I56ONV7HQ",
+                      "recurring": true,
+                      "crossborder": true
+                  },
+                  "errorMessage": "Error message should be defined",
+                  "createdAt": "2023-08-28T15:31:31.112Z",
+                  "source": "FIRST"
+              },
+              "prices": [
+                  {
+                      "id": "03e15d9f-6de9-49e8-92d0-a2195d588a03",
+                      "quantity": 1
+                  }
+              ],
+              "schedules": []
+          }
+      ],
+      "buyer": {
+          "customer": {
+              "id": "1ad634e0-3115-4a8e-b91a-d12f3079a850",
+              "firstName": "German Gerardo",
+              "lastName": "Guerci",
+              "cellPhone": "54-2257636857",
+              "birthday": "12-12-1996",
+              "taxIdType": "CUIT",
+              "taxIdNumber": "20401306286",
+              "personalIdType": "DNI",
+              "personalIdNumber": "40130628",
+              "userEmail": "john@doe.com",
+              "address": {
+                  "street": "Blanco encalada",
+                  "city": "Mar de ajo",
+                  "state": "Buenos Aires",
+                  "country": "AR",
+                  "zipCode": "7109",
+                  "number": "600",
+                  "floor": "2",
+                  "apt": "B",
+                  "description": "Home / Office"
+              }
+          },
+          "card": {
+              "id": "44154d3c-5b6d-4229-aa22-c4de390d3b9b",
+              "bin": 529991,
+              "last4": "0015",
+              "cardHolder": "German Gerardo Guerci",
+              "cardNumber": "529991bx_836a306afeb944119d7ec66cbf2a18aa_bx0015",
+              "expiration": {
+                  "month": 8,
+                  "year": "2030"
+              }
+          }
+      },
+      "type": "failed_transaction",
+      "createdAt": "2023-08-28T15:31:31.131Z"
+  }
+} */
