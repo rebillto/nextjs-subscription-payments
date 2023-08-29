@@ -52,4 +52,34 @@ This guide will walk you through the steps to configure Rebill for your project.
    NEXT_PUBLIC_REBILL_API_URL='https://api.rebill.dev/v2'
    ```
 
-## Creating Product and Pricing Information
+# Creating Product and Pricing Information
+
+## Rebill API Upload Script
+
+To speed up the setup, we have added a fixtures file to bootstrap test products and pricing data in your Rebill account. The script executes a series of API requests defined in this JSON file.
+
+## Prerequisites
+
+Before using this script, you need to have the following:
+
+1. Node.js installed on your system.
+2. An API Key from Rebill to authenticate your requests.
+
+## How to Use:
+
+1. Install Dependencies:
+   Before using the script, make sure you have the required dependencies installed. You can do this by running:
+
+   ```
+   npm install
+   ```
+
+2. Prepare Item Data:
+   Modify the JSON file named `itemsToUpload.json`. This file should contain an array of item objects that you want to upload.
+
+3. Simply open a terminal and navigate to the directory /fixtures containing the script and JSON files. Run the script using the following command:
+   ```
+   node uploadItems.js [REBILL_API_URL] [REBILL_API_KEY]
+   ```
+   - Replace `[REBILL_API_URL]` with the optional API URL if you want to override the default value.
+   - Replace `[REBILL_API_KEY]` with the optional API key if you want to override the default value.

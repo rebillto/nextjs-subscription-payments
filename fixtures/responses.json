@@ -674,5 +674,757 @@
         "debitType": null
       }
     ]
+  },
+  {
+    "item": {
+      "id": "682f6260-3e0f-477b-90cb-fc452852144d",
+      "name": "Hobby",
+      "description": "Hobby product description",
+      "metadata": null,
+      "createdAt": "2023-08-29T20:33:46.146Z",
+      "itemFamilyId": null,
+      "archive": false,
+      "enabled": true
+    },
+    "prices": [
+      {
+        "id": "dc71e3a1-6323-4a50-8324-fb94edba5501",
+        "gateway": {
+          "id": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+          "type": "rebill_gateway",
+          "country": "I",
+          "description": "Sandbox",
+          "status": "ACCEPTED",
+          "publicKey": "k-eFyvBF_eCtU46H5TOB02_I56ONV7HQ",
+          "recurring": true,
+          "crossborder": true
+        },
+        "frequency": {
+          "type": "months",
+          "quantity": 1
+        },
+        "repetitions": 2,
+        "description": "ARS-MONTH",
+        "currency": "ARS",
+        "enabled": true,
+        "archive": false,
+        "priceSetting": null,
+        "parent": null,
+        "itemId": "682f6260-3e0f-477b-90cb-fc452852144d",
+        "amount": "7000",
+        "type": "fixed",
+        "debitDay": null,
+        "debitType": null
+      },
+      {
+        "id": "523d4927-8dbd-49da-a4b0-dac4268109ea",
+        "gateway": {
+          "id": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+          "type": "rebill_gateway",
+          "country": "I",
+          "description": "Sandbox",
+          "status": "ACCEPTED",
+          "publicKey": "k-eFyvBF_eCtU46H5TOB02_I56ONV7HQ",
+          "recurring": true,
+          "crossborder": true
+        },
+        "frequency": {
+          "type": "years",
+          "quantity": 1
+        },
+        "repetitions": 2,
+        "description": "ARS-YEAR",
+        "currency": "ARS",
+        "enabled": true,
+        "archive": false,
+        "priceSetting": null,
+        "parent": null,
+        "itemId": "682f6260-3e0f-477b-90cb-fc452852144d",
+        "amount": "70000",
+        "type": "fixed",
+        "debitDay": null,
+        "debitType": null
+      },
+      {
+        "id": "9ae97068-4d00-490c-9ef8-de25d15454ef",
+        "gateway": {
+          "id": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+          "type": "rebill_gateway",
+          "country": "I",
+          "description": "Sandbox",
+          "status": "ACCEPTED",
+          "publicKey": "k-eFyvBF_eCtU46H5TOB02_I56ONV7HQ",
+          "recurring": true,
+          "crossborder": true
+        },
+        "frequency": {
+          "type": "months",
+          "quantity": 1
+        },
+        "repetitions": 2,
+        "description": "USD-MONTH",
+        "currency": "USD",
+        "enabled": true,
+        "archive": false,
+        "priceSetting": null,
+        "parent": null,
+        "itemId": "682f6260-3e0f-477b-90cb-fc452852144d",
+        "amount": "10",
+        "type": "fixed",
+        "debitDay": null,
+        "debitType": null
+      },
+      {
+        "id": "f0f7c405-7ed0-4b42-ac2d-dad2fb4ac37d",
+        "gateway": {
+          "id": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+          "type": "rebill_gateway",
+          "country": "I",
+          "description": "Sandbox",
+          "status": "ACCEPTED",
+          "publicKey": "k-eFyvBF_eCtU46H5TOB02_I56ONV7HQ",
+          "recurring": true,
+          "crossborder": true
+        },
+        "frequency": {
+          "type": "years",
+          "quantity": 1
+        },
+        "repetitions": 2,
+        "description": "USD-YEAR",
+        "currency": "USD",
+        "enabled": true,
+        "archive": false,
+        "priceSetting": null,
+        "parent": null,
+        "itemId": "682f6260-3e0f-477b-90cb-fc452852144d",
+        "amount": "100",
+        "type": "fixed",
+        "debitDay": null,
+        "debitType": null
+      },
+      {
+        "id": "73b7e858-98f3-4fbf-8705-da919ec279dc",
+        "gateway": {
+          "id": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+          "type": "rebill_gateway",
+          "country": "I",
+          "description": "Sandbox",
+          "status": "ACCEPTED",
+          "publicKey": "k-eFyvBF_eCtU46H5TOB02_I56ONV7HQ",
+          "recurring": true,
+          "crossborder": true
+        },
+        "frequency": {
+          "type": "months",
+          "quantity": 1
+        },
+        "repetitions": 2,
+        "description": "BRL-MONTH",
+        "currency": "BRL",
+        "enabled": true,
+        "archive": false,
+        "priceSetting": null,
+        "parent": null,
+        "itemId": "682f6260-3e0f-477b-90cb-fc452852144d",
+        "amount": "50",
+        "type": "fixed",
+        "debitDay": null,
+        "debitType": null
+      },
+      {
+        "id": "b8adccc3-c6d5-416f-89aa-bc1efc5c8818",
+        "gateway": {
+          "id": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+          "type": "rebill_gateway",
+          "country": "I",
+          "description": "Sandbox",
+          "status": "ACCEPTED",
+          "publicKey": "k-eFyvBF_eCtU46H5TOB02_I56ONV7HQ",
+          "recurring": true,
+          "crossborder": true
+        },
+        "frequency": {
+          "type": "years",
+          "quantity": 1
+        },
+        "repetitions": 2,
+        "description": "BRL-YEAR",
+        "currency": "BRL",
+        "enabled": true,
+        "archive": false,
+        "priceSetting": null,
+        "parent": null,
+        "itemId": "682f6260-3e0f-477b-90cb-fc452852144d",
+        "amount": "500",
+        "type": "fixed",
+        "debitDay": null,
+        "debitType": null
+      }
+    ]
+  },
+  {
+    "item": {
+      "id": "71a4b069-8514-4e48-a322-cf42e0203577",
+      "name": "Freelancer",
+      "description": "Freelancer product description",
+      "metadata": null,
+      "createdAt": "2023-08-29T20:33:46.663Z",
+      "itemFamilyId": null,
+      "archive": false,
+      "enabled": true
+    },
+    "prices": [
+      {
+        "id": "ace41b27-658f-428f-bffe-b89b9fb8b2d1",
+        "gateway": {
+          "id": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+          "type": "rebill_gateway",
+          "country": "I",
+          "description": "Sandbox",
+          "status": "ACCEPTED",
+          "publicKey": "k-eFyvBF_eCtU46H5TOB02_I56ONV7HQ",
+          "recurring": true,
+          "crossborder": true
+        },
+        "frequency": {
+          "type": "months",
+          "quantity": 1
+        },
+        "repetitions": 2,
+        "description": "ARS-MONTH",
+        "currency": "ARS",
+        "enabled": true,
+        "archive": false,
+        "priceSetting": null,
+        "parent": null,
+        "itemId": "71a4b069-8514-4e48-a322-cf42e0203577",
+        "amount": "7000",
+        "type": "fixed",
+        "debitDay": null,
+        "debitType": null
+      },
+      {
+        "id": "a4bc210f-aacb-40f7-bfb9-8d0d76493f49",
+        "gateway": {
+          "id": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+          "type": "rebill_gateway",
+          "country": "I",
+          "description": "Sandbox",
+          "status": "ACCEPTED",
+          "publicKey": "k-eFyvBF_eCtU46H5TOB02_I56ONV7HQ",
+          "recurring": true,
+          "crossborder": true
+        },
+        "frequency": {
+          "type": "years",
+          "quantity": 1
+        },
+        "repetitions": 2,
+        "description": "ARS-YEAR",
+        "currency": "ARS",
+        "enabled": true,
+        "archive": false,
+        "priceSetting": null,
+        "parent": null,
+        "itemId": "71a4b069-8514-4e48-a322-cf42e0203577",
+        "amount": "70000",
+        "type": "fixed",
+        "debitDay": null,
+        "debitType": null
+      },
+      {
+        "id": "080aefd3-3504-4936-a223-aed866dba8f1",
+        "gateway": {
+          "id": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+          "type": "rebill_gateway",
+          "country": "I",
+          "description": "Sandbox",
+          "status": "ACCEPTED",
+          "publicKey": "k-eFyvBF_eCtU46H5TOB02_I56ONV7HQ",
+          "recurring": true,
+          "crossborder": true
+        },
+        "frequency": {
+          "type": "months",
+          "quantity": 1
+        },
+        "repetitions": 2,
+        "description": "USD-MONTH",
+        "currency": "USD",
+        "enabled": true,
+        "archive": false,
+        "priceSetting": null,
+        "parent": null,
+        "itemId": "71a4b069-8514-4e48-a322-cf42e0203577",
+        "amount": "10",
+        "type": "fixed",
+        "debitDay": null,
+        "debitType": null
+      },
+      {
+        "id": "6e5617f1-f698-4342-be6f-3073348da824",
+        "gateway": {
+          "id": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+          "type": "rebill_gateway",
+          "country": "I",
+          "description": "Sandbox",
+          "status": "ACCEPTED",
+          "publicKey": "k-eFyvBF_eCtU46H5TOB02_I56ONV7HQ",
+          "recurring": true,
+          "crossborder": true
+        },
+        "frequency": {
+          "type": "years",
+          "quantity": 1
+        },
+        "repetitions": 2,
+        "description": "USD-YEAR",
+        "currency": "USD",
+        "enabled": true,
+        "archive": false,
+        "priceSetting": null,
+        "parent": null,
+        "itemId": "71a4b069-8514-4e48-a322-cf42e0203577",
+        "amount": "100",
+        "type": "fixed",
+        "debitDay": null,
+        "debitType": null
+      },
+      {
+        "id": "14c30826-27d3-40ed-b519-61c941a63b42",
+        "gateway": {
+          "id": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+          "type": "rebill_gateway",
+          "country": "I",
+          "description": "Sandbox",
+          "status": "ACCEPTED",
+          "publicKey": "k-eFyvBF_eCtU46H5TOB02_I56ONV7HQ",
+          "recurring": true,
+          "crossborder": true
+        },
+        "frequency": {
+          "type": "months",
+          "quantity": 1
+        },
+        "repetitions": 2,
+        "description": "BRL-MONTH",
+        "currency": "BRL",
+        "enabled": true,
+        "archive": false,
+        "priceSetting": null,
+        "parent": null,
+        "itemId": "71a4b069-8514-4e48-a322-cf42e0203577",
+        "amount": "50",
+        "type": "fixed",
+        "debitDay": null,
+        "debitType": null
+      },
+      {
+        "id": "aed0cac4-585b-4a47-a298-ed06efd94f93",
+        "gateway": {
+          "id": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+          "type": "rebill_gateway",
+          "country": "I",
+          "description": "Sandbox",
+          "status": "ACCEPTED",
+          "publicKey": "k-eFyvBF_eCtU46H5TOB02_I56ONV7HQ",
+          "recurring": true,
+          "crossborder": true
+        },
+        "frequency": {
+          "type": "years",
+          "quantity": 1
+        },
+        "repetitions": 2,
+        "description": "BRL-YEAR",
+        "currency": "BRL",
+        "enabled": true,
+        "archive": false,
+        "priceSetting": null,
+        "parent": null,
+        "itemId": "71a4b069-8514-4e48-a322-cf42e0203577",
+        "amount": "500",
+        "type": "fixed",
+        "debitDay": null,
+        "debitType": null
+      }
+    ]
+  },
+  {
+    "item": {
+      "id": "ec17f9a4-ba11-48a7-b9fa-d060f3e9e3c9",
+      "name": "Hobby",
+      "description": "Hobby product description",
+      "metadata": null,
+      "createdAt": "2023-08-29T20:34:52.693Z",
+      "itemFamilyId": null,
+      "archive": false,
+      "enabled": true
+    },
+    "prices": [
+      {
+        "id": "7d2ddb91-426e-44a0-a285-2c3397e6df52",
+        "gateway": {
+          "id": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+          "type": "rebill_gateway",
+          "country": "I",
+          "description": "Sandbox",
+          "status": "ACCEPTED",
+          "publicKey": "k-eFyvBF_eCtU46H5TOB02_I56ONV7HQ",
+          "recurring": true,
+          "crossborder": true
+        },
+        "frequency": {
+          "type": "months",
+          "quantity": 1
+        },
+        "repetitions": 2,
+        "description": "ARS-MONTH",
+        "currency": "ARS",
+        "enabled": true,
+        "archive": false,
+        "priceSetting": null,
+        "parent": null,
+        "itemId": "ec17f9a4-ba11-48a7-b9fa-d060f3e9e3c9",
+        "amount": "7000",
+        "type": "fixed",
+        "debitDay": null,
+        "debitType": null
+      },
+      {
+        "id": "1abf4877-44dc-4906-aaf3-0d3f78a5fc18",
+        "gateway": {
+          "id": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+          "type": "rebill_gateway",
+          "country": "I",
+          "description": "Sandbox",
+          "status": "ACCEPTED",
+          "publicKey": "k-eFyvBF_eCtU46H5TOB02_I56ONV7HQ",
+          "recurring": true,
+          "crossborder": true
+        },
+        "frequency": {
+          "type": "years",
+          "quantity": 1
+        },
+        "repetitions": 2,
+        "description": "ARS-YEAR",
+        "currency": "ARS",
+        "enabled": true,
+        "archive": false,
+        "priceSetting": null,
+        "parent": null,
+        "itemId": "ec17f9a4-ba11-48a7-b9fa-d060f3e9e3c9",
+        "amount": "70000",
+        "type": "fixed",
+        "debitDay": null,
+        "debitType": null
+      },
+      {
+        "id": "b6ba2388-81ac-4e73-97d4-f8d5c78f92a4",
+        "gateway": {
+          "id": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+          "type": "rebill_gateway",
+          "country": "I",
+          "description": "Sandbox",
+          "status": "ACCEPTED",
+          "publicKey": "k-eFyvBF_eCtU46H5TOB02_I56ONV7HQ",
+          "recurring": true,
+          "crossborder": true
+        },
+        "frequency": {
+          "type": "months",
+          "quantity": 1
+        },
+        "repetitions": 2,
+        "description": "USD-MONTH",
+        "currency": "USD",
+        "enabled": true,
+        "archive": false,
+        "priceSetting": null,
+        "parent": null,
+        "itemId": "ec17f9a4-ba11-48a7-b9fa-d060f3e9e3c9",
+        "amount": "10",
+        "type": "fixed",
+        "debitDay": null,
+        "debitType": null
+      },
+      {
+        "id": "a6e9ec5e-0ded-4265-ab12-267f078fee8d",
+        "gateway": {
+          "id": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+          "type": "rebill_gateway",
+          "country": "I",
+          "description": "Sandbox",
+          "status": "ACCEPTED",
+          "publicKey": "k-eFyvBF_eCtU46H5TOB02_I56ONV7HQ",
+          "recurring": true,
+          "crossborder": true
+        },
+        "frequency": {
+          "type": "years",
+          "quantity": 1
+        },
+        "repetitions": 2,
+        "description": "USD-YEAR",
+        "currency": "USD",
+        "enabled": true,
+        "archive": false,
+        "priceSetting": null,
+        "parent": null,
+        "itemId": "ec17f9a4-ba11-48a7-b9fa-d060f3e9e3c9",
+        "amount": "100",
+        "type": "fixed",
+        "debitDay": null,
+        "debitType": null
+      },
+      {
+        "id": "aa03f294-7f44-4ea5-9809-8cabe90d8a33",
+        "gateway": {
+          "id": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+          "type": "rebill_gateway",
+          "country": "I",
+          "description": "Sandbox",
+          "status": "ACCEPTED",
+          "publicKey": "k-eFyvBF_eCtU46H5TOB02_I56ONV7HQ",
+          "recurring": true,
+          "crossborder": true
+        },
+        "frequency": {
+          "type": "months",
+          "quantity": 1
+        },
+        "repetitions": 2,
+        "description": "BRL-MONTH",
+        "currency": "BRL",
+        "enabled": true,
+        "archive": false,
+        "priceSetting": null,
+        "parent": null,
+        "itemId": "ec17f9a4-ba11-48a7-b9fa-d060f3e9e3c9",
+        "amount": "50",
+        "type": "fixed",
+        "debitDay": null,
+        "debitType": null
+      },
+      {
+        "id": "f2b6f765-fb7f-49a8-bb32-5bab97aec2b7",
+        "gateway": {
+          "id": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+          "type": "rebill_gateway",
+          "country": "I",
+          "description": "Sandbox",
+          "status": "ACCEPTED",
+          "publicKey": "k-eFyvBF_eCtU46H5TOB02_I56ONV7HQ",
+          "recurring": true,
+          "crossborder": true
+        },
+        "frequency": {
+          "type": "years",
+          "quantity": 1
+        },
+        "repetitions": 2,
+        "description": "BRL-YEAR",
+        "currency": "BRL",
+        "enabled": true,
+        "archive": false,
+        "priceSetting": null,
+        "parent": null,
+        "itemId": "ec17f9a4-ba11-48a7-b9fa-d060f3e9e3c9",
+        "amount": "500",
+        "type": "fixed",
+        "debitDay": null,
+        "debitType": null
+      }
+    ]
+  },
+  {
+    "item": {
+      "id": "033f2f5d-1de1-401d-b160-56977388c921",
+      "name": "Freelancer",
+      "description": "Freelancer product description",
+      "metadata": null,
+      "createdAt": "2023-08-29T20:34:53.270Z",
+      "itemFamilyId": null,
+      "archive": false,
+      "enabled": true
+    },
+    "prices": [
+      {
+        "id": "53a79b3c-a894-47e4-bf67-5088377b020e",
+        "gateway": {
+          "id": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+          "type": "rebill_gateway",
+          "country": "I",
+          "description": "Sandbox",
+          "status": "ACCEPTED",
+          "publicKey": "k-eFyvBF_eCtU46H5TOB02_I56ONV7HQ",
+          "recurring": true,
+          "crossborder": true
+        },
+        "frequency": {
+          "type": "months",
+          "quantity": 1
+        },
+        "repetitions": 2,
+        "description": "ARS-MONTH",
+        "currency": "ARS",
+        "enabled": true,
+        "archive": false,
+        "priceSetting": null,
+        "parent": null,
+        "itemId": "033f2f5d-1de1-401d-b160-56977388c921",
+        "amount": "7000",
+        "type": "fixed",
+        "debitDay": null,
+        "debitType": null
+      },
+      {
+        "id": "77729a82-0570-4dc9-b1de-96dbc8b8a613",
+        "gateway": {
+          "id": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+          "type": "rebill_gateway",
+          "country": "I",
+          "description": "Sandbox",
+          "status": "ACCEPTED",
+          "publicKey": "k-eFyvBF_eCtU46H5TOB02_I56ONV7HQ",
+          "recurring": true,
+          "crossborder": true
+        },
+        "frequency": {
+          "type": "years",
+          "quantity": 1
+        },
+        "repetitions": 2,
+        "description": "ARS-YEAR",
+        "currency": "ARS",
+        "enabled": true,
+        "archive": false,
+        "priceSetting": null,
+        "parent": null,
+        "itemId": "033f2f5d-1de1-401d-b160-56977388c921",
+        "amount": "70000",
+        "type": "fixed",
+        "debitDay": null,
+        "debitType": null
+      },
+      {
+        "id": "e0291bae-cd07-4cae-b4fb-75375895de30",
+        "gateway": {
+          "id": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+          "type": "rebill_gateway",
+          "country": "I",
+          "description": "Sandbox",
+          "status": "ACCEPTED",
+          "publicKey": "k-eFyvBF_eCtU46H5TOB02_I56ONV7HQ",
+          "recurring": true,
+          "crossborder": true
+        },
+        "frequency": {
+          "type": "months",
+          "quantity": 1
+        },
+        "repetitions": 2,
+        "description": "USD-MONTH",
+        "currency": "USD",
+        "enabled": true,
+        "archive": false,
+        "priceSetting": null,
+        "parent": null,
+        "itemId": "033f2f5d-1de1-401d-b160-56977388c921",
+        "amount": "10",
+        "type": "fixed",
+        "debitDay": null,
+        "debitType": null
+      },
+      {
+        "id": "833f4415-7ca3-447c-b7ef-5b30db74dc76",
+        "gateway": {
+          "id": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+          "type": "rebill_gateway",
+          "country": "I",
+          "description": "Sandbox",
+          "status": "ACCEPTED",
+          "publicKey": "k-eFyvBF_eCtU46H5TOB02_I56ONV7HQ",
+          "recurring": true,
+          "crossborder": true
+        },
+        "frequency": {
+          "type": "years",
+          "quantity": 1
+        },
+        "repetitions": 2,
+        "description": "USD-YEAR",
+        "currency": "USD",
+        "enabled": true,
+        "archive": false,
+        "priceSetting": null,
+        "parent": null,
+        "itemId": "033f2f5d-1de1-401d-b160-56977388c921",
+        "amount": "100",
+        "type": "fixed",
+        "debitDay": null,
+        "debitType": null
+      },
+      {
+        "id": "d308dbad-523b-4390-8b91-7eee80dd2ec5",
+        "gateway": {
+          "id": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+          "type": "rebill_gateway",
+          "country": "I",
+          "description": "Sandbox",
+          "status": "ACCEPTED",
+          "publicKey": "k-eFyvBF_eCtU46H5TOB02_I56ONV7HQ",
+          "recurring": true,
+          "crossborder": true
+        },
+        "frequency": {
+          "type": "months",
+          "quantity": 1
+        },
+        "repetitions": 2,
+        "description": "BRL-MONTH",
+        "currency": "BRL",
+        "enabled": true,
+        "archive": false,
+        "priceSetting": null,
+        "parent": null,
+        "itemId": "033f2f5d-1de1-401d-b160-56977388c921",
+        "amount": "50",
+        "type": "fixed",
+        "debitDay": null,
+        "debitType": null
+      },
+      {
+        "id": "cdcfafeb-2884-4383-9bd8-b4e8437815b5",
+        "gateway": {
+          "id": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+          "type": "rebill_gateway",
+          "country": "I",
+          "description": "Sandbox",
+          "status": "ACCEPTED",
+          "publicKey": "k-eFyvBF_eCtU46H5TOB02_I56ONV7HQ",
+          "recurring": true,
+          "crossborder": true
+        },
+        "frequency": {
+          "type": "years",
+          "quantity": 1
+        },
+        "repetitions": 2,
+        "description": "BRL-YEAR",
+        "currency": "BRL",
+        "enabled": true,
+        "archive": false,
+        "priceSetting": null,
+        "parent": null,
+        "itemId": "033f2f5d-1de1-401d-b160-56977388c921",
+        "amount": "500",
+        "type": "fixed",
+        "debitDay": null,
+        "debitType": null
+      }
+    ]
   }
 ]
