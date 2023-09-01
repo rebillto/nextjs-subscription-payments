@@ -8,6 +8,7 @@ import {useTranslations, useLocale} from 'next-intl';
 
 import Button from '@/components/ui/Button';
 import { useStore } from '@/contexts/defaultStore';
+import localizeCurrency from '@/helpers/localizeCurrency';
 
 export default function Pricing({
   products,
@@ -182,11 +183,7 @@ export default function Pricing({
               (price: any) => (price.frequency.type === billingInterval && price.currency === data?.currency)
             );
             if (!price) return null;
-            const priceString = new Intl.NumberFormat(locale, {
-              style: 'currency',
-              currency: price.currency!,
-              minimumFractionDigits: 0
-            }).format((parseInt(price?.amount) || 0));
+            const priceString = localizeCurrency(price.amount, price.currency);
             return (
               <div
                 key={product?.item.id}
@@ -324,4 +321,4 @@ interface Props {
   products: Product[];
 }
 
-type BillingInterval = 'years' | 'months';
+type BillingInterval = 'years' | 'months'; 
