@@ -79,7 +79,6 @@ Before using this script, you need to have the following:
 
 3. Simply open a terminal and navigate to the directory /fixtures containing the script and JSON files. Run the script using the following command:
    ```
-   node uploadItems.js [REBILL_API_URL] [REBILL_API_KEY]
+   node uploadItems.js [REBILL_API_KEY]
    ```
-   - Replace `[REBILL_API_URL]` with the optional API URL if you want to override the default value.
    - Replace `[REBILL_API_KEY]` with the optional API key if you want to override the default value.

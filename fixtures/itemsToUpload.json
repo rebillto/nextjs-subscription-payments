@@ -80,6 +80,136 @@
         "repetitions": 2,
         "description": "BRL-YEAR",
         "enabled": true
+      },
+      {
+        "type": "fixed",
+        "frequency": {
+          "type": "months",
+          "quantity": 1
+        },
+        "amount": "50",
+        "currency": "CLP",
+        "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+        "repetitions": 2,
+        "description": "CLP-MONTH",
+        "enabled": true
+      },
+       {
+        "type": "fixed",
+        "frequency": {
+          "type": "years",
+          "quantity": 1
+        },
+        "amount": "500",
+        "currency": "CLP",
+        "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+        "repetitions": 2,
+        "description": "CLP-YEAR",
+        "enabled": true
+      },
+      {
+        "type": "fixed",
+        "frequency": {
+          "type": "months",
+          "quantity": 1
+        },
+        "amount": "50",
+        "currency": "MXN",
+        "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+        "repetitions": 2,
+        "description": "MXN-MONTH",
+        "enabled": true
+      },
+       {
+        "type": "fixed",
+        "frequency": {
+          "type": "years",
+          "quantity": 1
+        },
+        "amount": "500",
+        "currency": "MXN",
+        "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+        "repetitions": 2,
+        "description": "MXN-YEAR",
+        "enabled": true
+      },
+      {
+        "type": "fixed",
+        "frequency": {
+          "type": "months",
+          "quantity": 1
+        },
+        "amount": "50",
+        "currency": "UYU",
+        "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+        "repetitions": 2,
+        "description": "UYU-MONTH",
+        "enabled": true
+      },
+       {
+        "type": "fixed",
+        "frequency": {
+          "type": "years",
+          "quantity": 1
+        },
+        "amount": "500",
+        "currency": "UYU",
+        "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+        "repetitions": 2,
+        "description": "UYU-YEAR",
+        "enabled": true
+      },
+      {
+        "type": "fixed",
+        "frequency": {
+          "type": "months",
+          "quantity": 1
+        },
+        "amount": "50",
+        "currency": "COP",
+        "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+        "repetitions": 2,
+        "description": "COP-MONTH",
+        "enabled": true
+      },
+       {
+        "type": "fixed",
+        "frequency": {
+          "type": "years",
+          "quantity": 1
+        },
+        "amount": "500",
+        "currency": "COP",
+        "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+        "repetitions": 2,
+        "description": "COP-YEAR",
+        "enabled": true
+      },
+      {
+        "type": "fixed",
+        "frequency": {
+          "type": "months",
+          "quantity": 1
+        },
+        "amount": "50",
+        "currency": "PEN",
+        "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+        "repetitions": 2,
+        "description": "PEN-MONTH",
+        "enabled": true
+      },
+       {
+        "type": "fixed",
+        "frequency": {
+          "type": "years",
+          "quantity": 1
+        },
+        "amount": "500",
+        "currency": "PEN",
+        "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+        "repetitions": 2,
+        "description": "PEN-YEAR",
+        "enabled": true
       }
     ]
   },
@@ -163,6 +293,136 @@
         "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
         "repetitions": 2,
         "description": "BRL-YEAR",
+        "enabled": true
+      },
+      {
+        "type": "fixed",
+        "frequency": {
+          "type": "months",
+          "quantity": 1
+        },
+        "amount": "50",
+        "currency": "CLP",
+        "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+        "repetitions": 2,
+        "description": "CLP-MONTH",
+        "enabled": true
+      },
+       {
+        "type": "fixed",
+        "frequency": {
+          "type": "years",
+          "quantity": 1
+        },
+        "amount": "500",
+        "currency": "CLP",
+        "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+        "repetitions": 2,
+        "description": "CLP-YEAR",
+        "enabled": true
+      },
+      {
+        "type": "fixed",
+        "frequency": {
+          "type": "months",
+          "quantity": 1
+        },
+        "amount": "50",
+        "currency": "MXN",
+        "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+        "repetitions": 2,
+        "description": "MXN-MONTH",
+        "enabled": true
+      },
+       {
+        "type": "fixed",
+        "frequency": {
+          "type": "years",
+          "quantity": 1
+        },
+        "amount": "500",
+        "currency": "MXN",
+        "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+        "repetitions": 2,
+        "description": "MXN-YEAR",
+        "enabled": true
+      },
+      {
+        "type": "fixed",
+        "frequency": {
+          "type": "months",
+          "quantity": 1
+        },
+        "amount": "50",
+        "currency": "UYU",
+        "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+        "repetitions": 2,
+        "description": "UYU-MONTH",
+        "enabled": true
+      },
+       {
+        "type": "fixed",
+        "frequency": {
+          "type": "years",
+          "quantity": 1
+        },
+        "amount": "500",
+        "currency": "UYU",
+        "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+        "repetitions": 2,
+        "description": "UYU-YEAR",
+        "enabled": true
+      },
+      {
+        "type": "fixed",
+        "frequency": {
+          "type": "months",
+          "quantity": 1
+        },
+        "amount": "50",
+        "currency": "COP",
+        "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+        "repetitions": 2,
+        "description": "COP-MONTH",
+        "enabled": true
+      },
+       {
+        "type": "fixed",
+        "frequency": {
+          "type": "years",
+          "quantity": 1
+        },
+        "amount": "500",
+        "currency": "COP",
+        "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+        "repetitions": 2,
+        "description": "COP-YEAR",
+        "enabled": true
+      },
+      {
+        "type": "fixed",
+        "frequency": {
+          "type": "months",
+          "quantity": 1
+        },
+        "amount": "50",
+        "currency": "PEN",
+        "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+        "repetitions": 2,
+        "description": "PEN-MONTH",
+        "enabled": true
+      },
+       {
+        "type": "fixed",
+        "frequency": {
+          "type": "years",
+          "quantity": 1
+        },
+        "amount": "500",
+        "currency": "PEN",
+        "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+        "repetitions": 2,
+        "description": "PEN-YEAR",
         "enabled": true
       }
     ]

@@ -13,6 +13,7 @@ export interface StoreContext {
 
 export interface StoreData {
   selectedPriceId?: string; 
+  currency?: string;
 }
 
 const StoreCtx = createContext<StoreContext>({
@@ -21,7 +22,9 @@ const StoreCtx = createContext<StoreContext>({
 })
 
 const Provider = (props: any) => {
-  const [data, setData] = useState<Partial<StoreData>>({});
+  const [data, setData] = useState<Partial<StoreData>>({
+    currency: "USD"
+  });
   const updateData = (newData: Partial<StoreData>) => {
     if (newData) {
       setData((previous) => ({
