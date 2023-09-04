@@ -3,8 +3,8 @@ import fetch from 'node-fetch'; // Require node-fetch using a relative path
 
 // Parse command line arguments to get apiUrl and API_KEY
 const args = process.argv.slice(2); // Exclude 'node' and script filename
-const apiUrl = args[0] || 'https://api.rebill.dev/v2/item';
-const API_KEY = args[1] || 'API_KEY_e6360079-7723-48dd-b2df-bc00cce48b2d';
+const apiUrl = 'https://api.rebill.dev/v2/item';
+const API_KEY = args[0] || 'API_KEY_e6360079-7723-48dd-b2df-bc00cce48b2d';
 const authHeader = 'Bearer ' + API_KEY;
 
 const responsesFilePath = 'responses.json';
@@ -30,9 +30,7 @@ const responsesFilePath = 'responses.json';
         if (response.status === 201) {
           const responseBody = await response.json();
           successfulResponses.push(responseBody); // Store successful response
-          console.log('Item uploaded successfully:', item);
         }
-        console.log(response);
       } catch (error) {
         console.error('Error uploading item:', error.message);
       }

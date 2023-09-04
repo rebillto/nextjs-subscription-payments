@@ -7,6 +7,7 @@ import { useState } from 'react';
 
 import Logo from '@/components/icons/Logo';
 import GitHub from '@/components/icons/GitHub';
+import { useStore } from '@/contexts/defaultStore';
 
 export default function Footer() {
   const t = useTranslations('footer');
@@ -87,6 +88,9 @@ export default function Footer() {
             <li className="py-3 md:py-0 md:pb-4">
              <LanguageSelector />
             </li>
+            <li className="py-3 md:py-0 md:pb-4">
+             <CurrencySelector />
+            </li>
           </ul>
         </div>
         <div className="flex items-start col-span-1 text-white lg:col-span-6 lg:justify-end">
@@ -127,7 +131,6 @@ const LanguageSelector = () => {
   const locale = useLocale();
   const [selectedLanguage, setSelectedLanguage] = useState(locale);
   
-
   const handleLanguageChange = (event: any) => {
     event.preventDefault();
     setSelectedLanguage(event.target.value);
@@ -145,6 +148,34 @@ const LanguageSelector = () => {
         <option value="en" className="text-pink-600">EN</option>
         <option value="es" className="text-pink-600">ES</option>
         <option value="pt" className="text-pink-600">PT</option>
+      </select>
+    </div>
+  );
+};
+
+const CurrencySelector = () => {
+
+  const { data, updateData } = useStore();
+  
+  const handleLanguageChange = (event: any) => {
+    event.preventDefault();
+    updateData({currency: event.target.value})
+  };
+
+  return (
+    <div className="flex items-center space-x-2">
+      <select
+        value={(data?.currency ? data?.currency : "USD")}
+        onChange={handleLanguageChange}
+        className="border border-gray-300 rounded p-1 text-pink-600"
+      >
+        <option value="ARS" className="text-pink-600">ARS $</option>
+        <option value="CLP" className="text-pink-600">CLP $</option>
+        <option value="COP" className="text-pink-600">COP $</option>
+        <option value="MXN" className="text-pink-600">MXN $</option>
+        <option value="PEN" className="text-pink-600">PEN S/</option>
+        <option value="UYU" className="text-pink-600">UYU $</option>
+        <option value="USD" className="text-pink-600">USD $</option>
       </select>
     </div>
   );
