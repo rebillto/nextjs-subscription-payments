@@ -32,9 +32,7 @@ export async function POST(req: Request) {
     
     // Step 2: Update user metadata
     const userId = body?.auth0_user_id; 
-    const metadataToUpdate = {
-      rebill_user_id: body?.rebill_user_id,
-    };
+    const metadataToUpdate = body?.metadataToUpdate;
 
     const userMetadataEndpoint = `${audience}users/${userId}`;
     const updateMetadataResponse = await fetch(userMetadataEndpoint, {

@@ -20,6 +20,10 @@ You need the following information:
 
 A callback URL is a URL in your application where Auth0 redirects the user after they have authenticated. The callback URL for your app must be added to the Allowed Callback URLs field in your Application Settings. If this field is not set, users will be unable to log in to the application and will get an error.
 
+### Authorize Client Credentials
+
+Authorize Client Credentials by going to Applications → API → Management API → Machine to Machine Applications in your tenant dashboard.
+
 ### Configure Logout URLs
 
 A logout URL is a URL in your application that Auth0 can return to after the user has been logged out of the authorization server. This is specified in the returnTo query parameter. The logout URL for your app must be added to the Allowed Logout URLs field in your Application Settings. If this field is not set, users will be unable to log out from the application and will get an error.
@@ -32,6 +36,7 @@ AUTH0_BASE_URL='http://localhost:3000'
 AUTH0_ISSUER_BASE_URL='https://{yourDomain}'
 AUTH0_CLIENT_ID='{yourClientId}'
 AUTH0_CLIENT_SECRET='{yourClientSecret}'
+AUTH0_API_URL='https://{yourDomain}/api/v2/'
 ```
 
 # Configuring Rebill
