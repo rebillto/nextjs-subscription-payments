@@ -3,7 +3,7 @@
 import { useUser } from '@auth0/nextjs-auth0/client';
 import cn from 'classnames';
 import { useRouter } from 'next/navigation';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
 
 import Button from '@/components/ui/Button';
@@ -29,6 +29,10 @@ export default function Pricing({
   const [billingInterval, setBillingInterval] =
     useState<BillingInterval>('months');
   const [priceIdLoading, setPriceIdLoading] = useState<string>();
+
+  useEffect(() => {
+    console.log(user)
+  }, [user])
     
   //todo change to oauth subscription user metadata
   const subscription = '';

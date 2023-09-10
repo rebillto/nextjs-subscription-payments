@@ -75,7 +75,7 @@ export default function Checkout() {
   }, [data])
 
   const handleSuccess = async (transactionResponse: SuccessfulResponse) => {
-    await fetch("/api/auth/update-user-metadata", {
+    await fetch("/api/auth/user-metadata", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
