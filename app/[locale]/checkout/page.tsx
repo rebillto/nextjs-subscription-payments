@@ -70,12 +70,12 @@ export default function Checkout() {
 
   useEffect(() => {
     if(!data?.selectedPriceId){
-      router.push("/");
+      router.push("/")
     }
   }, [data])
 
   const handleSuccess = async (transactionResponse: SuccessfulResponse) => {
-    await fetch("/api/auth/user-metadata", {
+    await fetch("/api/auth/update-user-metadata", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

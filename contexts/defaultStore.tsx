@@ -14,6 +14,7 @@ export interface StoreContext {
 export interface StoreData {
   selectedPriceId?: string; 
   currency?: string;
+  userMetaData?: any;
 }
 
 const StoreCtx = createContext<StoreContext>({

@@ -9,6 +9,7 @@ import { useTranslations } from 'next-intl';
 import Button from '@/components/ui/Button';
 import { useStore } from '@/contexts/defaultStore';
 import localizeCurrency from '@/helpers/localizeCurrency';
+import { getUserMetadata } from '@/helpers/getUserMetadata';
 
 export default function Pricing({
   products,
@@ -30,12 +31,23 @@ export default function Pricing({
     useState<BillingInterval>('months');
   const [priceIdLoading, setPriceIdLoading] = useState<string>();
 
+  const getSubscriptions = async (userId: string) => {
+    await getUserMetadata(userId)
+      .then(res => {
+        if("user_metadata" in res){
+          updateData({
+            userMetaData: res?.user_metadata
+          })
+        }
+      })
+      .catch(error => console.log(error))
+  }
+
   useEffect(() => {
-    console.log(user)
-  }, [user])
-    
-  //todo change to oauth subscription user metadata
-  const subscription = '';
+    if(!data?.userMetaData && user?.sub){
+      getSubscriptions(user?.sub)
+    }
+  }, [data?.userMetaData, user?.sub])
 
   const handleCheckout = (price: any) => {
     setPriceIdLoading(price.id);
@@ -45,7 +57,7 @@ export default function Pricing({
     if (!user) {
       return router.push('/signin');
     }
-    if (subscription) {
+    if (data?.userMetaData?.rebill_item_id.indexOf(price.id) > -1) {
       //todo create manage subscription flow. 
       return router.push('/account');
     }
@@ -126,9 +138,7 @@ export default function Pricing({
                 className={cn(
                   'rounded-lg shadow-sm divide-y divide-zinc-600 bg-zinc-900',
                   {
-                    'border border-pink-500': subscription
-                      ? product.item.name === subscription
-                      : product.item.name === 'Freelancer'
+                    'border border-pink-500': data?.userMetaData?.rebill_item_id.indexOf(price.id) > -1 ? true : false
                   }
                 )}
               >
@@ -153,7 +163,7 @@ export default function Pricing({
                     onClick={() => handleCheckout(price)}
                     className="block w-full py-2 mt-8 text-sm font-semibold text-center text-white rounded-md hover:bg-zinc-900"
                   >
-                    {subscription ? t("ManageButton"): t("SubscribeButton")}
+                    {data?.userMetaData?.rebill_item_id.indexOf(price.id) > -1 ? t("ManageButton"): t("SubscribeButton")}
                   </Button>
                 </div>
               </div>
