@@ -53,7 +53,7 @@ This guide will walk you through the steps to configure Rebill for your project.
 
    ```env
    NEXT_PUBLIC_REBILL_ORG_ID='{yourOrgId}'
-   NEXT_PUBLIC_REBILL_API_KEY='{yourApiKey}'
+   REBILL_API_KEY='{yourApiKey}'
    NEXT_PUBLIC_REBILL_API_URL='https://api.rebill.dev/v2'
    ```
 

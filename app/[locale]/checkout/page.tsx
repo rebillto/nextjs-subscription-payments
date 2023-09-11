@@ -6,7 +6,6 @@ import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
 const organization_id = process?.env?.NEXT_PUBLIC_REBILL_ORG_ID;
-const api_key = process?.env?.NEXT_PUBLIC_REBILL_API_KEY;
 const api_url = process?.env?.NEXT_PUBLIC_REBILL_API_URL;
 
 declare global {
@@ -107,7 +106,6 @@ export default function Checkout() {
   const sdkLoad = () => {
       const initialization = {
         organization_id,
-        api_key,
         api_url
       }
 
