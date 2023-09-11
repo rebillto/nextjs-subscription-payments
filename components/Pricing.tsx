@@ -10,6 +10,7 @@ import Button from '@/components/ui/Button';
 import { useStore } from '@/contexts/defaultStore';
 import localizeCurrency from '@/helpers/localizeCurrency';
 import { getUserMetadata } from '@/helpers/getUserMetadata';
+import { getCustomerSession } from '@/helpers/getCustomerSession';
 
 export default function Pricing({
   products,
@@ -49,7 +50,7 @@ export default function Pricing({
     }
   }, [data?.userMetaData, user?.sub])
 
-  const handleCheckout = (price: any) => {
+  const handleCheckout = async (price: any) => {
     setPriceIdLoading(price.id);
     updateData({
       selectedPriceId: price.id
@@ -57,9 +58,13 @@ export default function Pricing({
     if (!user) {
       return router.push('/signin');
     }
-    if (data?.userMetaData?.rebill_item_id?.indexOf(price.id) > -1) {
+    if (data?.userMetaData?.rebill_item_id?.indexOf(price.id) > -1 && data?.userMetaData?.rebill_user_id) {
       //todo create manage subscription flow. 
-      return router.push('/account');
+      const customerPortalLink = await getCustomerSession(data?.userMetaData?.rebill_user_id)
+      if(customerPortalLink?.token){
+        setPriceIdLoading('');
+        return window.open(customerPortalLink.token, "_blank");
+      }
     }
     return router.push('/checkout')
   };
@@ -212,6 +217,15 @@ function LogoCloud() {
             />
           </a>
         </div>
+        <div className="flex items-center justify-start">
+          <a href="https://rebill.to" aria-label="rebill.to Link">
+            <img
+              src="/rebill.png"
+              alt="rebill.to Logo"
+              className="h-10 text-white"
+            />
+          </a>
+        </div>
       </div>
     </div>
   );
@@ -239,22 +253,22 @@ interface Price {
   description: string;
   currency: string;
   enabled: boolean;
-  priceSetting: any; // You can replace 'any' with the appropriate type if needed
-  parent: any; // You can replace 'any' with the appropriate type if needed
+  priceSetting: any; 
+  parent: any; 
   itemId: string;
   amount: string;
   type: string;
-  debitDay: any; // You can replace 'any' with the appropriate type if needed
-  debitType: any; // You can replace 'any' with the appropriate type if needed
+  debitDay: any; 
+  debitType: any; 
 }
 
 interface Item {
   id: string;
   name: string;
   description: string;
-  metadata: any; // You can replace 'any' with the appropriate type if needed
+  metadata: any; 
   createdAt: string;
-  itemFamilyId: any; // You can replace 'any' with the appropriate type if needed
+  itemFamilyId: any; 
   enabled: boolean;
 }
 
