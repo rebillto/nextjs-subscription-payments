@@ -2,7 +2,7 @@
 import {
   createContext,
   useContext,
-  useState,
+  useState
 } from 'react';
 
 export interface StoreContext {

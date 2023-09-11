@@ -57,7 +57,7 @@ export default function Pricing({
     if (!user) {
       return router.push('/signin');
     }
-    if (data?.userMetaData?.rebill_item_id.indexOf(price.id) > -1) {
+    if (data?.userMetaData?.rebill_item_id?.indexOf(price.id) > -1) {
       //todo create manage subscription flow. 
       return router.push('/account');
     }
@@ -138,7 +138,7 @@ export default function Pricing({
                 className={cn(
                   'rounded-lg shadow-sm divide-y divide-zinc-600 bg-zinc-900',
                   {
-                    'border border-pink-500': data?.userMetaData?.rebill_item_id.indexOf(price.id) > -1 ? true : false
+                    'border border-pink-500': data?.userMetaData?.rebill_item_id?.indexOf(price.id) > -1 ? true : false
                   }
                 )}
               >
@@ -159,11 +159,11 @@ export default function Pricing({
                     variant="slim"
                     type="button"
                     disabled={!user}
-                    loading={priceIdLoading === price.id}
+                    loading={((user && !data?.userMetaData) || priceIdLoading === price.id)}
                     onClick={() => handleCheckout(price)}
                     className="block w-full py-2 mt-8 text-sm font-semibold text-center text-white rounded-md hover:bg-zinc-900"
                   >
-                    {data?.userMetaData?.rebill_item_id.indexOf(price.id) > -1 ? t("ManageButton"): t("SubscribeButton")}
+                    {data?.userMetaData?.rebill_item_id?.indexOf(price.id) > -1 ? t("ManageButton"): t("SubscribeButton")}
                   </Button>
                 </div>
               </div>

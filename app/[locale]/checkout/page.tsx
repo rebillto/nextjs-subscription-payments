@@ -64,7 +64,7 @@ const transaction = {
 }
 
 export default function Checkout() {
-  const { data } = useStore(); 
+  const { data, updateData } = useStore(); 
   const { user } = useUser();
   const router = useRouter();
 
@@ -75,7 +75,7 @@ export default function Checkout() {
   }, [data])
 
   const handleSuccess = async (transactionResponse: SuccessfulResponse) => {
-    await fetch("/api/auth/update-user-metadata", {
+    await fetch("/api/auth/user-metadata", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -88,7 +88,19 @@ export default function Checkout() {
         },
       }),
     })
-    .then(res => res)
+    .then(res => {
+      updateData({
+        userMetaData: {
+          ...data?.userMetaData,
+          rebill_user_id: transactionResponse?.invoice.buyer.customer.id,
+          rebill_item_id: Array.isArray(data?.userMetaData?.rebill_item_id)
+            ? [...data?.userMetaData?.rebill_item_id, data?.selectedPriceId]
+            : data?.userMetaData?.rebill_item_id ? [data?.userMetaData?.rebill_item_id, data?.selectedPriceId] 
+            : [data?.selectedPriceId]
+        }
+      })
+      router.push("/")
+    })
     .catch(error => console.log(error));
   }
 
