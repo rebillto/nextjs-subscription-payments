@@ -3,12 +3,14 @@
 import { useUser } from '@auth0/nextjs-auth0/client';
 import cn from 'classnames';
 import { useRouter } from 'next/navigation';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
 
 import Button from '@/components/ui/Button';
 import { useStore } from '@/contexts/defaultStore';
 import localizeCurrency from '@/helpers/localizeCurrency';
+import { getUserMetadata } from '@/helpers/getUserMetadata';
+import { getCustomerSession } from '@/helpers/getCustomerSession';
 
 export default function Pricing({
   products,
@@ -29,11 +31,26 @@ export default function Pricing({
   const [billingInterval, setBillingInterval] =
     useState<BillingInterval>('months');
   const [priceIdLoading, setPriceIdLoading] = useState<string>();
-    
-  //todo change to oauth subscription user metadata
-  const subscription = '';
 
-  const handleCheckout = (price: any) => {
+  const getSubscriptions = async (userId: string) => {
+    await getUserMetadata(userId)
+      .then(res => {
+        if("user_metadata" in res){
+          updateData({
+            userMetaData: res?.user_metadata
+          })
+        }
+      })
+      .catch(error => console.log(error))
+  }
+
+  useEffect(() => {
+    if(!data?.userMetaData && user?.sub){
+      getSubscriptions(user?.sub)
+    }
+  }, [data?.userMetaData, user?.sub])
+
+  const handleCheckout = async (price: any) => {
     setPriceIdLoading(price.id);
     updateData({
       selectedPriceId: price.id
@@ -41,9 +58,13 @@ export default function Pricing({
     if (!user) {
       return router.push('/signin');
     }
-    if (subscription) {
+    if (data?.userMetaData?.rebill_item_id?.includes(price.id) && data?.userMetaData?.rebill_user_id) {
       //todo create manage subscription flow. 
-      return router.push('/account');
+      const customerPortalLink = await getCustomerSession(data?.userMetaData?.rebill_user_id)
+      if(customerPortalLink?.token){
+        setPriceIdLoading('');
+        return window.open(customerPortalLink.token, "_blank");
+      }
     }
     return router.push('/checkout')
   };
@@ -122,9 +143,7 @@ export default function Pricing({
                 className={cn(
                   'rounded-lg shadow-sm divide-y divide-zinc-600 bg-zinc-900',
                   {
-                    'border border-pink-500': subscription
-                      ? product.item.name === subscription
-                      : product.item.name === 'Freelancer'
+                    'border border-pink-500': data?.userMetaData?.rebill_item_id?.includes(price.id) ? true : false
                   }
                 )}
               >
@@ -145,11 +164,11 @@ export default function Pricing({
                     variant="slim"
                     type="button"
                     disabled={!user}
-                    loading={priceIdLoading === price.id}
+                    loading={((user && !data?.userMetaData) || priceIdLoading === price.id)}
                     onClick={() => handleCheckout(price)}
                     className="block w-full py-2 mt-8 text-sm font-semibold text-center text-white rounded-md hover:bg-zinc-900"
                   >
-                    {subscription ? t("ManageButton"): t("SubscribeButton")}
+                    {data?.userMetaData?.rebill_item_id?.includes(price.id) ? t("ManageButton"): t("SubscribeButton")}
                   </Button>
                 </div>
               </div>
@@ -198,6 +217,15 @@ function LogoCloud() {
             />
           </a>
         </div>
+        <div className="flex items-center justify-start">
+          <a href="https://rebill.to" aria-label="rebill.to Link">
+            <img
+              src="/rebill.png"
+              alt="rebill.to Logo"
+              className="h-10 text-white"
+            />
+          </a>
+        </div>
       </div>
     </div>
   );
@@ -225,22 +253,22 @@ interface Price {
   description: string;
   currency: string;
   enabled: boolean;
-  priceSetting: any; // You can replace 'any' with the appropriate type if needed
-  parent: any; // You can replace 'any' with the appropriate type if needed
+  priceSetting: any; 
+  parent: any; 
   itemId: string;
   amount: string;
   type: string;
-  debitDay: any; // You can replace 'any' with the appropriate type if needed
-  debitType: any; // You can replace 'any' with the appropriate type if needed
+  debitDay: any; 
+  debitType: any; 
 }
 
 interface Item {
   id: string;
   name: string;
   description: string;
-  metadata: any; // You can replace 'any' with the appropriate type if needed
+  metadata: any; 
   createdAt: string;
-  itemFamilyId: any; // You can replace 'any' with the appropriate type if needed
+  itemFamilyId: any; 
   enabled: boolean;
 }
 

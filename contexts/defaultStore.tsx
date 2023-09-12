@@ -2,7 +2,7 @@
 import {
   createContext,
   useContext,
-  useState,
+  useState
 } from 'react';
 
 export interface StoreContext {
@@ -14,6 +14,7 @@ export interface StoreContext {
 export interface StoreData {
   selectedPriceId?: string; 
   currency?: string;
+  userMetaData?: any;
 }
 
 const StoreCtx = createContext<StoreContext>({
