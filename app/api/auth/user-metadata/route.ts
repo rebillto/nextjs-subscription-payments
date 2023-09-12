@@ -1,32 +1,11 @@
 export async function POST(req: Request) {
   try {
     // Step 1: Get an Auth0 token
-    const auth0Domain = process.env.AUTH0_ISSUER_BASE_URL;
-    const clientId = process.env.AUTH0_CLIENT_ID;
-    const clientSecret = process.env.AUTH0_CLIENT_SECRET;
+
     const audience = process.env.AUTH0_API_URL;
 
-    const tokenEndpoint = `${auth0Domain}/oauth/token`;
+    const accessToken = await getAuth0Token();
 
-    const tokenResponse = await fetch(tokenEndpoint, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        client_id: clientId,
-        client_secret: clientSecret,
-        audience: audience,
-        grant_type: 'client_credentials',
-      }),
-    }).then((data) => data);
-
-    if (tokenResponse?.status != 200) {
-      throw new Error('Error fetching Auth0 token');
-    }
-
-    const tokenData = await tokenResponse.json();
-    const accessToken = tokenData.access_token;
     const body = await req.json();
 
     // Step 2: Get user metadata
@@ -48,24 +27,18 @@ export async function POST(req: Request) {
     // Step 3: Update user metadata
     const metadataToUpdate = body?.metadata;
 
-    // Check if the property to update already exists
     if (existingUserMetadata.user_metadata && metadataToUpdate) {
       for (const prop in metadataToUpdate) {
         if (existingUserMetadata.user_metadata.hasOwnProperty(prop) && prop !== "rebill_user_id") {
-          // If the property already exists, convert it to an array if it's not already
           if (!Array.isArray(existingUserMetadata.user_metadata[prop])) {
             existingUserMetadata.user_metadata[prop] = [existingUserMetadata.user_metadata[prop]];
           }
-          // Push the new value to the array
           existingUserMetadata.user_metadata[prop].push(metadataToUpdate[prop]);
         } else {
-          // If the property doesn't exist, create it with the new value
           existingUserMetadata.user_metadata[prop] = metadataToUpdate[prop];
         }
       }
     }
-
-    // Update user metadata with the modified data
     const updateMetadataResponse = await fetch(userMetadataEndpoint, {
       method: 'PATCH',
       headers: {
@@ -98,32 +71,10 @@ export async function POST(req: Request) {
 export async function GET(req: Request) {
   try {
     // Step 1: Get an Auth0 token
-    const auth0Domain = process.env.AUTH0_ISSUER_BASE_URL;
-    const clientId = process.env.AUTH0_CLIENT_ID;
-    const clientSecret = process.env.AUTH0_CLIENT_SECRET;
+   
     const audience = process.env.AUTH0_API_URL;
 
-    const tokenEndpoint = `${auth0Domain}/oauth/token`;
-
-    const tokenResponse = await fetch(tokenEndpoint, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        client_id: clientId,
-        client_secret: clientSecret,
-        audience: audience,
-        grant_type: 'client_credentials',
-      }),
-    }).then((data) => data);
-
-    if (tokenResponse?.status != 200) {
-      throw new Error('Error fetching Auth0 token');
-    }
-
-    const tokenData = await tokenResponse.json();
-    const accessToken = tokenData.access_token;
+    const accessToken = await getAuth0Token();
 
     // Step 2: Get user metadata
     const url = new URL(req.url);
@@ -154,4 +105,33 @@ export async function GET(req: Request) {
       { status: 500 }
     );
   }
+}
+
+async function getAuth0Token() {
+  const auth0Domain = process.env.AUTH0_ISSUER_BASE_URL;
+  const clientId = process.env.AUTH0_CLIENT_ID;
+  const clientSecret = process.env.AUTH0_CLIENT_SECRET;
+  const audience = process.env.AUTH0_API_URL;
+
+  const tokenEndpoint = `${auth0Domain}/oauth/token`;
+
+  const tokenResponse = await fetch(tokenEndpoint, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      client_id: clientId,
+      client_secret: clientSecret,
+      audience: audience,
+      grant_type: 'client_credentials',
+    }),
+  }).then((data) => data);
+
+  if (tokenResponse?.status != 200) {
+    throw new Error('Error fetching Auth0 token');
+  }
+
+  const tokenData = await tokenResponse.json();
+  return tokenData.access_token;
 }
