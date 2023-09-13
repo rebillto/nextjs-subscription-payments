@@ -107,7 +107,7 @@ export async function GET(req: Request) {
   }
 }
 
-async function getAuth0Token() {
+export async function getAuth0Token() {
   const auth0Domain = process.env.AUTH0_ISSUER_BASE_URL;
   const clientId = process.env.AUTH0_CLIENT_ID;
   const clientSecret = process.env.AUTH0_CLIENT_SECRET;
