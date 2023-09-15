@@ -58,15 +58,16 @@ export default function Pricing({
     if (!user) {
       return router.push('/signin');
     }
-    if (data?.userMetaData?.rebill_item_id?.includes(price.id) && data?.userMetaData?.rebill_user_id) {
+    if (data?.userMetaData?.rebill_item_id?.includes(price.id) || data?.userMetaData?.rebill_item_id == price.id) {
       //todo create manage subscription flow. 
       const customerPortalLink = await getCustomerSession(data?.userMetaData?.rebill_user_id)
       if(customerPortalLink?.token){
         setPriceIdLoading('');
         return window.open(customerPortalLink.token, "_blank");
       }
+    }else{
+      return router.push('/checkout')
     }
-    return router.push('/checkout')
   };
 
   if (!products.length)
