@@ -65,8 +65,10 @@ export default function Pricing({
         setPriceIdLoading('');
         return window.open(customerPortalLink.token, "_blank");
       }
-    }else{
-      return router.push('/checkout')
+    } else{
+      const organizationAlias = process?.env?.NEXT_PUBLIC_REBILL_ORGANIZATION_ALIAS;
+      const payLink = `https://pay.rebill.dev/${organizationAlias}/price/${price.id}`;
+      return window.open(payLink);
     }
   };
 
