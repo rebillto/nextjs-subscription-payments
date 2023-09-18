@@ -91,4 +91,4 @@ Before using this script, you need to have the following:
    ```
 
    - Replace `[REBILL_API_KEY]` with the REBILL API key.
-   - Replace `[SUCCESS_PAYMENT_URL]` with the URL of your production site, for example: `https://yoursite.com/?subscription_id=` (subscription_id query param is mandatory to work).
+   - Replace `[SUCCESS_PAYMENT_URL]` with the URL of your production site, for example: `{yourSiteUrl}/success?subscription_id=`

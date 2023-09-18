@@ -165,7 +165,7 @@ const CurrencySelector = () => {
   return (
     <div className="flex items-center space-x-2">
       <select
-        value={(data?.currency ? data?.currency : "USD")}
+        value={(data?.currency ? data?.currency : "ARS")}
         onChange={handleLanguageChange}
         className="border border-gray-300 rounded p-1 text-pink-600"
       >

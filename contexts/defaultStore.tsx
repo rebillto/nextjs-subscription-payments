@@ -24,7 +24,7 @@ const StoreCtx = createContext<StoreContext>({
 
 const Provider = (props: any) => {
   const [data, setData] = useState<Partial<StoreData>>({
-    currency: "USD"
+    currency: "ARS"
   });
   const updateData = (newData: Partial<StoreData>) => {
     if (newData) {

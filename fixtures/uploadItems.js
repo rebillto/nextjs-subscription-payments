@@ -4,7 +4,7 @@ import fetch from 'node-fetch';
 const args = process.argv.slice(2);
 const apiUrl = 'https://api.rebill.dev/v2/item';
 const API_KEY = args[0] || 'API_KEY_e6360079-7723-48dd-b2df-bc00cce48b2d';
-const successPaymentUrl = args[1] || 'https://test.com/?subscription_id=';
+const successPaymentUrl = args[1] || 'https://test.com/success?subscription_id=';
 const authHeader = 'Bearer ' + API_KEY;
 const responsesFilePath = 'responses.json';
 
