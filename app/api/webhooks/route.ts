@@ -14,8 +14,10 @@ async function handleCancellationRequest(req: Request) {
       const subscriptionDetail = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/rebill/subscription?subscription_id=${billingScheduleId}`, {
         method: 'get'
       }).then(data => data.json());
-      const metadataToRemove = subscriptionDetail?.price?.parent;
+      const metadataToRemove = (subscriptionDetail?.price?.parent ? subscriptionDetail?.price?.parent : subscriptionDetail?.price?.id);
       const userId = subscriptionDetail?.metadataObject?.auth_id;
+
+      console.log(metadataToRemove, userId);
 
       if (!userId || !metadataToRemove) {
         return new Response(
