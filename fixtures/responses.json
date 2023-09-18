@@ -1,11 +1,11 @@
 [
   {
     "item": {
-      "id": "f2f28ece-9e07-4d80-ad69-6771ffc70522",
+      "id": "c13ce3f8-fef6-4423-9b06-d1e2be9762e1",
       "name": "Hobby",
       "description": "Hobby product description",
       "metadata": null,
-      "createdAt": "2023-09-17T23:50:42.143Z",
+      "createdAt": "2023-09-18T12:17:52.361Z",
       "itemFamilyId": null,
       "archive": false,
       "enabled": true,
@@ -13,7 +13,7 @@
     },
     "prices": [
       {
-        "id": "a4cf80f3-6ee5-4c53-9379-2b7158318ba4",
+        "id": "c4dae7d3-6cde-4d7f-90b1-47cfce4fd83b",
         "gateway": {
           "id": "a32a7858-3b3c-438f-8279-12810b4dbc59",
           "type": "rebill_gateway",
@@ -35,14 +35,14 @@
         "archive": false,
         "priceSetting": null,
         "parent": null,
-        "itemId": "f2f28ece-9e07-4d80-ad69-6771ffc70522",
+        "itemId": "c13ce3f8-fef6-4423-9b06-d1e2be9762e1",
         "amount": "7000",
         "type": "fixed",
         "debitDay": null,
         "debitType": null
       },
       {
-        "id": "0f4421aa-8b08-46b6-8f15-e86dc8f97897",
+        "id": "5d12b6ea-a447-4b91-8ac7-ce16974d67ae",
         "gateway": {
           "id": "a32a7858-3b3c-438f-8279-12810b4dbc59",
           "type": "rebill_gateway",
@@ -64,14 +64,14 @@
         "archive": false,
         "priceSetting": null,
         "parent": null,
-        "itemId": "f2f28ece-9e07-4d80-ad69-6771ffc70522",
+        "itemId": "c13ce3f8-fef6-4423-9b06-d1e2be9762e1",
         "amount": "70000",
         "type": "fixed",
         "debitDay": null,
         "debitType": null
       },
       {
-        "id": "96a44ea4-e2e2-4be4-833a-7481f3966bd4",
+        "id": "d94e6ebf-fb80-44f0-a1f4-3da5ab26271e",
         "gateway": {
           "id": "a32a7858-3b3c-438f-8279-12810b4dbc59",
           "type": "rebill_gateway",
@@ -93,14 +93,14 @@
         "archive": false,
         "priceSetting": null,
         "parent": null,
-        "itemId": "f2f28ece-9e07-4d80-ad69-6771ffc70522",
+        "itemId": "c13ce3f8-fef6-4423-9b06-d1e2be9762e1",
         "amount": "10",
         "type": "fixed",
         "debitDay": null,
         "debitType": null
       },
       {
-        "id": "89aeacab-dc0f-4a52-b58f-405854801a23",
+        "id": "bc0d4809-1e2e-47d2-a3b2-28afa78e5567",
         "gateway": {
           "id": "a32a7858-3b3c-438f-8279-12810b4dbc59",
           "type": "rebill_gateway",
@@ -122,14 +122,14 @@
         "archive": false,
         "priceSetting": null,
         "parent": null,
-        "itemId": "f2f28ece-9e07-4d80-ad69-6771ffc70522",
+        "itemId": "c13ce3f8-fef6-4423-9b06-d1e2be9762e1",
         "amount": "100",
         "type": "fixed",
         "debitDay": null,
         "debitType": null
       },
       {
-        "id": "6dc0bf76-a2f9-4025-9046-8b2700287afb",
+        "id": "f53fe8ef-a878-4d48-b194-14c3a84e50b3",
         "gateway": {
           "id": "a32a7858-3b3c-438f-8279-12810b4dbc59",
           "type": "rebill_gateway",
@@ -151,14 +151,14 @@
         "archive": false,
         "priceSetting": null,
         "parent": null,
-        "itemId": "f2f28ece-9e07-4d80-ad69-6771ffc70522",
+        "itemId": "c13ce3f8-fef6-4423-9b06-d1e2be9762e1",
         "amount": "50",
         "type": "fixed",
         "debitDay": null,
         "debitType": null
       },
       {
-        "id": "4ce7e70f-defd-44b8-8882-7264b4238ae6",
+        "id": "04039b71-209b-4462-a592-f7f2c3b8edbc",
         "gateway": {
           "id": "a32a7858-3b3c-438f-8279-12810b4dbc59",
           "type": "rebill_gateway",
@@ -180,14 +180,14 @@
         "archive": false,
         "priceSetting": null,
         "parent": null,
-        "itemId": "f2f28ece-9e07-4d80-ad69-6771ffc70522",
+        "itemId": "c13ce3f8-fef6-4423-9b06-d1e2be9762e1",
         "amount": "500",
         "type": "fixed",
         "debitDay": null,
         "debitType": null
       },
       {
-        "id": "a996064d-9f24-49c7-9554-525c9961f9bb",
+        "id": "d477f33e-9dea-491b-8272-ae4e2117fb1a",
         "gateway": {
           "id": "a32a7858-3b3c-438f-8279-12810b4dbc59",
           "type": "rebill_gateway",
@@ -209,14 +209,14 @@
         "archive": false,
         "priceSetting": null,
         "parent": null,
-        "itemId": "f2f28ece-9e07-4d80-ad69-6771ffc70522",
+        "itemId": "c13ce3f8-fef6-4423-9b06-d1e2be9762e1",
         "amount": "50",
         "type": "fixed",
         "debitDay": null,
         "debitType": null
       },
       {
-        "id": "dc2dbce7-2f88-47a4-bf31-ad41f6a2490e",
+        "id": "8bdad5bb-7914-4f6a-b313-66818a480c4b",
         "gateway": {
           "id": "a32a7858-3b3c-438f-8279-12810b4dbc59",
           "type": "rebill_gateway",
@@ -238,14 +238,14 @@
         "archive": false,
         "priceSetting": null,
         "parent": null,
-        "itemId": "f2f28ece-9e07-4d80-ad69-6771ffc70522",
+        "itemId": "c13ce3f8-fef6-4423-9b06-d1e2be9762e1",
         "amount": "500",
         "type": "fixed",
         "debitDay": null,
         "debitType": null
       },
       {
-        "id": "1b7243a1-06a2-4691-ba1e-a8756c8be4dc",
+        "id": "4b0046a7-56f0-4add-9726-1957db9a7b6d",
         "gateway": {
           "id": "a32a7858-3b3c-438f-8279-12810b4dbc59",
           "type": "rebill_gateway",
@@ -267,14 +267,14 @@
         "archive": false,
         "priceSetting": null,
         "parent": null,
-        "itemId": "f2f28ece-9e07-4d80-ad69-6771ffc70522",
+        "itemId": "c13ce3f8-fef6-4423-9b06-d1e2be9762e1",
         "amount": "50",
         "type": "fixed",
         "debitDay": null,
         "debitType": null
       },
       {
-        "id": "0699a621-4105-46ae-bfd3-a39f1f28680c",
+        "id": "4fbd9e9d-4d60-41fc-8d28-c41a5033c1df",
         "gateway": {
           "id": "a32a7858-3b3c-438f-8279-12810b4dbc59",
           "type": "rebill_gateway",
@@ -296,14 +296,14 @@
         "archive": false,
         "priceSetting": null,
         "parent": null,
-        "itemId": "f2f28ece-9e07-4d80-ad69-6771ffc70522",
+        "itemId": "c13ce3f8-fef6-4423-9b06-d1e2be9762e1",
         "amount": "500",
         "type": "fixed",
         "debitDay": null,
         "debitType": null
       },
       {
-        "id": "188c67a1-387f-49ef-8d81-39670f70dc14",
+        "id": "77fc266f-52e7-4ee7-aab7-2b7c63aed0ab",
         "gateway": {
           "id": "a32a7858-3b3c-438f-8279-12810b4dbc59",
           "type": "rebill_gateway",
@@ -325,14 +325,14 @@
         "archive": false,
         "priceSetting": null,
         "parent": null,
-        "itemId": "f2f28ece-9e07-4d80-ad69-6771ffc70522",
+        "itemId": "c13ce3f8-fef6-4423-9b06-d1e2be9762e1",
         "amount": "50",
         "type": "fixed",
         "debitDay": null,
         "debitType": null
       },
       {
-        "id": "87a83c17-41d3-4815-b1a5-6606944044b5",
+        "id": "5696fd7c-37dc-4fa9-8d43-a938b52a93a8",
         "gateway": {
           "id": "a32a7858-3b3c-438f-8279-12810b4dbc59",
           "type": "rebill_gateway",
@@ -354,14 +354,14 @@
         "archive": false,
         "priceSetting": null,
         "parent": null,
-        "itemId": "f2f28ece-9e07-4d80-ad69-6771ffc70522",
+        "itemId": "c13ce3f8-fef6-4423-9b06-d1e2be9762e1",
         "amount": "500",
         "type": "fixed",
         "debitDay": null,
         "debitType": null
       },
       {
-        "id": "004801fa-c18f-4e3d-83c5-771add7e8383",
+        "id": "15066ab3-536a-4b21-86e8-b989700e5e34",
         "gateway": {
           "id": "a32a7858-3b3c-438f-8279-12810b4dbc59",
           "type": "rebill_gateway",
@@ -383,14 +383,14 @@
         "archive": false,
         "priceSetting": null,
         "parent": null,
-        "itemId": "f2f28ece-9e07-4d80-ad69-6771ffc70522",
+        "itemId": "c13ce3f8-fef6-4423-9b06-d1e2be9762e1",
         "amount": "50",
         "type": "fixed",
         "debitDay": null,
         "debitType": null
       },
       {
-        "id": "2db2005c-108e-4d8c-b780-ab0109a4a89c",
+        "id": "1bd17100-371d-447c-831c-6c975b4f5103",
         "gateway": {
           "id": "a32a7858-3b3c-438f-8279-12810b4dbc59",
           "type": "rebill_gateway",
@@ -412,14 +412,14 @@
         "archive": false,
         "priceSetting": null,
         "parent": null,
-        "itemId": "f2f28ece-9e07-4d80-ad69-6771ffc70522",
+        "itemId": "c13ce3f8-fef6-4423-9b06-d1e2be9762e1",
         "amount": "500",
         "type": "fixed",
         "debitDay": null,
         "debitType": null
       },
       {
-        "id": "540b38b5-adfc-4a3a-8b87-f4b0800330db",
+        "id": "4d703949-d740-432a-a59b-217f5b36a398",
         "gateway": {
           "id": "a32a7858-3b3c-438f-8279-12810b4dbc59",
           "type": "rebill_gateway",
@@ -441,14 +441,14 @@
         "archive": false,
         "priceSetting": null,
         "parent": null,
-        "itemId": "f2f28ece-9e07-4d80-ad69-6771ffc70522",
+        "itemId": "c13ce3f8-fef6-4423-9b06-d1e2be9762e1",
         "amount": "50",
         "type": "fixed",
         "debitDay": null,
         "debitType": null
       },
       {
-        "id": "3017728b-e93f-4aaa-a46f-c373d9cd26ea",
+        "id": "91dbf2f1-747c-4cf2-9b53-ca17fce84a7c",
         "gateway": {
           "id": "a32a7858-3b3c-438f-8279-12810b4dbc59",
           "type": "rebill_gateway",
@@ -470,7 +470,7 @@
         "archive": false,
         "priceSetting": null,
         "parent": null,
-        "itemId": "f2f28ece-9e07-4d80-ad69-6771ffc70522",
+        "itemId": "c13ce3f8-fef6-4423-9b06-d1e2be9762e1",
         "amount": "500",
         "type": "fixed",
         "debitDay": null,
@@ -480,11 +480,11 @@
   },
   {
     "item": {
-      "id": "bab00f42-e1bd-467b-9054-a83aa7c1dbc8",
+      "id": "9f11c580-f448-4bd9-8ee3-5817be16668c",
       "name": "Freelancer",
       "description": "Freelancer product description",
       "metadata": null,
-      "createdAt": "2023-09-17T23:50:58.425Z",
+      "createdAt": "2023-09-18T12:18:01.125Z",
       "itemFamilyId": null,
       "archive": false,
       "enabled": true,
@@ -492,7 +492,7 @@
     },
     "prices": [
       {
-        "id": "8e988712-9f51-474a-89e1-1c3a6ec4738e",
+        "id": "0f75cccc-9692-4c1c-b3a3-48012aae4a8b",
         "gateway": {
           "id": "a32a7858-3b3c-438f-8279-12810b4dbc59",
           "type": "rebill_gateway",
@@ -514,14 +514,14 @@
         "archive": false,
         "priceSetting": null,
         "parent": null,
-        "itemId": "bab00f42-e1bd-467b-9054-a83aa7c1dbc8",
+        "itemId": "9f11c580-f448-4bd9-8ee3-5817be16668c",
         "amount": "7000",
         "type": "fixed",
         "debitDay": null,
         "debitType": null
       },
       {
-        "id": "0f07825a-f415-4d4e-a05c-e0edcbac5319",
+        "id": "fece2c81-eb84-4e77-a7ba-620edf62c310",
         "gateway": {
           "id": "a32a7858-3b3c-438f-8279-12810b4dbc59",
           "type": "rebill_gateway",
@@ -543,14 +543,14 @@
         "archive": false,
         "priceSetting": null,
         "parent": null,
-        "itemId": "bab00f42-e1bd-467b-9054-a83aa7c1dbc8",
+        "itemId": "9f11c580-f448-4bd9-8ee3-5817be16668c",
         "amount": "70000",
         "type": "fixed",
         "debitDay": null,
         "debitType": null
       },
       {
-        "id": "0cfc95ff-6c74-40c7-b66a-d7694eb8b5c1",
+        "id": "36d0d792-dcc2-436f-b512-8af86d5da4e7",
         "gateway": {
           "id": "a32a7858-3b3c-438f-8279-12810b4dbc59",
           "type": "rebill_gateway",
@@ -572,14 +572,14 @@
         "archive": false,
         "priceSetting": null,
         "parent": null,
-        "itemId": "bab00f42-e1bd-467b-9054-a83aa7c1dbc8",
+        "itemId": "9f11c580-f448-4bd9-8ee3-5817be16668c",
         "amount": "10",
         "type": "fixed",
         "debitDay": null,
         "debitType": null
       },
       {
-        "id": "1f4fcb98-4bbd-4812-ac2b-dc3e758b2954",
+        "id": "361bf352-d1d8-40a1-817a-fa0df2e4a9a3",
         "gateway": {
           "id": "a32a7858-3b3c-438f-8279-12810b4dbc59",
           "type": "rebill_gateway",
@@ -601,14 +601,14 @@
         "archive": false,
         "priceSetting": null,
         "parent": null,
-        "itemId": "bab00f42-e1bd-467b-9054-a83aa7c1dbc8",
+        "itemId": "9f11c580-f448-4bd9-8ee3-5817be16668c",
         "amount": "100",
         "type": "fixed",
         "debitDay": null,
         "debitType": null
       },
       {
-        "id": "6cdbfde3-431e-4fd3-993a-405305959a4e",
+        "id": "6e609ca9-3006-4c14-8267-f0c00a0bc09b",
         "gateway": {
           "id": "a32a7858-3b3c-438f-8279-12810b4dbc59",
           "type": "rebill_gateway",
@@ -630,14 +630,14 @@
         "archive": false,
         "priceSetting": null,
         "parent": null,
-        "itemId": "bab00f42-e1bd-467b-9054-a83aa7c1dbc8",
+        "itemId": "9f11c580-f448-4bd9-8ee3-5817be16668c",
         "amount": "50",
         "type": "fixed",
         "debitDay": null,
         "debitType": null
       },
       {
-        "id": "ee28e9d2-d870-4b65-b7ea-9e52ba63fde5",
+        "id": "1b2f72b6-3e28-4f65-8a0e-dd4090c12738",
         "gateway": {
           "id": "a32a7858-3b3c-438f-8279-12810b4dbc59",
           "type": "rebill_gateway",
@@ -659,14 +659,14 @@
         "archive": false,
         "priceSetting": null,
         "parent": null,
-        "itemId": "bab00f42-e1bd-467b-9054-a83aa7c1dbc8",
+        "itemId": "9f11c580-f448-4bd9-8ee3-5817be16668c",
         "amount": "500",
         "type": "fixed",
         "debitDay": null,
         "debitType": null
       },
       {
-        "id": "9f0c3180-e5d4-4cdd-8924-6c0dc63c15ba",
+        "id": "4e9443ed-6ef4-4a69-8ce5-ffbc7b5f1d91",
         "gateway": {
           "id": "a32a7858-3b3c-438f-8279-12810b4dbc59",
           "type": "rebill_gateway",
@@ -688,14 +688,14 @@
         "archive": false,
         "priceSetting": null,
         "parent": null,
-        "itemId": "bab00f42-e1bd-467b-9054-a83aa7c1dbc8",
+        "itemId": "9f11c580-f448-4bd9-8ee3-5817be16668c",
         "amount": "50",
         "type": "fixed",
         "debitDay": null,
         "debitType": null
       },
       {
-        "id": "ddacb2e3-b522-49b7-a668-94faba0fd05e",
+        "id": "8b325cab-ed34-4f66-aa02-410a418fa6a4",
         "gateway": {
           "id": "a32a7858-3b3c-438f-8279-12810b4dbc59",
           "type": "rebill_gateway",
@@ -717,14 +717,14 @@
         "archive": false,
         "priceSetting": null,
         "parent": null,
-        "itemId": "bab00f42-e1bd-467b-9054-a83aa7c1dbc8",
+        "itemId": "9f11c580-f448-4bd9-8ee3-5817be16668c",
         "amount": "500",
         "type": "fixed",
         "debitDay": null,
         "debitType": null
       },
       {
-        "id": "b044c174-107d-4d3d-82a2-82017c203928",
+        "id": "304140f1-6376-4fcd-8dec-e95e63ecd6eb",
         "gateway": {
           "id": "a32a7858-3b3c-438f-8279-12810b4dbc59",
           "type": "rebill_gateway",
@@ -746,14 +746,14 @@
         "archive": false,
         "priceSetting": null,
         "parent": null,
-        "itemId": "bab00f42-e1bd-467b-9054-a83aa7c1dbc8",
+        "itemId": "9f11c580-f448-4bd9-8ee3-5817be16668c",
         "amount": "50",
         "type": "fixed",
         "debitDay": null,
         "debitType": null
       },
       {
-        "id": "b328f47d-81f1-485e-abd4-a6dd7d86b832",
+        "id": "fb0db23f-0e80-4828-9663-5fab308fed44",
         "gateway": {
           "id": "a32a7858-3b3c-438f-8279-12810b4dbc59",
           "type": "rebill_gateway",
@@ -775,14 +775,14 @@
         "archive": false,
         "priceSetting": null,
         "parent": null,
-        "itemId": "bab00f42-e1bd-467b-9054-a83aa7c1dbc8",
+        "itemId": "9f11c580-f448-4bd9-8ee3-5817be16668c",
         "amount": "500",
         "type": "fixed",
         "debitDay": null,
         "debitType": null
       },
       {
-        "id": "db268d9d-77f4-484a-9e6f-ce58e0ee6c6d",
+        "id": "81dc922c-f6b8-4cfe-86b9-85dcbfd82c81",
         "gateway": {
           "id": "a32a7858-3b3c-438f-8279-12810b4dbc59",
           "type": "rebill_gateway",
@@ -804,14 +804,14 @@
         "archive": false,
         "priceSetting": null,
         "parent": null,
-        "itemId": "bab00f42-e1bd-467b-9054-a83aa7c1dbc8",
+        "itemId": "9f11c580-f448-4bd9-8ee3-5817be16668c",
         "amount": "50",
         "type": "fixed",
         "debitDay": null,
         "debitType": null
       },
       {
-        "id": "5e451b82-ee5a-44d6-8f1d-552c77ee99f7",
+        "id": "33915992-cddd-4ef7-8f0b-f07ad952573e",
         "gateway": {
           "id": "a32a7858-3b3c-438f-8279-12810b4dbc59",
           "type": "rebill_gateway",
@@ -833,14 +833,14 @@
         "archive": false,
         "priceSetting": null,
         "parent": null,
-        "itemId": "bab00f42-e1bd-467b-9054-a83aa7c1dbc8",
+        "itemId": "9f11c580-f448-4bd9-8ee3-5817be16668c",
         "amount": "500",
         "type": "fixed",
         "debitDay": null,
         "debitType": null
       },
       {
-        "id": "7a894c93-efb9-46dd-8510-06bc4419b4ac",
+        "id": "25ae1c80-fabc-46c8-9221-8145d427d903",
         "gateway": {
           "id": "a32a7858-3b3c-438f-8279-12810b4dbc59",
           "type": "rebill_gateway",
@@ -862,14 +862,14 @@
         "archive": false,
         "priceSetting": null,
         "parent": null,
-        "itemId": "bab00f42-e1bd-467b-9054-a83aa7c1dbc8",
+        "itemId": "9f11c580-f448-4bd9-8ee3-5817be16668c",
         "amount": "50",
         "type": "fixed",
         "debitDay": null,
         "debitType": null
       },
       {
-        "id": "ad7a421f-bdae-49dc-a6c8-852322e1b3d0",
+        "id": "c1df40f1-2314-4e95-a524-10eadf9333a4",
         "gateway": {
           "id": "a32a7858-3b3c-438f-8279-12810b4dbc59",
           "type": "rebill_gateway",
@@ -891,14 +891,14 @@
         "archive": false,
         "priceSetting": null,
         "parent": null,
-        "itemId": "bab00f42-e1bd-467b-9054-a83aa7c1dbc8",
+        "itemId": "9f11c580-f448-4bd9-8ee3-5817be16668c",
         "amount": "500",
         "type": "fixed",
         "debitDay": null,
         "debitType": null
       },
       {
-        "id": "3b6d08cb-fc4f-41ac-bad6-6beb9d5ff7e1",
+        "id": "f6532253-8d14-4ef1-8ef8-a763e2bfa090",
         "gateway": {
           "id": "a32a7858-3b3c-438f-8279-12810b4dbc59",
           "type": "rebill_gateway",
@@ -920,14 +920,14 @@
         "archive": false,
         "priceSetting": null,
         "parent": null,
-        "itemId": "bab00f42-e1bd-467b-9054-a83aa7c1dbc8",
+        "itemId": "9f11c580-f448-4bd9-8ee3-5817be16668c",
         "amount": "50",
         "type": "fixed",
         "debitDay": null,
         "debitType": null
       },
       {
-        "id": "bf2a5506-e123-451b-a29e-8b9e43d767b5",
+        "id": "ee4df5b9-d113-44fb-b771-0cc0b382efc9",
         "gateway": {
           "id": "a32a7858-3b3c-438f-8279-12810b4dbc59",
           "type": "rebill_gateway",
@@ -949,7 +949,7 @@
         "archive": false,
         "priceSetting": null,
         "parent": null,
-        "itemId": "bab00f42-e1bd-467b-9054-a83aa7c1dbc8",
+        "itemId": "9f11c580-f448-4bd9-8ee3-5817be16668c",
         "amount": "500",
         "type": "fixed",
         "debitDay": null,

@@ -44,19 +44,24 @@ This guide will walk you through the steps to configure Rebill for your project.
 
 ## Getting Started
 
-1. **Login to Your Rebill Dashboard**: [Rebill Dashboard](https://dashboard.rebill.dev/integrations) - Log in to your Rebill dashboard and generate an API key.
+1. **Login to Your Rebill Dashboard**: [Rebill Dashboard](https://dashboard.rebill.com/integrations) - Log in to your Rebill dashboard and generate an API key.
 
-2. **Get Your Organization ID**: [Settings Panel](https://dashboard.rebill.dev/settings) - Retrieve your organization ID from the settings panel in your Rebill dashboard.
+2. **Get Your Organization ID**: [Settings Panel](https://dashboard.rebill.com/settings) - Retrieve your organization ID from the settings panel in your Rebill dashboard.
 
-3. **Get Your Organization Alias**: [Settings Panel](https://dashboard.rebill.dev/settings) - Retrieve your organization alias from the settings panel in your Rebill dashboard (Customize your checkout page - https://pay.rebill.com/{yourOrgAlias}).
+3. **Get Your Organization Alias**: [Settings Panel](https://dashboard.rebill.com/settings) - Retrieve your organization alias from the settings panel in your Rebill dashboard (Customize your checkout page - https://pay.rebill.com/{yourOrgAlias}).
 
-4. **Update `.env.local` File**: Update your `.env.local` file with the following environment variables:
+4. **Create Subscription Change Webhook**: [Webhooks Panel](https://dashboard.rebill.com/webhooks) - Create a webhook for Subscription status change event, with the URL:
+   https://your-deployment-url.vercel.app/api/webhooks.
+
+5. **Update `.env.local` File**: Update your `.env.local` file with the following environment variables:
 
 ```env
 NEXT_PUBLIC_REBILL_ORG_ID='{yourOrgId}'
 REBILL_API_KEY='{yourApiKey}'
 NEXT_PUBLIC_REBILL_API_URL='https://api.rebill.com/v2'
 NEXT_PUBLIC_REBILL_ORGANIZATION_ALIAS='{yourOrgAlias}'
+NEXT_PUBLIC_SITE_URL=https://your-deployment-url.vercel.app
+
 ```
 
 # Creating Product and Pricing Information

@@ -47,6 +47,6 @@ export default async function SuccessPage() {
   }, [subscriptionId, hasHandledSubscription]);
 
   return (
-    <div>Loading...</div>
+    <div className="max-w-6xl px-4 py-8 mx-auto sm:py-24 sm:px-6 lg:px-8 flex-col flex items-center">Loading...</div>
   );
 }
