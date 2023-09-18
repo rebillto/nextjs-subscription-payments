@@ -1,12 +1,11 @@
-import fs from 'fs/promises'; // Node.js built-in module for file operations
-import fetch from 'node-fetch'; // Require node-fetch using a relative path
+import fs from 'fs/promises';
+import fetch from 'node-fetch';
 
-// Parse command line arguments to get apiUrl and API_KEY
-const args = process.argv.slice(2); // Exclude 'node' and script filename
+const args = process.argv.slice(2);
 const apiUrl = 'https://api.rebill.dev/v2/item';
 const API_KEY = args[0] || 'API_KEY_e6360079-7723-48dd-b2df-bc00cce48b2d';
+const successPaymentUrl = args[1] || 'https://test.com/success?subscription_id=';
 const authHeader = 'Bearer ' + API_KEY;
-
 const responsesFilePath = 'responses.json';
 
 (async () => {
@@ -22,23 +21,60 @@ const responsesFilePath = 'responses.json';
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            Authorization: authHeader
+            Authorization: authHeader,
           },
-          body: JSON.stringify(item)
+          body: JSON.stringify(item),
         });
 
         if (response.status === 201) {
           const responseBody = await response.json();
-          successfulResponses.push(responseBody); // Store successful response
+
+          for (const newPrice of responseBody.prices) {
+            try {
+              const priceLinkResponse = await fetch(
+                `${apiUrl}/price/${newPrice.id}/settings`,
+                {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json',
+                    Authorization: authHeader,
+                  },
+                  body: JSON.stringify({
+                    "documentRequired": true,
+                    "phoneRequired": true,
+                    "billingAddressRequired": true,
+                    "showImage": false,
+                    "redirectUrl": successPaymentUrl,
+                    "paymentMethods": [
+                      "CARD"
+                    ],
+                    "expirationDate": "2024-12-14T21:05:27.701Z",
+                    "priceId": newPrice.id
+                  }),
+                }
+              );
+
+              if (priceLinkResponse.status === 201) {
+                console.log(`Price link created for item with ID: ${newPrice.id}`);
+              } else {
+                console.error(
+                  `Error creating price link for item with ID: ${newPrice.id} ${newPrice.currency}`,
+                  await priceLinkResponse.json()
+                );
+              }
+            } catch (priceLinkError) {
+              console.error('Error creating price link:', priceLinkError.message);
+            }
+          }
+
+          successfulResponses.push(responseBody);
         }
       } catch (error) {
         console.error('Error uploading item:', error.message);
       }
     }
 
-    // Write successfulResponses array to responses.json
     if (successfulResponses.length > 0) {
-      // Read existing responses from responses.json (if it exists)
       let existingResponses = [];
       try {
         const existingData = await fs.readFile(responsesFilePath, 'utf-8');
@@ -47,10 +83,8 @@ const responsesFilePath = 'responses.json';
         // File doesn't exist or couldn't be parsed, that's okay
       }
 
-      // Combine existing and new successful responses
       const combinedResponses = [...existingResponses, ...successfulResponses];
 
-      // Write combinedResponses array to responses.json
       await fs.writeFile(responsesFilePath, JSON.stringify(combinedResponses, null, 2));
       console.log('Successful Responses written to', responsesFilePath);
     } else {

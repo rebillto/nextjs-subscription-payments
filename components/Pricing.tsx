@@ -4,7 +4,7 @@ import { useUser } from '@auth0/nextjs-auth0/client';
 import cn from 'classnames';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 
 import Button from '@/components/ui/Button';
 import { useStore } from '@/contexts/defaultStore';
@@ -27,10 +27,11 @@ export default function Pricing({
   const { data, updateData } = useStore();
   const t = useTranslations('pricing');
   const router = useRouter();
-  const { user } = useUser();
+  const { user, isLoading } = useUser();
   const [billingInterval, setBillingInterval] =
     useState<BillingInterval>('months');
   const [priceIdLoading, setPriceIdLoading] = useState<string>();
+  const locale = useLocale();
 
   const getSubscriptions = async (userId: string) => {
     await getUserMetadata(userId)
@@ -45,10 +46,10 @@ export default function Pricing({
   }
 
   useEffect(() => {
-    if(!data?.userMetaData && user?.sub){
+    if(!data?.userMetaData && user?.sub && !isLoading){
       getSubscriptions(user?.sub)
     }
-  }, [data?.userMetaData, user?.sub])
+  }, [data?.userMetaData, user?.sub, isLoading])
 
   const handleCheckout = async (price: any) => {
     setPriceIdLoading(price.id);
@@ -58,15 +59,17 @@ export default function Pricing({
     if (!user) {
       return router.push('/signin');
     }
-    if (data?.userMetaData?.rebill_item_id?.includes(price.id) && data?.userMetaData?.rebill_user_id) {
-      //todo create manage subscription flow. 
+    if (data?.userMetaData?.rebill_item_id?.includes(price.id) || data?.userMetaData?.rebill_item_id == price.id) {
       const customerPortalLink = await getCustomerSession(data?.userMetaData?.rebill_user_id)
       if(customerPortalLink?.token){
         setPriceIdLoading('');
         return window.open(customerPortalLink.token, "_blank");
       }
+    } else{
+      const organizationAlias = process?.env?.NEXT_PUBLIC_REBILL_ORGANIZATION_ALIAS;
+      const payLink = `https://pay.rebill.dev/${organizationAlias}/price/${price.id}?auth_id=${user?.sub}&lang=${locale}`;
+      return window.location.replace(payLink);
     }
-    return router.push('/checkout')
   };
 
   if (!products.length)

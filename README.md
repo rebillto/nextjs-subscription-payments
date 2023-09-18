@@ -9,8 +9,7 @@
 
 ### Get Your Application Keys
 
-When you signed up for Auth0, a new application was created for you, or you could have created a new one. You will need some details about that application to communicate with Auth0. You can get these details from the [Application Settings](https://manage.auth0.com/#/applications) section in the Auth0 dashboard.
-You need the following information:
+When you signed up for Auth0, a new application was created for you, or you could have created a new one. You will need some details about that application to communicate with Auth0. You can get these details from the [Application Settings](https://manage.auth0.com/#/applications) section in the Auth0 dashboard. You need the following information:
 
 - Domain
 - Client ID
@@ -31,7 +30,7 @@ A logout URL is a URL in your application that Auth0 can return to after the use
 In the root directory of your project, add the file `.env.local` with the following environment variables:
 
 ```env
-AUTH0_SECRET='use [openssl rand -hex 32] to generate a 32 bytes value'
+AUTH0_SECRET='use [openssl rand -hex 32] to generate a 32-byte value'
 AUTH0_BASE_URL='http://localhost:3000'
 AUTH0_ISSUER_BASE_URL='https://{yourDomain}'
 AUTH0_CLIENT_ID='{yourClientId}'
@@ -45,17 +44,25 @@ This guide will walk you through the steps to configure Rebill for your project.
 
 ## Getting Started
 
-1. **Login to Your Rebill Dashboard**: [Rebill Dashboard](https://dashboard.rebill.dev/integrations) - Log in to your Rebill dashboard and generate an API key.
+1. **Login to Your Rebill Dashboard**: [Rebill Dashboard](https://dashboard.rebill.com/integrations) - Log in to your Rebill dashboard and generate an API key.
 
-2. **Get Your Organization ID**: [Settings Panel](https://dashboard.rebill.dev/settings) - Retrieve your organization ID from the settings panel in your Rebill dashboard.
+2. **Get Your Organization ID**: [Settings Panel](https://dashboard.rebill.com/settings) - Retrieve your organization ID from the settings panel in your Rebill dashboard.
 
-3. **Update `.env.local` File**: Update your `.env.local` file with the following environment variables:
+3. **Get Your Organization Alias**: [Settings Panel](https://dashboard.rebill.com/settings) - Retrieve your organization alias from the settings panel in your Rebill dashboard (Customize your checkout page - https://pay.rebill.com/{yourOrgAlias}).
 
-   ```env
-   NEXT_PUBLIC_REBILL_ORG_ID='{yourOrgId}'
-   REBILL_API_KEY='{yourApiKey}'
-   NEXT_PUBLIC_REBILL_API_URL='https://api.rebill.dev/v2'
-   ```
+4. **Create Subscription Change Webhook**: [Webhooks Panel](https://dashboard.rebill.com/webhooks) - Create a webhook for Subscription status change event, with the URL:
+   https://your-deployment-url.vercel.app/api/webhooks.
+
+5. **Update `.env.local` File**: Update your `.env.local` file with the following environment variables:
+
+```env
+NEXT_PUBLIC_REBILL_ORG_ID='{yourOrgId}'
+REBILL_API_KEY='{yourApiKey}'
+NEXT_PUBLIC_REBILL_API_URL='https://api.rebill.com/v2'
+NEXT_PUBLIC_REBILL_ORGANIZATION_ALIAS='{yourOrgAlias}'
+NEXT_PUBLIC_SITE_URL=https://your-deployment-url.vercel.app
+
+```
 
 # Creating Product and Pricing Information
 
@@ -82,8 +89,11 @@ Before using this script, you need to have the following:
 2. Prepare Item Data:
    Modify the JSON file named `itemsToUpload.json`. This file should contain an array of item objects that you want to upload.
 
-3. Simply open a terminal and navigate to the directory /fixtures containing the script and JSON files. Run the script using the following command:
+3. Simply open a terminal and navigate to the directory `/fixtures` containing the script and JSON files. Run the script using the following command:
+
    ```
-   node uploadItems.js [REBILL_API_KEY]
+   node uploadItems.js [REBILL_API_KEY] [SUCCESS_PAYMENT_URL]
    ```
-   - Replace `[REBILL_API_KEY]` with the optional API key if you want to override the default value.
+
+   - Replace `[REBILL_API_KEY]` with the REBILL API key.
+   - Replace `[SUCCESS_PAYMENT_URL]` with the URL of your production site, for example: `{yourSiteUrl}/success?subscription_id=`
