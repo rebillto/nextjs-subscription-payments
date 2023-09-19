@@ -96,7 +96,7 @@ export default function Footer() {
           <div className="flex items-center h-10 space-x-6">
             <a
               aria-label="Github Repository"
-              href="https://github.com/vercel/nextjs-subscription-payments"
+              href="https://github.com/rebillto/nextjs-subscription-payments/"
             >
               <GitHub />
             </a>
@@ -111,9 +111,9 @@ export default function Footer() {
         </div>
         <div className="flex items-center">
           <span className="text-white">Crafted by</span>
-          <a href="https://vercel.com" aria-label="Vercel.com Link">
+          <a href="https://rebill.com" aria-label="Rebill.com Link">
             <img
-              src="/vercel.svg"
+              src="/rebill.png"
               alt="Vercel.com Logo"
               className="inline-block h-6 ml-4 text-white"
             />
