@@ -14,8 +14,8 @@ export async function POST(req: Request) {
     const getUserMetadataResponse = await fetch(userMetadataEndpoint, {
       method: 'GET',
       headers: {
-        'Authorization': `Bearer ${accessToken}`,
-      },
+        Authorization: `Bearer ${accessToken}`
+      }
     });
 
     if (!getUserMetadataResponse.ok) {
@@ -29,9 +29,14 @@ export async function POST(req: Request) {
 
     if (existingUserMetadata.user_metadata && metadataToUpdate) {
       for (const prop in metadataToUpdate) {
-        if (existingUserMetadata.user_metadata.hasOwnProperty(prop) && prop !== "rebill_user_id") {
+        if (
+          existingUserMetadata.user_metadata.hasOwnProperty(prop) &&
+          prop !== 'rebill_user_id'
+        ) {
           if (!Array.isArray(existingUserMetadata.user_metadata[prop])) {
-            existingUserMetadata.user_metadata[prop] = [existingUserMetadata.user_metadata[prop]];
+            existingUserMetadata.user_metadata[prop] = [
+              existingUserMetadata.user_metadata[prop]
+            ];
           }
           existingUserMetadata.user_metadata[prop].push(metadataToUpdate[prop]);
         } else {
@@ -43,25 +48,28 @@ export async function POST(req: Request) {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${accessToken}`,
+        Authorization: `Bearer ${accessToken}`
       },
       body: JSON.stringify({
-        user_metadata: existingUserMetadata.user_metadata,
-      }),
+        user_metadata: existingUserMetadata.user_metadata
+      })
     });
 
     if (!updateMetadataResponse.ok) {
       throw new Error('Error updating user metadata');
     }
 
-    return new Response(JSON.stringify({ message: 'Metadata updated successfully' }), {
-      status: 200,
-    });
+    return new Response(
+      JSON.stringify({ message: 'Metadata updated successfully' }),
+      {
+        status: 200
+      }
+    );
   } catch (error) {
     console.error(error);
     return new Response(
       JSON.stringify({
-        error: { statusCode: 500, message: 'Server error' },
+        error: { statusCode: 500, message: 'Server error' }
       }),
       { status: 500 }
     );
@@ -71,20 +79,20 @@ export async function POST(req: Request) {
 export async function GET(req: Request) {
   try {
     // Step 1: Get an Auth0 token
-   
+
     const audience = process.env.AUTH0_API_URL;
 
     const accessToken = await getAuth0Token();
 
     // Step 2: Get user metadata
     const url = new URL(req.url);
-    const userId = url.searchParams.get("user_id");
+    const userId = url.searchParams.get('user_id');
     const userMetadataEndpoint = `${audience}users/${userId}`;
     const getUserMetadataResponse = await fetch(userMetadataEndpoint, {
       method: 'GET',
       headers: {
-        'Authorization': `Bearer ${accessToken}`,
-      },
+        Authorization: `Bearer ${accessToken}`
+      }
     });
 
     if (!getUserMetadataResponse.ok) {
@@ -94,13 +102,13 @@ export async function GET(req: Request) {
     const userMetadata = await getUserMetadataResponse.json();
 
     return new Response(JSON.stringify(userMetadata), {
-      status: 200,
+      status: 200
     });
   } catch (error) {
     console.error(error);
     return new Response(
       JSON.stringify({
-        error: { statusCode: 500, message: 'Server error' },
+        error: { statusCode: 500, message: 'Server error' }
       }),
       { status: 500 }
     );
@@ -118,14 +126,14 @@ export async function getAuth0Token() {
   const tokenResponse = await fetch(tokenEndpoint, {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json',
+      'Content-Type': 'application/json'
     },
     body: JSON.stringify({
       client_id: clientId,
       client_secret: clientSecret,
       audience: audience,
-      grant_type: 'client_credentials',
-    }),
+      grant_type: 'client_credentials'
+    })
   }).then((data) => data);
 
   if (tokenResponse?.status != 200) {

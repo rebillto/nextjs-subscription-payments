@@ -1,11 +1,10 @@
-import { UserProvider } from '@auth0/nextjs-auth0/client';
-import { ReactNode } from 'react';
-import {NextIntlClientProvider} from 'next-intl';
-import {notFound} from 'next/navigation';
-
+import StoreProvider from '../../contexts/defaultStore';
 import Footer from '@/components/ui/Footer';
 import Navbar from '@/components/ui/Navbar';
-import StoreProvider, { useStore } from '../../contexts/defaultStore';
+import { UserProvider } from '@auth0/nextjs-auth0/client';
+import { NextIntlClientProvider } from 'next-intl';
+import { notFound } from 'next/navigation';
+import { ReactNode } from 'react';
 import 'styles/main.css';
 import Script from 'next/script';
 
@@ -15,8 +14,7 @@ const meta = {
   cardImage: '/og.png',
   robots: 'follow, index',
   favicon: '/favicon.ico',
-  //todo update url. 
-  url: 'https://rebill-starter.vercel.app',
+  url: process.env.NEXT_PUBLIC_SITE_URL,
   type: 'website'
 };
 
@@ -53,14 +51,14 @@ interface RootLayoutProps {
 }
 
 export function generateStaticParams() {
-  return [{locale: 'en'}, {locale: 'es'}, {locale: 'pt'}];
+  return [{ locale: 'en' }, { locale: 'es' }, { locale: 'pt' }];
 }
 
 export default async function RootLayout({
   // Layouts must accept a children prop.
   // This will be populated with nested layouts or pages
   children,
-  params: {locale}
+  params: { locale }
 }: RootLayoutProps) {
   let messages;
   try {
@@ -72,20 +70,20 @@ export default async function RootLayout({
     <html lang={locale}>
       <Script src="https://sdk.rebill.to/v2/rebill.min.js" />
       <body className="bg-black loading">
-          <UserProvider>
-            <NextIntlClientProvider locale={locale} messages={messages}>
-              <StoreProvider>
-                <Navbar />
-                <main
-                  id="skip"
-                  className="min-h-[calc(100dvh-4rem)] md:min-h[calc(100dvh-5rem)]"
-                >
-                    {children}
-                </main>
-                <Footer />
-              </StoreProvider>
-            </NextIntlClientProvider>
-          </UserProvider>
+        <UserProvider>
+          <NextIntlClientProvider locale={locale} messages={messages}>
+            <StoreProvider>
+              <Navbar />
+              <main
+                id="skip"
+                className="min-h-[calc(100dvh-4rem)] md:min-h[calc(100dvh-5rem)]"
+              >
+                {children}
+              </main>
+              <Footer />
+            </StoreProvider>
+          </NextIntlClientProvider>
+        </UserProvider>
       </body>
     </html>
   );
