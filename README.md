@@ -101,3 +101,27 @@ Before using this script, you need to have the following:
 
    - Replace `[REBILL_API_KEY]` with the REBILL API key.
    - Replace `[SUCCESS_PAYMENT_URL]` with the URL of your production site, for example: `{yourSiteUrl}/success?subscription_id=`
+
+### 1. Middleware Behavior
+
+The middleware included in this project serves two primary purposes:
+
+- **Authentication Validation:** It ensures that routes starting with `/api/` are properly authenticated. Unauthorized access will result in a `401 Unauthorized` response.
+
+- **Localization:** It manages localization based on user preferences. Make sure to configure the supported locales and default locale as needed.
+
+### 2. Error Handling
+
+The middleware code includes error handling to manage unexpected situations. However, it's crucial to keep the following in mind:
+
+- **Exceptions:** If any unexpected errors occur within the middleware, they will be caught and logged as "Internal Server Error." Be sure to monitor your application logs for any issues.
+
+- **Middleware Order:** The order in which middleware is applied can impact behavior. Ensure that the order of middleware execution aligns with your application's requirements.
+
+- **Configuration:** Verify that the configuration settings for both authentication and localization are correctly set in your environment variables and middleware configuration files.
+
+### 3. Testing
+
+Before deploying your application to a production environment, thoroughly test the middleware's behavior and error handling under various scenarios to ensure your application's security and functionality.
+
+By being aware of these considerations and taking necessary precautions, you can successfully leverage the middleware in this project to build a robust Next.js application.
