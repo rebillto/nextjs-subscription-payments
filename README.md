@@ -53,7 +53,9 @@ This guide will walk you through the steps to configure Rebill for your project.
 4. **Create Subscription Change Webhook**: [Webhooks Panel](https://dashboard.rebill.com/webhooks) - Create a webhook for Subscription status change event, with the URL:
    https://your-deployment-url.vercel.app/api/webhooks.
 
-5. **Update `.env.local` File**: Update your `.env.local` file with the following environment variables:
+5. **Get your Gateway ID**: [Payments Panel](https://dashboard.rebill.com/rebill-payments) - Retrieve your gateway ID from Rebill payments dashboard.
+
+6. **Update `.env.local` File**: Update your `.env.local` file with the following environment variables:
 
 ```env
 NEXT_PUBLIC_REBILL_ORG_ID='{yourOrgId}'
@@ -88,6 +90,8 @@ Before using this script, you need to have the following:
 
 2. Prepare Item Data:
    Modify the JSON file named `itemsToUpload.json`. This file should contain an array of item objects that you want to upload.
+
+   - Replace "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59" with "gatewayId": {yourGatewayId} in all item prices.
 
 3. Simply open a terminal and navigate to the directory `/fixtures` containing the script and JSON files. Run the script using the following command:
 
