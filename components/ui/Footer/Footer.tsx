@@ -1,13 +1,12 @@
 'use client';
 
-import Link from 'next/link';
-import {useTranslations, useLocale} from 'next-intl';
-import { useRouter, usePathname } from 'next-intl/client';
-import { useState } from 'react';
-
-import Logo from '@/components/icons/Logo';
 import GitHub from '@/components/icons/GitHub';
+import Logo from '@/components/icons/Logo';
 import { useStore } from '@/contexts/defaultStore';
+import { useTranslations, useLocale } from 'next-intl';
+import { useRouter, usePathname } from 'next-intl/client';
+import Link from 'next/link';
+import { useState } from 'react';
 
 export default function Footer() {
   const t = useTranslations('footer');
@@ -33,7 +32,7 @@ export default function Footer() {
                 href="/"
                 className="text-white transition duration-150 ease-in-out hover:text-zinc-200"
               >
-                {t("home")}
+                {t('home')}
               </Link>
             </li>
             <li className="py-3 md:py-0 md:pb-4">
@@ -41,7 +40,7 @@ export default function Footer() {
                 href="/"
                 className="text-white transition duration-150 ease-in-out hover:text-zinc-200"
               >
-                {t("about")}
+                {t('about')}
               </Link>
             </li>
             <li className="py-3 md:py-0 md:pb-4">
@@ -49,7 +48,7 @@ export default function Footer() {
                 href="/"
                 className="text-white transition duration-150 ease-in-out hover:text-zinc-200"
               >
-                {t("careers")}
+                {t('careers')}
               </Link>
             </li>
             <li className="py-3 md:py-0 md:pb-4">
@@ -57,7 +56,7 @@ export default function Footer() {
                 href="/"
                 className="text-white transition duration-150 ease-in-out hover:text-zinc-200"
               >
-                {t("blog")}
+                {t('blog')}
               </Link>
             </li>
           </ul>
@@ -66,7 +65,7 @@ export default function Footer() {
           <ul className="flex flex-col flex-initial md:flex-1">
             <li className="py-3 md:py-0 md:pb-4">
               <p className="font-bold text-white transition duration-150 ease-in-out hover:text-zinc-200">
-                {t("legal")}
+                {t('legal')}
               </p>
             </li>
             <li className="py-3 md:py-0 md:pb-4">
@@ -74,7 +73,7 @@ export default function Footer() {
                 href="/"
                 className="text-white transition duration-150 ease-in-out hover:text-zinc-200"
               >
-                {t("privacyPolicy")}
+                {t('privacyPolicy')}
               </Link>
             </li>
             <li className="py-3 md:py-0 md:pb-4">
@@ -82,14 +81,14 @@ export default function Footer() {
                 href="/"
                 className="text-white transition duration-150 ease-in-out hover:text-zinc-200"
               >
-                {t("termsOfUse")}
+                {t('termsOfUse')}
               </Link>
             </li>
             <li className="py-3 md:py-0 md:pb-4">
-             <LanguageSelector />
+              <LanguageSelector />
             </li>
             <li className="py-3 md:py-0 md:pb-4">
-             <CurrencySelector />
+              <CurrencySelector />
             </li>
           </ul>
         </div>
@@ -130,12 +129,12 @@ const LanguageSelector = () => {
   const pathName = usePathname();
   const locale = useLocale();
   const [selectedLanguage, setSelectedLanguage] = useState(locale);
-  
+
   const handleLanguageChange = (event: any) => {
     event.preventDefault();
     setSelectedLanguage(event.target.value);
-    const url = (`${pathName}`);
-    router.push(url, {locale: event?.target.value})
+    const url = `${pathName}`;
+    router.push(url, { locale: event?.target.value });
   };
 
   return (
@@ -145,37 +144,56 @@ const LanguageSelector = () => {
         onChange={handleLanguageChange}
         className="border border-gray-300 rounded p-1 text-pink-600"
       >
-        <option value="en" className="text-pink-600">EN</option>
-        <option value="es" className="text-pink-600">ES</option>
-        <option value="pt" className="text-pink-600">PT</option>
+        <option value="en" className="text-pink-600">
+          EN
+        </option>
+        <option value="es" className="text-pink-600">
+          ES
+        </option>
+        <option value="pt" className="text-pink-600">
+          PT
+        </option>
       </select>
     </div>
   );
 };
 
 const CurrencySelector = () => {
-
   const { data, updateData } = useStore();
-  
+
   const handleLanguageChange = (event: any) => {
     event.preventDefault();
-    updateData({currency: event.target.value})
+    updateData({ currency: event.target.value });
   };
 
   return (
     <div className="flex items-center space-x-2">
       <select
-        value={(data?.currency ? data?.currency : "ARS")}
+        value={data?.currency ? data?.currency : 'ARS'}
         onChange={handleLanguageChange}
         className="border border-gray-300 rounded p-1 text-pink-600"
       >
-        <option value="ARS" className="text-pink-600">ARS $</option>
-        <option value="CLP" className="text-pink-600">CLP $</option>
-        <option value="COP" className="text-pink-600">COP $</option>
-        <option value="MXN" className="text-pink-600">MXN $</option>
-        <option value="PEN" className="text-pink-600">PEN S/</option>
-        <option value="UYU" className="text-pink-600">UYU $</option>
-        <option value="USD" className="text-pink-600">USD $</option>
+        <option value="ARS" className="text-pink-600">
+          ARS $
+        </option>
+        <option value="CLP" className="text-pink-600">
+          CLP $
+        </option>
+        <option value="COP" className="text-pink-600">
+          COP $
+        </option>
+        <option value="MXN" className="text-pink-600">
+          MXN $
+        </option>
+        <option value="PEN" className="text-pink-600">
+          PEN S/
+        </option>
+        <option value="UYU" className="text-pink-600">
+          UYU $
+        </option>
+        <option value="USD" className="text-pink-600">
+          USD $
+        </option>
       </select>
     </div>
   );

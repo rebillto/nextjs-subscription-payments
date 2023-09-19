@@ -1,12 +1,10 @@
 'use client';
 
-import Link from 'next/link';
-import { useUser } from '@auth0/nextjs-auth0/client';
-
-import Logo from '@/components/icons/Logo';
-
 import s from './Navbar.module.css';
-import {useTranslations} from 'next-intl';
+import Logo from '@/components/icons/Logo';
+import { useUser } from '@auth0/nextjs-auth0/client';
+import { useTranslations } from 'next-intl';
+import Link from 'next/link';
 
 export default function Navbar() {
   const { user, error, isLoading } = useUser();
@@ -15,7 +13,7 @@ export default function Navbar() {
   return (
     <nav className={s.root}>
       <a href="#skip" className="sr-only focus:not-sr-only">
-        {t("skipToContent")}
+        {t('skipToContent')}
       </a>
       <div className="max-w-6xl px-6 mx-auto">
         <div className="relative flex flex-row justify-between py-4 align-center md:py-6">
@@ -25,23 +23,23 @@ export default function Navbar() {
             </Link>
             <nav className="hidden ml-6 space-x-2 lg:block">
               <Link href="/" className={s.link}>
-                {t("pricing")}
+                {t('pricing')}
               </Link>
               {user && (
                 <Link href="/account" className={s.link}>
-                  {t("account")}
+                  {t('account')}
                 </Link>
               )}
             </nav>
           </div>
           <div className="flex justify-end flex-1 space-x-8">
             {user ? (
-            <a href="/api/auth/logout" className={s.link}>
-              {t("signOut")}
-            </a>
+              <a href="/api/auth/logout" className={s.link}>
+                {t('signOut')}
+              </a>
             ) : (
               <a href="/api/auth/login" className={s.link}>
-                {t("signIn")}
+                {t('signIn')}
               </a>
             )}
           </div>

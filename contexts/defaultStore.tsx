@@ -1,18 +1,15 @@
-'use client'
-import {
-  createContext,
-  useContext,
-  useState
-} from 'react';
+'use client';
+
+import { createContext, useContext, useState } from 'react';
 
 export interface StoreContext {
   data?: StoreData;
-  updateData: (data?: any) => void; 
+  updateData: (data?: any) => void;
   clearData: () => void;
 }
 
 export interface StoreData {
-  selectedPriceId?: string; 
+  selectedPriceId?: string;
   currency?: string;
   userMetaData?: any;
 }
@@ -20,17 +17,17 @@ export interface StoreData {
 const StoreCtx = createContext<StoreContext>({
   updateData: () => {},
   clearData: () => {}
-})
+});
 
 const Provider = (props: any) => {
   const [data, setData] = useState<Partial<StoreData>>({
-    currency: "ARS"
+    currency: 'ARS'
   });
   const updateData = (newData: Partial<StoreData>) => {
     if (newData) {
       setData((previous) => ({
         ...previous,
-        ...newData,
+        ...newData
       }));
     }
   };
@@ -41,10 +38,10 @@ const Provider = (props: any) => {
     data,
     updateData,
     clearData
-  }
+  };
 
   return <StoreCtx.Provider value={values} {...props}></StoreCtx.Provider>;
-}
+};
 
 export const useStore = () => {
   return useContext(StoreCtx);

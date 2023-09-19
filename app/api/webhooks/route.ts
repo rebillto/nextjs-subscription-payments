@@ -1,6 +1,6 @@
-import { getAuth0Token } from "../auth/user-metadata/route";
+import { getAuth0Token } from '../auth/user-metadata/route';
 
-const NEW_STATUS_CANCELLED = "CANCELLED";
+const NEW_STATUS_CANCELLED = 'CANCELLED';
 
 // Function to handle cancellation request
 async function handleCancellationRequest(req: Request) {
@@ -11,10 +11,15 @@ async function handleCancellationRequest(req: Request) {
 
     if (billingScheduleId && newStatus === NEW_STATUS_CANCELLED) {
       const accessToken = await getAuth0Token();
-      const subscriptionDetail = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/rebill/subscription?subscription_id=${billingScheduleId}`, {
-        method: 'get'
-      }).then(data => data.json());
-      const metadataToRemove = (subscriptionDetail?.price?.parent ? subscriptionDetail?.price?.parent : subscriptionDetail?.price?.id);
+      const subscriptionDetail = await fetch(
+        `${process.env.NEXT_PUBLIC_SITE_URL}/api/rebill/subscription?subscription_id=${billingScheduleId}`,
+        {
+          method: 'get'
+        }
+      ).then((data) => data.json());
+      const metadataToRemove = subscriptionDetail?.price?.parent
+        ? subscriptionDetail?.price?.parent
+        : subscriptionDetail?.price?.id;
       const userId = subscriptionDetail?.metadataObject?.auth_id;
 
       console.log(metadataToRemove, userId);
@@ -30,12 +35,14 @@ async function handleCancellationRequest(req: Request) {
       const getUserMetadataResponse = await fetch(userMetadataEndpoint, {
         method: 'GET',
         headers: {
-          'Authorization': `Bearer ${accessToken}`,
-        },
+          Authorization: `Bearer ${accessToken}`
+        }
       });
 
       if (!getUserMetadataResponse.ok) {
-        throw new Error('Error fetching user metadata: ' + getUserMetadataResponse.statusText);
+        throw new Error(
+          'Error fetching user metadata: ' + getUserMetadataResponse.statusText
+        );
       }
 
       let shouldUpdate = false;
@@ -43,26 +50,30 @@ async function handleCancellationRequest(req: Request) {
 
       if (
         userMetadata.user_metadata &&
-        userMetadata.user_metadata.hasOwnProperty("rebill_item_id")
+        userMetadata.user_metadata.hasOwnProperty('rebill_item_id')
       ) {
         if (
           Array.isArray(userMetadata.user_metadata.rebill_item_id) &&
           userMetadata.user_metadata.rebill_item_id.includes(metadataToRemove)
         ) {
-          userMetadata.user_metadata.rebill_item_id = userMetadata.user_metadata.rebill_item_id.filter(
-            (item: string) => item !== metadataToRemove
-          );
+          userMetadata.user_metadata.rebill_item_id =
+            userMetadata.user_metadata.rebill_item_id.filter(
+              (item: string) => item !== metadataToRemove
+            );
           shouldUpdate = true;
-        } else if (userMetadata.user_metadata.rebill_item_id === metadataToRemove) {
+        } else if (
+          userMetadata.user_metadata.rebill_item_id === metadataToRemove
+        ) {
           userMetadata.user_metadata.rebill_item_id = [];
           shouldUpdate = true;
         } else {
           return new Response(
             JSON.stringify({
-              message: 'Metadata not updated, rebill_item_id not found in user_metadata',
+              message:
+                'Metadata not updated, rebill_item_id not found in user_metadata'
             }),
             {
-              status: 404,
+              status: 404
             }
           );
         }
@@ -73,21 +84,23 @@ async function handleCancellationRequest(req: Request) {
           method: 'PATCH',
           headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${accessToken}`,
+            Authorization: `Bearer ${accessToken}`
           },
           body: JSON.stringify({
-            user_metadata: userMetadata.user_metadata,
-          }),
+            user_metadata: userMetadata.user_metadata
+          })
         });
 
         if (!updateMetadataResponse.ok) {
-          throw new Error('Error updating user metadata: ' + updateMetadataResponse.statusText);
+          throw new Error(
+            'Error updating user metadata: ' + updateMetadataResponse.statusText
+          );
         }
 
         return new Response(
           JSON.stringify({ message: 'Metadata updated successfully' }),
           {
-            status: 200,
+            status: 200
           }
         );
       }
@@ -95,7 +108,7 @@ async function handleCancellationRequest(req: Request) {
       return new Response(
         JSON.stringify({ message: 'Metadata not updated.' }),
         {
-          status: 200,
+          status: 200
         }
       );
     }
@@ -103,7 +116,7 @@ async function handleCancellationRequest(req: Request) {
     console.error(error);
     return new Response(
       JSON.stringify({
-        error: { statusCode: 500, message: 'Server error' },
+        error: { statusCode: 500, message: 'Server error' }
       }),
       { status: 500 }
     );

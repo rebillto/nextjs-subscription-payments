@@ -1,21 +1,17 @@
 'use client';
 
-import { useUser } from '@auth0/nextjs-auth0/client';
-import cn from 'classnames';
-import { useRouter } from 'next/navigation';
-import { useEffect, useState } from 'react';
-import { useTranslations, useLocale } from 'next-intl';
-
 import Button from '@/components/ui/Button';
 import { useStore } from '@/contexts/defaultStore';
-import localizeCurrency from '@/helpers/localizeCurrency';
-import { getUserMetadata } from '@/helpers/getUserMetadata';
 import { getCustomerSession } from '@/helpers/getCustomerSession';
+import { getUserMetadata } from '@/helpers/getUserMetadata';
+import localizeCurrency from '@/helpers/localizeCurrency';
+import { useUser } from '@auth0/nextjs-auth0/client';
+import cn from 'classnames';
+import { useTranslations, useLocale } from 'next-intl';
+import { useRouter } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
-export default function Pricing({
-  products,
-}: Props) {
-
+export default function Pricing({ products }: Props) {
   const intervals = Array.from(
     new Set(
       products.flatMap((product) =>
@@ -35,39 +31,45 @@ export default function Pricing({
 
   const getSubscriptions = async (userId: string) => {
     await getUserMetadata(userId)
-      .then(res => {
-        if("user_metadata" in res){
+      .then((res) => {
+        if ('user_metadata' in res) {
           updateData({
             userMetaData: res?.user_metadata
-          })
+          });
         }
       })
-      .catch(error => console.log(error))
-  }
+      .catch((error) => console.log(error));
+  };
 
   useEffect(() => {
-    if(!data?.userMetaData && user?.sub && !isLoading){
-      getSubscriptions(user?.sub)
+    if (!data?.userMetaData && user?.sub && !isLoading) {
+      getSubscriptions(user?.sub);
     }
-  }, [data?.userMetaData, user?.sub, isLoading])
+  }, [data?.userMetaData, user?.sub, isLoading]);
 
   const handleCheckout = async (price: any) => {
     setPriceIdLoading(price.id);
     updateData({
       selectedPriceId: price.id
-    })
+    });
     if (!user) {
       return router.push('/signin');
     }
-    if (data?.userMetaData?.rebill_item_id?.includes(price.id) || data?.userMetaData?.rebill_item_id == price.id) {
-      const customerPortalLink = await getCustomerSession(data?.userMetaData?.rebill_user_id)
-      if(customerPortalLink?.token){
+    if (
+      data?.userMetaData?.rebill_item_id?.includes(price.id) ||
+      data?.userMetaData?.rebill_item_id == price.id
+    ) {
+      const customerPortalLink = await getCustomerSession(
+        data?.userMetaData?.rebill_user_id
+      );
+      if (customerPortalLink?.token) {
         setPriceIdLoading('');
-        return window.open(customerPortalLink.token, "_blank");
+        return window.open(customerPortalLink.token, '_blank');
       }
-    } else{
-      const organizationAlias = process?.env?.NEXT_PUBLIC_REBILL_ORGANIZATION_ALIAS;
-      const payLink = `https://pay.rebill.dev/${organizationAlias}/price/${price.id}?auth_id=${user?.sub}&lang=${locale}`;
+    } else {
+      const organizationAlias =
+        process?.env?.NEXT_PUBLIC_REBILL_ORGANIZATION_ALIAS;
+      const payLink = `https://pay.rebill.com/${organizationAlias}/price/${price.id}?auth_id=${user?.sub}&lang=${locale}`;
       return window.location.replace(payLink);
     }
   };
@@ -78,10 +80,10 @@ export default function Pricing({
         <div className="max-w-6xl px-4 py-8 mx-auto sm:py-24 sm:px-6 lg:px-8">
           <div className="sm:flex sm:flex-col sm:align-center"></div>
           <p className="text-4xl font-extrabold text-white sm:text-center sm:text-6xl">
-            {t("NoPlansFoundMessage")}
+            {t('NoPlansFoundMessage')}
             <a
               className="text-pink-500 underline"
-              href="http://dashboard.rebill.dev/"
+              href="http://dashboard.rebill.com/"
               rel="noopener noreferrer"
               target="_blank"
             >
@@ -99,10 +101,10 @@ export default function Pricing({
       <div className="max-w-6xl px-4 py-8 mx-auto sm:py-24 sm:px-6 lg:px-8">
         <div className="sm:flex sm:flex-col sm:align-center">
           <h1 className="text-4xl font-extrabold text-white sm:text-center sm:text-6xl">
-            {t("PlansHeader")}
+            {t('PlansHeader')}
           </h1>
           <p className="max-w-2xl m-auto mt-5 text-xl text-zinc-200 sm:text-center sm:text-2xl">
-            {t("PlansDescription")}
+            {t('PlansDescription')}
           </p>
           <div className="relative self-center mt-6 bg-zinc-900 rounded-lg p-0.5 flex sm:mt-8 border border-zinc-800">
             {intervals.includes('months') && (
@@ -115,7 +117,7 @@ export default function Pricing({
                     : 'ml-0.5 relative w-1/2 border border-transparent text-zinc-400'
                 } rounded-md m-1 py-2 text-sm font-medium whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-opacity-50 focus:z-10 sm:w-auto sm:px-8`}
               >
-                {t("MonthlyBilling")}
+                {t('MonthlyBilling')}
               </button>
             )}
             {intervals.includes('years') && (
@@ -128,7 +130,7 @@ export default function Pricing({
                     : 'ml-0.5 relative w-1/2 border border-transparent text-zinc-400'
                 } rounded-md m-1 py-2 text-sm font-medium whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-opacity-50 focus:z-10 sm:w-auto sm:px-8`}
               >
-                {t("YearlyBilling")}
+                {t('YearlyBilling')}
               </button>
             )}
           </div>
@@ -136,7 +138,9 @@ export default function Pricing({
         <div className="mt-12 space-y-4 sm:mt-16 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-6 lg:max-w-4xl lg:mx-auto xl:max-w-none xl:mx-0 xl:grid-cols-3">
           {products.map((product) => {
             const price = product?.prices?.find(
-              (price: any) => (price.frequency.type === billingInterval && price.currency === data?.currency)
+              (price: any) =>
+                price.frequency.type === billingInterval &&
+                price.currency === data?.currency
             );
             if (!price) return null;
             const priceString = localizeCurrency(price.amount, price.currency);
@@ -146,7 +150,10 @@ export default function Pricing({
                 className={cn(
                   'rounded-lg shadow-sm divide-y divide-zinc-600 bg-zinc-900',
                   {
-                    'border border-pink-500': data?.userMetaData?.rebill_item_id?.includes(price.id) ? true : false
+                    'border border-pink-500':
+                      data?.userMetaData?.rebill_item_id?.includes(price.id)
+                        ? true
+                        : false
                   }
                 )}
               >
@@ -154,7 +161,9 @@ export default function Pricing({
                   <h2 className="text-2xl font-semibold leading-6 text-white">
                     {product.item.name}
                   </h2>
-                  <p className="mt-4 text-zinc-300">{product.item.description}</p>
+                  <p className="mt-4 text-zinc-300">
+                    {product.item.description}
+                  </p>
                   <p className="mt-8">
                     <span className="text-5xl font-extrabold white">
                       {priceString}
@@ -167,11 +176,16 @@ export default function Pricing({
                     variant="slim"
                     type="button"
                     disabled={!user}
-                    loading={((user && !data?.userMetaData) || priceIdLoading === price.id)}
+                    loading={
+                      (user && !data?.userMetaData) ||
+                      priceIdLoading === price.id
+                    }
                     onClick={() => handleCheckout(price)}
                     className="block w-full py-2 mt-8 text-sm font-semibold text-center text-white rounded-md hover:bg-zinc-900"
                   >
-                    {data?.userMetaData?.rebill_item_id?.includes(price.id) ? t("ManageButton"): t("SubscribeButton")}
+                    {data?.userMetaData?.rebill_item_id?.includes(price.id)
+                      ? t('ManageButton')
+                      : t('SubscribeButton')}
                   </Button>
                 </div>
               </div>
@@ -190,7 +204,7 @@ function LogoCloud() {
   return (
     <div>
       <p className="mt-24 text-xs uppercase text-zinc-400 text-center font-bold tracking-[0.3em]">
-        {t("BroughtToYouBy")}
+        {t('BroughtToYouBy')}
       </p>
       <div className="flex flex-col items-center my-12 space-y-4 sm:mt-8 sm:space-y-0 md:mx-auto md:max-w-2xl sm:grid sm:gap-6 sm:grid-cols-5">
         <div className="flex items-center justify-start">
@@ -256,22 +270,22 @@ interface Price {
   description: string;
   currency: string;
   enabled: boolean;
-  priceSetting: any; 
-  parent: any; 
+  priceSetting: any;
+  parent: any;
   itemId: string;
   amount: string;
   type: string;
-  debitDay: any; 
-  debitType: any; 
+  debitDay: any;
+  debitType: any;
 }
 
 interface Item {
   id: string;
   name: string;
   description: string;
-  metadata: any; 
+  metadata: any;
   createdAt: string;
-  itemFamilyId: any; 
+  itemFamilyId: any;
   enabled: boolean;
 }
 
@@ -284,4 +298,4 @@ interface Props {
   products: Product[];
 }
 
-type BillingInterval = 'years' | 'months'; 
+type BillingInterval = 'years' | 'months';
