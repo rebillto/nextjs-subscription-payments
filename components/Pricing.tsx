@@ -67,7 +67,7 @@ export default function Pricing({
       }
     } else{
       const organizationAlias = process?.env?.NEXT_PUBLIC_REBILL_ORGANIZATION_ALIAS;
-      const payLink = `https://pay.rebill.dev/${organizationAlias}/price/${price.id}?auth_id=${user?.sub}&lang=${locale}`;
+      const payLink = `https://pay.rebill.com/${organizationAlias}/price/${price.id}?auth_id=${user?.sub}&lang=${locale}`;
       return window.location.replace(payLink);
     }
   };
@@ -81,7 +81,7 @@ export default function Pricing({
             {t("NoPlansFoundMessage")}
             <a
               className="text-pink-500 underline"
-              href="http://dashboard.rebill.dev/"
+              href="http://dashboard.rebill.com/"
               rel="noopener noreferrer"
               target="_blank"
             >
