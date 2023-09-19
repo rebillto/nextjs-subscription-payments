@@ -180,7 +180,7 @@ export default function Pricing({ products }: Props) {
                     type="button"
                     disabled={!user}
                     loading={
-                      (user && !data?.userMetaData) ||
+                      (user && !data?.userMetaData && !loaded) ||
                       priceIdLoading === price.id
                     }
                     onClick={() => handleCheckout(price)}
