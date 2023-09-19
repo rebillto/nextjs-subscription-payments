@@ -18,7 +18,11 @@ export default async function middleware(req: NextRequest) {
       return NextResponse.json({ message: 'Unauthorized' }, { status: 401 });
       }
     return NextResponse.next()
-  }else{
+  }
+  else if (pathname.startsWith(`/api/`) && pathname.includes("webhooks")) {
+    return NextResponse.next()
+  }
+  else{
     return intlMiddleware(req)
 
   }

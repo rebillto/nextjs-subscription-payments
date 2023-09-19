@@ -28,6 +28,7 @@ export default function Pricing({ products }: Props) {
     useState<BillingInterval>('months');
   const [priceIdLoading, setPriceIdLoading] = useState<string>();
   const locale = useLocale();
+  const [loaded, setLoaded] = useState(false);
 
   const getSubscriptions = async (userId: string) => {
     await getUserMetadata(userId)
@@ -36,6 +37,8 @@ export default function Pricing({ products }: Props) {
           updateData({
             userMetaData: res?.user_metadata
           });
+        }else{
+          setLoaded(true);
         }
       })
       .catch((error) => console.log(error));
@@ -177,7 +180,7 @@ export default function Pricing({ products }: Props) {
                     type="button"
                     disabled={!user}
                     loading={
-                      (user && !data?.userMetaData) ||
+                      (user && !data?.userMetaData && !loaded) ||
                       priceIdLoading === price.id
                     }
                     onClick={() => handleCheckout(price)}
