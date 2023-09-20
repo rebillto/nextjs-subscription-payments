@@ -68,7 +68,6 @@ export default async function RootLayout({
   }
   return (
     <html lang={locale}>
-      <Script src="https://sdk.rebill.to/v2/rebill.min.js" />
       <body className="bg-black loading">
         <UserProvider>
           <NextIntlClientProvider locale={locale} messages={messages}>

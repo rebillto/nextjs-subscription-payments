@@ -2,7 +2,7 @@ import fs from 'fs/promises';
 import fetch from 'node-fetch';
 
 const args = process.argv.slice(2);
-const apiUrl = 'https://api.rebill.dev/v2/item';
+const apiUrl = 'https://api.rebill.com/v2/item';
 const API_KEY = args[0];
 const successPaymentUrl = args[1];
 const authHeader = 'Bearer ' + API_KEY;

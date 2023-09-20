@@ -65,15 +65,15 @@ export default function Pricing({ products }: Props) {
       const customerPortalLink = await getCustomerSession(
         data?.userMetaData?.rebill_user_id
       );
-      if (customerPortalLink?.token) {
+      if (customerPortalLink?.url) {
         setPriceIdLoading('');
-        return window.open(customerPortalLink.token, '_blank');
+        return window.open(customerPortalLink.url, '_blank');
       }
     } else {
       const organizationAlias =
         process?.env?.NEXT_PUBLIC_REBILL_ORGANIZATION_ALIAS;
       const payLink = `https://pay.rebill.com/${organizationAlias}/price/${price.id}?auth_id=${user?.sub}&lang=${locale}`;
-      return window.location.replace(payLink);
+      return window.open(payLink, '_self');
     }
   };
 
@@ -236,10 +236,10 @@ function LogoCloud() {
           </a>
         </div>
         <div className="flex items-center justify-start">
-          <a href="https://rebill.to" aria-label="rebill.to Link">
+          <a href="https://rebill.com" aria-label="rebill.com Link">
             <img
               src="/rebill.png"
-              alt="rebill.to Logo"
+              alt="rebill.com Logo"
               className="h-10 text-white"
             />
           </a>
