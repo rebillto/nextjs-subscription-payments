@@ -161,7 +161,7 @@ const LanguageSelector = () => {
 const CurrencySelector = () => {
   const { data, updateData } = useStore();
 
-  const handleLanguageChange = (event: any) => {
+  const handleCurrencyChange = (event: any) => {
     event.preventDefault();
     updateData({ currency: event.target.value });
   };
@@ -170,7 +170,7 @@ const CurrencySelector = () => {
     <div className="flex items-center space-x-2">
       <select
         value={data?.currency ? data?.currency : 'ARS'}
-        onChange={handleLanguageChange}
+        onChange={handleCurrencyChange}
         className="border border-gray-300 rounded p-1 text-pink-600"
       >
         <option value="ARS" className="text-pink-600">
@@ -185,15 +185,18 @@ const CurrencySelector = () => {
         <option value="MXN" className="text-pink-600">
           MXN $
         </option>
-        <option value="PEN" className="text-pink-600">
+{/*         <option value="PEN" className="text-pink-600">
           PEN S/
-        </option>
+        </option> */}
         <option value="UYU" className="text-pink-600">
           UYU $
         </option>
         <option value="USD" className="text-pink-600">
           USD $
         </option>
+       {/*  <option value="BRL" className="text-pink-600">
+          BRL $
+        </option> */}
       </select>
     </div>
   );

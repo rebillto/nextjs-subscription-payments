@@ -165,7 +165,7 @@ export default function Pricing({ products }: Props) {
                     {product.item.name}
                   </h2>
                   <p className="mt-4 text-zinc-300">
-                    {product.item.description}
+                    {price.description}
                   </p>
                   <p className="mt-8">
                     <span className="text-5xl font-extrabold white">
