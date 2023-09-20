@@ -7,7 +7,9 @@
     "SubscribeButton": "Suscribir",
     "MonthlyBilling": "Facturación mensual",
     "YearlyBilling": "Facturación anual",
-    "BroughtToYouBy": "Presentado por"
+    "BroughtToYouBy": "Presentado por",
+    "months": "mes",
+    "years": "año"
   },
   "nav": {
     "skipToContent": "Saltar al contenido",

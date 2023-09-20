@@ -142,17 +142,11 @@ const LanguageSelector = () => {
       <select
         value={selectedLanguage}
         onChange={handleLanguageChange}
-        className="border border-gray-300 rounded p-1 text-pink-600"
+        className="border border-gray-300 rounded p-1 text-black"
       >
-        <option value="en" className="text-pink-600">
-          EN
-        </option>
-        <option value="es" className="text-pink-600">
-          ES
-        </option>
-        <option value="pt" className="text-pink-600">
-          PT
-        </option>
+        <option value="en">EN</option>
+        <option value="es">ES</option>
+        <option value="pt">PT</option>
       </select>
     </div>
   );
@@ -161,7 +155,7 @@ const LanguageSelector = () => {
 const CurrencySelector = () => {
   const { data, updateData } = useStore();
 
-  const handleLanguageChange = (event: any) => {
+  const handleCurrencyChange = (event: any) => {
     event.preventDefault();
     updateData({ currency: event.target.value });
   };
@@ -170,30 +164,21 @@ const CurrencySelector = () => {
     <div className="flex items-center space-x-2">
       <select
         value={data?.currency ? data?.currency : 'ARS'}
-        onChange={handleLanguageChange}
-        className="border border-gray-300 rounded p-1 text-pink-600"
+        onChange={handleCurrencyChange}
+        className="border border-gray-300 rounded p-1 text-black"
       >
-        <option value="ARS" className="text-pink-600">
-          ARS $
-        </option>
-        <option value="CLP" className="text-pink-600">
-          CLP $
-        </option>
-        <option value="COP" className="text-pink-600">
-          COP $
-        </option>
-        <option value="MXN" className="text-pink-600">
-          MXN $
-        </option>
-        <option value="PEN" className="text-pink-600">
+        <option value="ARS">ARS $</option>
+        <option value="CLP">CLP $</option>
+        <option value="COP">COP $</option>
+        <option value="MXN">MXN $</option>
+        {/*         <option value="PEN">
           PEN S/
-        </option>
-        <option value="UYU" className="text-pink-600">
-          UYU $
-        </option>
-        <option value="USD" className="text-pink-600">
-          USD $
-        </option>
+        </option> */}
+        <option value="UYU">UYU $</option>
+        <option value="USD">USD $</option>
+        {/*  <option value="BRL">
+          BRL $
+        </option> */}
       </select>
     </div>
   );

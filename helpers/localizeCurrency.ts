@@ -9,14 +9,14 @@ export default function localizeCurrency(
       decimalPlaces: number;
     };
   } = {
-    ARS: { symbol: '$', decimalSeparator: ',', decimalPlaces: 2 },
-    CLP: { symbol: '$', decimalSeparator: '.', decimalPlaces: 2 },
-    USD: { symbol: '$', decimalSeparator: '.', decimalPlaces: 2 },
+    ARS: { symbol: '$', decimalSeparator: ',', decimalPlaces: 0 },
+    CLP: { symbol: '$', decimalSeparator: '.', decimalPlaces: 0 },
+    USD: { symbol: '$', decimalSeparator: '.', decimalPlaces: 0 },
     COP: { symbol: '$', decimalSeparator: ',', decimalPlaces: 0 },
-    MXN: { symbol: '$', decimalSeparator: '.', decimalPlaces: 2 },
-    UYU: { symbol: '$', decimalSeparator: ',', decimalPlaces: 2 },
-    PEN: { symbol: 'S/', decimalSeparator: '.', decimalPlaces: 2 },
-    BRL: { symbol: 'R$', decimalSeparator: ',', decimalPlaces: 2 }
+    MXN: { symbol: '$', decimalSeparator: '.', decimalPlaces: 0 },
+    UYU: { symbol: '$', decimalSeparator: ',', decimalPlaces: 0 },
+    PEN: { symbol: 'S/', decimalSeparator: '.', decimalPlaces: 0 },
+    BRL: { symbol: 'R$', decimalSeparator: ',', decimalPlaces: 0 }
   };
 
   let numericAmount: number;
