@@ -142,15 +142,15 @@ const LanguageSelector = () => {
       <select
         value={selectedLanguage}
         onChange={handleLanguageChange}
-        className="border border-gray-300 rounded p-1 text-pink-600"
+        className="border border-gray-300 rounded p-1 text-black"
       >
-        <option value="en" className="text-pink-600">
+        <option value="en">
           EN
         </option>
-        <option value="es" className="text-pink-600">
+        <option value="es">
           ES
         </option>
-        <option value="pt" className="text-pink-600">
+        <option value="pt">
           PT
         </option>
       </select>
@@ -171,30 +171,30 @@ const CurrencySelector = () => {
       <select
         value={data?.currency ? data?.currency : 'ARS'}
         onChange={handleCurrencyChange}
-        className="border border-gray-300 rounded p-1 text-pink-600"
+        className="border border-gray-300 rounded p-1 text-black"
       >
-        <option value="ARS" className="text-pink-600">
+        <option value="ARS">
           ARS $
         </option>
-        <option value="CLP" className="text-pink-600">
+        <option value="CLP">
           CLP $
         </option>
-        <option value="COP" className="text-pink-600">
+        <option value="COP">
           COP $
         </option>
-        <option value="MXN" className="text-pink-600">
+        <option value="MXN">
           MXN $
         </option>
-{/*         <option value="PEN" className="text-pink-600">
+{/*         <option value="PEN">
           PEN S/
         </option> */}
-        <option value="UYU" className="text-pink-600">
+        <option value="UYU">
           UYU $
         </option>
-        <option value="USD" className="text-pink-600">
+        <option value="USD">
           USD $
         </option>
-       {/*  <option value="BRL" className="text-pink-600">
+       {/*  <option value="BRL">
           BRL $
         </option> */}
       </select>

@@ -172,7 +172,7 @@ export default function Pricing({ products }: Props) {
                       {priceString}
                     </span>
                     <span className="text-base font-medium text-zinc-100">
-                      /{billingInterval}
+                      /{t(billingInterval)}
                     </span>
                   </p>
                   <Button
