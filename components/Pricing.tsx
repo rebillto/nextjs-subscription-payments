@@ -37,7 +37,7 @@ export default function Pricing({ products }: Props) {
           updateData({
             userMetaData: res?.user_metadata
           });
-        }else{
+        } else {
           setLoaded(true);
         }
       })
@@ -164,9 +164,7 @@ export default function Pricing({ products }: Props) {
                   <h2 className="text-2xl font-semibold leading-6 text-white">
                     {product.item.name}
                   </h2>
-                  <p className="mt-4 text-zinc-300">
-                    {price.description}
-                  </p>
+                  <p className="mt-4 text-zinc-300">{price.description}</p>
                   <p className="mt-8">
                     <span className="text-5xl font-extrabold white">
                       {priceString}

@@ -144,15 +144,9 @@ const LanguageSelector = () => {
         onChange={handleLanguageChange}
         className="border border-gray-300 rounded p-1 text-black"
       >
-        <option value="en">
-          EN
-        </option>
-        <option value="es">
-          ES
-        </option>
-        <option value="pt">
-          PT
-        </option>
+        <option value="en">EN</option>
+        <option value="es">ES</option>
+        <option value="pt">PT</option>
       </select>
     </div>
   );
@@ -173,28 +167,16 @@ const CurrencySelector = () => {
         onChange={handleCurrencyChange}
         className="border border-gray-300 rounded p-1 text-black"
       >
-        <option value="ARS">
-          ARS $
-        </option>
-        <option value="CLP">
-          CLP $
-        </option>
-        <option value="COP">
-          COP $
-        </option>
-        <option value="MXN">
-          MXN $
-        </option>
-{/*         <option value="PEN">
+        <option value="ARS">ARS $</option>
+        <option value="CLP">CLP $</option>
+        <option value="COP">COP $</option>
+        <option value="MXN">MXN $</option>
+        {/*         <option value="PEN">
           PEN S/
         </option> */}
-        <option value="UYU">
-          UYU $
-        </option>
-        <option value="USD">
-          USD $
-        </option>
-       {/*  <option value="BRL">
+        <option value="UYU">UYU $</option>
+        <option value="USD">USD $</option>
+        {/*  <option value="BRL">
           BRL $
         </option> */}
       </select>
