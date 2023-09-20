@@ -322,5 +322,167 @@
         "enabled": true
       }
     ]
+  },
+  {
+    "name": "Premium",
+    "description": "Premium product description",
+    "prices": [
+      {
+        "type": "fixed",
+        "frequency": {
+          "type": "months",
+          "quantity": 1
+        },
+        "amount": "7000",
+        "currency": "ARS",
+        "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+        "repetitions": 2,
+        "description": "Descripción de producto Premium",
+        "enabled": true
+      },
+       {
+        "type": "fixed",
+        "frequency": {
+          "type": "years",
+          "quantity": 1
+        },
+        "amount": "70000",
+        "currency": "ARS",
+        "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+        "repetitions": 2,
+        "description": "Descripción de producto Premium",
+        "enabled": true
+      },
+      {
+        "type": "fixed",
+        "frequency": {
+          "type": "months",
+          "quantity": 1
+        },
+        "amount": "10",
+        "currency": "USD",
+        "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+        "repetitions": 2,
+        "description": "Premium product description",
+        "enabled": true
+      },
+       {
+        "type": "fixed",
+        "frequency": {
+          "type": "years",
+          "quantity": 1
+        },
+        "amount": "100",
+        "currency": "USD",
+        "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+        "repetitions": 2,
+        "description": "Premium product description",
+        "enabled": true
+      },
+      {
+        "type": "fixed",
+        "frequency": {
+          "type": "months",
+          "quantity": 1
+        },
+        "amount": "50",
+        "currency": "CLP",
+        "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+        "repetitions": 2,
+        "description": "Descripción de producto Premium",
+        "enabled": true
+      },
+       {
+        "type": "fixed",
+        "frequency": {
+          "type": "years",
+          "quantity": 1
+        },
+        "amount": "500",
+        "currency": "CLP",
+        "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+        "repetitions": 2,
+        "description": "Descripción de producto Premium",
+        "enabled": true
+      },
+      {
+        "type": "fixed",
+        "frequency": {
+          "type": "months",
+          "quantity": 1
+        },
+        "amount": "50",
+        "currency": "MXN",
+        "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+        "repetitions": 2,
+        "description": "Descripción de producto Premium",
+        "enabled": true
+      },
+       {
+        "type": "fixed",
+        "frequency": {
+          "type": "years",
+          "quantity": 1
+        },
+        "amount": "500",
+        "currency": "MXN",
+        "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+        "repetitions": 2,
+        "description": "Descripción de producto Premium",
+        "enabled": true
+      },
+      {
+        "type": "fixed",
+        "frequency": {
+          "type": "months",
+          "quantity": 1
+        },
+        "amount": "50",
+        "currency": "UYU",
+        "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+        "repetitions": 2,
+        "description": "Descripción de producto Premium",
+        "enabled": true
+      },
+       {
+        "type": "fixed",
+        "frequency": {
+          "type": "years",
+          "quantity": 1
+        },
+        "amount": "500",
+        "currency": "UYU",
+        "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+        "repetitions": 2,
+        "description": "Descripción de producto Premium",
+        "enabled": true
+      },
+      {
+        "type": "fixed",
+        "frequency": {
+          "type": "months",
+          "quantity": 1
+        },
+        "amount": "50",
+        "currency": "COP",
+        "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+        "repetitions": 2,
+        "description": "Descripción de producto Premium",
+        "enabled": true
+      },
+       {
+        "type": "fixed",
+        "frequency": {
+          "type": "years",
+          "quantity": 1
+        },
+        "amount": "500",
+        "currency": "COP",
+        "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+        "repetitions": 2,
+        "description": "Descripción de producto Premium",
+        "enabled": true
+      }
+    ]
   }
 ]
