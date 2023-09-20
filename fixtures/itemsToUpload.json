@@ -13,7 +13,7 @@
         "currency": "ARS",
         "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
         "repetitions": 2,
-        "description": "ARS-MONTH",
+        "description": "Descripción de producto Hobby",
         "enabled": true
       },
        {
@@ -26,7 +26,7 @@
         "currency": "ARS",
         "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
         "repetitions": 2,
-        "description": "ARS-YEAR",
+        "description": "Descripción de producto Hobby",
         "enabled": true
       },
       {
@@ -39,7 +39,7 @@
         "currency": "USD",
         "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
         "repetitions": 2,
-        "description": "USD-MONTH",
+        "description": "Hobby product description",
         "enabled": true
       },
        {
@@ -52,33 +52,7 @@
         "currency": "USD",
         "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
         "repetitions": 2,
-        "description": "USD-YEAR",
-        "enabled": true
-      },
-      {
-        "type": "fixed",
-        "frequency": {
-          "type": "months",
-          "quantity": 1
-        },
-        "amount": "50",
-        "currency": "BRL",
-        "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
-        "repetitions": 2,
-        "description": "BRL-MONTH",
-        "enabled": true
-      },
-       {
-        "type": "fixed",
-        "frequency": {
-          "type": "years",
-          "quantity": 1
-        },
-        "amount": "500",
-        "currency": "BRL",
-        "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
-        "repetitions": 2,
-        "description": "BRL-YEAR",
+        "description": "Hobby product description",
         "enabled": true
       },
       {
@@ -91,7 +65,7 @@
         "currency": "CLP",
         "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
         "repetitions": 2,
-        "description": "CLP-MONTH",
+        "description": "Descripción de producto Hobby",
         "enabled": true
       },
        {
@@ -104,7 +78,7 @@
         "currency": "CLP",
         "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
         "repetitions": 2,
-        "description": "CLP-YEAR",
+        "description": "Descripción de producto Hobby",
         "enabled": true
       },
       {
@@ -117,7 +91,7 @@
         "currency": "MXN",
         "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
         "repetitions": 2,
-        "description": "MXN-MONTH",
+        "description": "Descripción de producto Hobby",
         "enabled": true
       },
        {
@@ -130,7 +104,7 @@
         "currency": "MXN",
         "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
         "repetitions": 2,
-        "description": "MXN-YEAR",
+        "description": "Descripción de producto Hobby",
         "enabled": true
       },
       {
@@ -143,7 +117,7 @@
         "currency": "UYU",
         "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
         "repetitions": 2,
-        "description": "UYU-MONTH",
+        "description": "Descripción de producto Hobby",
         "enabled": true
       },
        {
@@ -156,7 +130,7 @@
         "currency": "UYU",
         "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
         "repetitions": 2,
-        "description": "UYU-YEAR",
+        "description": "Descripción de producto Hobby",
         "enabled": true
       },
       {
@@ -169,7 +143,7 @@
         "currency": "COP",
         "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
         "repetitions": 2,
-        "description": "COP-MONTH",
+        "description": "Descripción de producto Hobby",
         "enabled": true
       },
        {
@@ -182,33 +156,7 @@
         "currency": "COP",
         "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
         "repetitions": 2,
-        "description": "COP-YEAR",
-        "enabled": true
-      },
-      {
-        "type": "fixed",
-        "frequency": {
-          "type": "months",
-          "quantity": 1
-        },
-        "amount": "50",
-        "currency": "PEN",
-        "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
-        "repetitions": 2,
-        "description": "PEN-MONTH",
-        "enabled": true
-      },
-       {
-        "type": "fixed",
-        "frequency": {
-          "type": "years",
-          "quantity": 1
-        },
-        "amount": "500",
-        "currency": "PEN",
-        "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
-        "repetitions": 2,
-        "description": "PEN-YEAR",
+        "description": "Descripción de producto Hobby",
         "enabled": true
       }
     ]
@@ -227,7 +175,7 @@
         "currency": "ARS",
         "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
         "repetitions": 2,
-        "description": "ARS-MONTH",
+        "description": "Descripción de producto Hobby",
         "enabled": true
       },
        {
@@ -240,7 +188,7 @@
         "currency": "ARS",
         "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
         "repetitions": 2,
-        "description": "ARS-YEAR",
+        "description": "Descripción de producto Hobby",
         "enabled": true
       },
       {
@@ -253,7 +201,7 @@
         "currency": "USD",
         "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
         "repetitions": 2,
-        "description": "USD-MONTH",
+        "description": "Hobby product description",
         "enabled": true
       },
        {
@@ -266,33 +214,7 @@
         "currency": "USD",
         "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
         "repetitions": 2,
-        "description": "USD-YEAR",
-        "enabled": true
-      },
-      {
-        "type": "fixed",
-        "frequency": {
-          "type": "months",
-          "quantity": 1
-        },
-        "amount": "50",
-        "currency": "BRL",
-        "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
-        "repetitions": 2,
-        "description": "BRL-MONTH",
-        "enabled": true
-      },
-       {
-        "type": "fixed",
-        "frequency": {
-          "type": "years",
-          "quantity": 1
-        },
-        "amount": "500",
-        "currency": "BRL",
-        "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
-        "repetitions": 2,
-        "description": "BRL-YEAR",
+        "description": "Hobby product description",
         "enabled": true
       },
       {
@@ -305,7 +227,7 @@
         "currency": "CLP",
         "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
         "repetitions": 2,
-        "description": "CLP-MONTH",
+        "description": "Descripción de producto Hobby",
         "enabled": true
       },
        {
@@ -318,7 +240,7 @@
         "currency": "CLP",
         "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
         "repetitions": 2,
-        "description": "CLP-YEAR",
+        "description": "Descripción de producto Hobby",
         "enabled": true
       },
       {
@@ -331,7 +253,7 @@
         "currency": "MXN",
         "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
         "repetitions": 2,
-        "description": "MXN-MONTH",
+        "description": "Descripción de producto Hobby",
         "enabled": true
       },
        {
@@ -344,7 +266,7 @@
         "currency": "MXN",
         "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
         "repetitions": 2,
-        "description": "MXN-YEAR",
+        "description": "Descripción de producto Hobby",
         "enabled": true
       },
       {
@@ -357,7 +279,7 @@
         "currency": "UYU",
         "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
         "repetitions": 2,
-        "description": "UYU-MONTH",
+        "description": "Descripción de producto Hobby",
         "enabled": true
       },
        {
@@ -370,7 +292,7 @@
         "currency": "UYU",
         "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
         "repetitions": 2,
-        "description": "UYU-YEAR",
+        "description": "Descripción de producto Hobby",
         "enabled": true
       },
       {
@@ -383,7 +305,7 @@
         "currency": "COP",
         "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
         "repetitions": 2,
-        "description": "COP-MONTH",
+        "description": "Descripción de producto Hobby",
         "enabled": true
       },
        {
@@ -396,33 +318,7 @@
         "currency": "COP",
         "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
         "repetitions": 2,
-        "description": "COP-YEAR",
-        "enabled": true
-      },
-      {
-        "type": "fixed",
-        "frequency": {
-          "type": "months",
-          "quantity": 1
-        },
-        "amount": "50",
-        "currency": "PEN",
-        "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
-        "repetitions": 2,
-        "description": "PEN-MONTH",
-        "enabled": true
-      },
-       {
-        "type": "fixed",
-        "frequency": {
-          "type": "years",
-          "quantity": 1
-        },
-        "amount": "500",
-        "currency": "PEN",
-        "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
-        "repetitions": 2,
-        "description": "PEN-YEAR",
+        "description": "Descripción de producto Hobby",
         "enabled": true
       }
     ]

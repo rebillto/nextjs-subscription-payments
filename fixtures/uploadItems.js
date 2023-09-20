@@ -10,6 +10,15 @@ const responsesFilePath = 'responses.json';
 
 (async () => {
   const priceLinkExpiration = "2024-12-14T21:05:27.701Z";
+  const currenciesAvailable = {
+    "UYU": ["TRANSFER"],
+    "COP": ["TRANSFER", "CARD"],
+    "USD": ["CARD"],
+    "CLP": ["CARD"],
+    "MXN": ["TRANSFER"],
+    "ARS": ["TRANSFER", "CARD"]
+  };
+
   try {
     const jsonData = await fs.readFile('itemsToUpload.json', 'utf-8');
     const items = JSON.parse(jsonData);
@@ -46,9 +55,7 @@ const responsesFilePath = 'responses.json';
                     "billingAddressRequired": true,
                     "showImage": false,
                     "redirectUrl": successPaymentUrl,
-                    "paymentMethods": [
-                      "CARD"
-                    ],
+                    "paymentMethods": currenciesAvailable[newPrice.currency],
                     "expirationDate": priceLinkExpiration,
                     "priceId": newPrice.id
                   }),
@@ -95,3 +102,4 @@ const responsesFilePath = 'responses.json';
     console.error('Error reading JSON file:', error.message);
   }
 })();
+
