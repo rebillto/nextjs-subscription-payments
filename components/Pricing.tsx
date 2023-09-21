@@ -71,7 +71,6 @@ export default function Pricing({ products }: Props) {
   };
 
   useEffect(() => {
-    console.log("user: ", user);
     if (!data?.userMetaData && user?.sub && !isLoading) {
       getSubscriptions(user?.sub);
     }

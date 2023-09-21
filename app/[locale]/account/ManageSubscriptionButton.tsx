@@ -16,7 +16,7 @@ export default function ManageSubscriptionButton() {
     try {
       const url = await getCustomerSession(
         data?.userMetaData?.rebill_user_id
-      );
+      ).then(data => data?.url);
       router.push(url);
     } catch (error) {
       if (error) return alert((error as Error).message);

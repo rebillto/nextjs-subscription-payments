@@ -5,23 +5,24 @@ import ManageSubscriptionButton from './ManageSubscriptionButton';
 import Button from '@/components/ui/Button';
 import { useStore } from '@/contexts/defaultStore';
 import { useUser } from '@auth0/nextjs-auth0/client';
-import Link from 'next/link';
 import { redirect } from 'next/navigation';
-import { ReactNode } from 'react';
+import { ReactNode, useEffect } from 'react';
 
-export default async function Account() {
+export default function Account() {
   const { user, isLoading } = useUser();
   const { data } = useStore();
 
-  if (!user && !isLoading) {
-    return redirect('/signin');
-  }
+  useEffect(() => {
+    if (!isLoading && (!user || !data?.userMetaData)) {
+      return redirect('/');
+    }
+  }, [user, isLoading, data])
 
-  const updateName = async (formData: FormData) => {
+  const updateName = (formData: FormData) => {
     const newName = formData.get('name') as string;
   };
 
-  const updateEmail = async (formData: FormData) => {
+  const updateEmail = (formData: FormData) => {
     const newEmail = formData.get('email') as string;
   };
 
@@ -38,23 +39,9 @@ export default async function Account() {
         </div>
       </div>
       <div className="p-4">
-        <Card
-          title="Your Plan"
-          description={
-            user
-              ? `You are currently on the ${user} plan.`
-              : 'You are not currently subscribed to any plan.'
-          }
+        <HeadlessCard
           footer={<ManageSubscriptionButton />}
-        >
-          <div className="mt-8 mb-4 text-xl font-semibold">
-            {user ? (
-              `${user}/${user}`
-            ) : (
-              <Link href="/">Choose your plan</Link>
-            )}
-          </div>
-        </Card>
+          />
         <Card
           title="Your Name"
           description="Please enter your full name, or a display name you are comfortable with."
@@ -65,7 +52,7 @@ export default async function Account() {
                 variant="slim"
                 type="submit"
                 form="nameForm"
-                disabled={true}
+                disabled={false}
               >
                 Update Name
               </Button>
@@ -73,13 +60,17 @@ export default async function Account() {
           }
         >
           <div className="mt-8 mb-4 text-xl font-semibold">
-            <form id="nameForm" action={updateName}>
+            <form id="nameForm" onSubmit={(e) => {
+              e.preventDefault();
+              const formData = new FormData(e.target as HTMLFormElement); 
+              updateName(formData); 
+            }}>
               <input
                 type="text"
                 name="name"
                 className="w-1/2 p-3 rounded-md bg-zinc-800"
-                defaultValue={''}
-                placeholder="Your name"
+                defaultValue={data?.userMetaData?.userInfo?.given_name ?? ''}
+                placeholder={data?.userMetaData?.userInfo?.given_name ?? ''}
                 maxLength={64}
               />
             </form>
@@ -97,7 +88,7 @@ export default async function Account() {
                 variant="slim"
                 type="submit"
                 form="emailForm"
-                disabled={true}
+                disabled={false}
               >
                 Update Email
               </Button>
@@ -105,13 +96,16 @@ export default async function Account() {
           }
         >
           <div className="mt-8 mb-4 text-xl font-semibold">
-            <form id="emailForm" action={updateEmail}>
+            <form id="emailForm" onSubmit={(e) => {
+              e.preventDefault();
+              updateEmail(new FormData(e.target as HTMLFormElement)); 
+            }}>
               <input
                 type="text"
                 name="email"
                 className="w-1/2 p-3 rounded-md bg-zinc-800"
-                defaultValue={''}
-                placeholder="Your email"
+                defaultValue={data?.userMetaData?.userInfo?.email ?? ''}
+                placeholder={data?.userMetaData?.userInfo?.email ?? ''}
                 maxLength={64}
               />
             </form>
@@ -127,6 +121,20 @@ interface Props {
   description?: string;
   footer?: ReactNode;
   children: ReactNode;
+}
+
+interface PropsHeadless {
+  footer: ReactNode;
+}
+
+function HeadlessCard({ footer }: PropsHeadless) {
+  return (
+    <div className="w-full max-w-3xl m-auto my-8 border rounded-md p border-zinc-700">
+      <div className="p-4 border-t rounded-b-md border-zinc-700 bg-zinc-900 text-zinc-500">
+        {footer}
+      </div>
+    </div>
+  );
 }
 
 function Card({ title, description, footer, children }: Props) {
