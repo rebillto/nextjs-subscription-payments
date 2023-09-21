@@ -72,8 +72,8 @@ export default function Pricing({ products }: Props) {
     } else {
       const organizationAlias =
         process?.env?.NEXT_PUBLIC_REBILL_ORGANIZATION_ALIAS;
-      const payLink = `https://pay.rebill.com/${organizationAlias}/price/${price.id}?auth_id=${user?.sub}&lang=${locale}`;
-      return window.open(payLink, '_self');
+      const payLink = `https://pay.rebill.dev/${organizationAlias}/price/${price.id}?auth_id=${user?.sub}&lang=${locale}`;
+      return router.push(payLink);
     }
   };
 
