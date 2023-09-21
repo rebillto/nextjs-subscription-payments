@@ -31,7 +31,7 @@ export async function POST(req: Request) {
       for (const prop in metadataToUpdate) {
         if (
           existingUserMetadata.user_metadata.hasOwnProperty(prop) &&
-          prop !== 'rebill_user_id'
+          prop === 'rebill_item_id'
         ) {
           if (!Array.isArray(existingUserMetadata.user_metadata[prop])) {
             existingUserMetadata.user_metadata[prop] = [

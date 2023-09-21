@@ -32,11 +32,37 @@ export default function Pricing({ products }: Props) {
 
   const getSubscriptions = async (userId: string) => {
     await getUserMetadata(userId)
-      .then((res) => {
+      .then(async (res) => {
         if ('user_metadata' in res) {
-          updateData({
-            userMetaData: res?.user_metadata
-          });
+          let userInfo = res?.user_metadata.userInfo;
+          if(!userInfo){
+            userInfo = {
+              family_name: user?.family_name ?? '',
+              given_name: user?.given_name ?? '',
+              email: user?.email ?? ''
+            }
+            await fetch('/api/auth/user-metadata', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({
+                auth0_user_id: user?.sub,
+                metadata: {
+                  userInfo
+                }
+              })
+            }).then(() => {
+              updateData({
+                userMetaData: {...res?.user_metadata, ...userInfo}
+              })
+            }).catch(error => console.error("error updating user metadata ", error) )
+            
+          }else{
+            updateData({
+              userMetaData: {...res?.user_metadata}
+            });
+          }
         } else {
           setLoaded(true);
         }
@@ -45,6 +71,7 @@ export default function Pricing({ products }: Props) {
   };
 
   useEffect(() => {
+    console.log("user: ", user);
     if (!data?.userMetaData && user?.sub && !isLoading) {
       getSubscriptions(user?.sub);
     }
