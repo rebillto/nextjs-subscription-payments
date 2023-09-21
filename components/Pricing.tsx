@@ -207,7 +207,7 @@ function LogoCloud() {
       <p className="mt-24 text-xs uppercase text-zinc-400 text-center font-bold tracking-[0.3em]">
         {t('BroughtToYouBy')}
       </p>
-      <div className="flex flex-col items-center my-12 space-y-4 sm:mt-8 sm:space-y-0 md:mx-auto md:max-w-2xl sm:grid sm:gap-6 sm:grid-cols-5">
+      <div className="flex flex-col justify-center items-center my-12 space-y-4 sm:mt-8 sm:space-y-0 md:mx-auto md:max-w-2xl sm:grid sm:gap-6 sm:grid-cols-4">
         <div className="flex items-center justify-start">
           <a href="https://nextjs.org" aria-label="Next.js Link">
             <img
