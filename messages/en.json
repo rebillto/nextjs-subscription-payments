@@ -42,6 +42,8 @@
     "yourEmailCardDescription": "Please enter the email address you want to use to login.",
     "yourEmailCardVerifyChange": "Enter a valid email",
     "updateEmailButton": "Update Email",
-    "emailPlaceholder": "Email Address"
+    "emailPlaceholder": "Email Address",
+    "manageTitle": "Manage your subscription on Rebill.",
+    "openCustomerPortal": "Open customer portal"
   }
 }

@@ -3,16 +3,16 @@
 import ManageSubscriptionButton from './ManageSubscriptionButton';
 import Button from '@/components/ui/Button';
 import { useStore } from '@/contexts/defaultStore';
+import { getUserMetadata } from '@/helpers/getUserMetadata';
 import { useUser } from '@auth0/nextjs-auth0/client';
+import { useTranslations } from 'next-intl';
 import { redirect } from 'next/navigation';
 import { ReactNode, useEffect } from 'react';
-import { useTranslations } from 'next-intl';
-import { getUserMetadata } from '@/helpers/getUserMetadata';
 
 export default function Account() {
   const { user, isLoading } = useUser();
   const { data, updateData } = useStore();
-  const t = useTranslations('account'); // Use 'en' as the default locale
+  const t = useTranslations('account');
 
   const getMetadata = async (userId: string) => {
     await getUserMetadata(userId)
@@ -21,22 +21,22 @@ export default function Account() {
           let userInfo = res?.user_metadata.userInfo;
           if (!userInfo) {
             return redirect('/');
-          }else{
+          } else {
             updateData({
               userMetaData: { ...res?.user_metadata }
             });
-          } 
+          }
         }
       })
       .catch((error) => console.log(error));
   };
 
   useEffect(() => {
-    if (!isLoading && !user ) {
+    if (!isLoading && !user) {
       return redirect('/');
     }
-    if(data && !data?.userMetaData && user?.sub){
-      getMetadata(user?.sub)
+    if (data && !data?.userMetaData && user?.sub) {
+      getMetadata(user?.sub);
     }
   }, [user, isLoading, data]);
 
@@ -93,7 +93,7 @@ export default function Account() {
         updateData({
           userMetaData: { ...data?.userMetaData, userInfo }
         });
-        window.alert(t('updateSuccess')); 
+        window.alert(t('updateSuccess'));
       })
       .catch((error) => console.error(t('errorUpdatingMetadata'), error));
   };
@@ -111,7 +111,9 @@ export default function Account() {
         </div>
       </div>
       <div className="p-4">
-        {data?.userMetaData?.rebill_item_id && <HeadlessCard footer={<ManageSubscriptionButton />} />}
+        {data?.userMetaData?.rebill_item_id && (
+          <HeadlessCard footer={<ManageSubscriptionButton />} />
+        )}
         <Card
           title={t('yourNameCardTitle')}
           description={t('yourNameCardDescription')}
@@ -163,9 +165,7 @@ export default function Account() {
           description={t('yourEmailCardDescription')}
           footer={
             <div className="flex flex-col items-start justify-between sm:flex-row sm:items-center">
-              <p className="pb-4 sm:pb-0">
-                {t('yourEmailCardVerifyChange')}
-              </p>
+              <p className="pb-4 sm:pb-0">{t('yourEmailCardVerifyChange')}</p>
               <Button
                 variant="slim"
                 type="submit"
