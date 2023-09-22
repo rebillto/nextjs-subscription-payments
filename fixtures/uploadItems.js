@@ -53,7 +53,7 @@ const responsesFilePath = 'responses.json';
                     "documentRequired": true,
                     "phoneRequired": true,
                     "billingAddressRequired": true,
-                    "showImage": false,
+                    "showImage": true,
                     "redirectUrl": successPaymentUrl,
                     "paymentMethods": currenciesAvailable[newPrice.currency],
                     "expirationDate": priceLinkExpiration,

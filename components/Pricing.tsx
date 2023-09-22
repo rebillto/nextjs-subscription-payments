@@ -77,7 +77,7 @@ export default function Pricing({ products }: Props) {
     if (!data?.userMetaData && user?.sub && !isLoading) {
       getSubscriptions(user?.sub);
     }
-  }, [data?.userMetaData, user?.sub, isLoading]);
+  }, [data?.userMetaData, user?.sub, isLoading, locale]);
 
   const handleCheckout = async (price: any) => {
     setPriceIdLoading(price.id);
