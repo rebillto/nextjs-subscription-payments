@@ -32,11 +32,40 @@ export default function Pricing({ products }: Props) {
 
   const getSubscriptions = async (userId: string) => {
     await getUserMetadata(userId)
-      .then((res) => {
+      .then(async (res) => {
         if ('user_metadata' in res) {
-          updateData({
-            userMetaData: res?.user_metadata
-          });
+          let userInfo = res?.user_metadata.userInfo;
+          if (!userInfo) {
+            userInfo = {
+              family_name: user?.family_name ?? '',
+              given_name: user?.given_name ?? '',
+              email: user?.email ?? ''
+            };
+            await fetch('/api/auth/user-metadata', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({
+                auth0_user_id: user?.sub,
+                metadata: {
+                  userInfo
+                }
+              })
+            })
+              .then(() => {
+                updateData({
+                  userMetaData: { ...res?.user_metadata, userInfo }
+                });
+              })
+              .catch((error) =>
+                console.error('error updating user metadata ', error)
+              );
+          } else {
+            updateData({
+              userMetaData: { ...res?.user_metadata }
+            });
+          }
         } else {
           setLoaded(true);
         }
@@ -48,7 +77,7 @@ export default function Pricing({ products }: Props) {
     if (!data?.userMetaData && user?.sub && !isLoading) {
       getSubscriptions(user?.sub);
     }
-  }, [data?.userMetaData, user?.sub, isLoading]);
+  }, [data?.userMetaData, user?.sub, isLoading, locale]);
 
   const handleCheckout = async (price: any) => {
     setPriceIdLoading(price.id);
@@ -70,10 +99,11 @@ export default function Pricing({ products }: Props) {
         return window.open(customerPortalLink.url, '_blank');
       }
     } else {
+      const { email, given_name, family_name } = data?.userMetaData?.userInfo;
       const organizationAlias =
         process?.env?.NEXT_PUBLIC_REBILL_ORGANIZATION_ALIAS;
-      const payLink = `https://pay.rebill.com/${organizationAlias}/price/${price.id}?auth_id=${user?.sub}&lang=${locale}`;
-      return window.open(payLink, '_self');
+      const payLink = `https://pay.rebill.com/${organizationAlias}/price/${price.id}?auth_id=${user?.sub}&lang=${locale}&email=${email}&firstName=${given_name}&lastName=${family_name}`;
+      return router.push(payLink);
     }
   };
 
@@ -207,7 +237,7 @@ function LogoCloud() {
       <p className="mt-24 text-xs uppercase text-zinc-400 text-center font-bold tracking-[0.3em]">
         {t('BroughtToYouBy')}
       </p>
-      <div className="flex flex-col items-center my-12 space-y-4 sm:mt-8 sm:space-y-0 md:mx-auto md:max-w-2xl sm:grid sm:gap-6 sm:grid-cols-5">
+      <div className="flex flex-col justify-center items-center my-12 space-y-4 sm:mt-8 sm:space-y-0 md:mx-auto md:max-w-2xl sm:grid sm:gap-6 sm:grid-cols-4">
         <div className="flex items-center justify-start">
           <a href="https://nextjs.org" aria-label="Next.js Link">
             <img

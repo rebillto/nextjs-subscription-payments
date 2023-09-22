@@ -26,5 +26,24 @@
     "legal": "Legal",
     "privacyPolicy": "Privacy Policy",
     "termsOfUse": "Terms of Use"
+  },
+  "account": {
+    "updateSuccess": "Updated successfully.",
+    "errorUpdatingMetadata": "Error updating user metadata",
+    "pageTitle": "Account",
+    "partneredWithRebill": "We partnered with Rebill for a simplified billing.",
+    "yourNameCardTitle": "Your Name",
+    "yourNameCardDescription": "Please enter your full name, or a display name you are comfortable with.",
+    "yourNameCardMaxLength": "64 characters maximum",
+    "updateNameButton": "Update Name",
+    "firstNamePlaceholder": "First Name",
+    "lastNamePlaceholder": "Last Name",
+    "yourEmailCardTitle": "Your Email",
+    "yourEmailCardDescription": "Please enter the email address you want to use to login.",
+    "yourEmailCardVerifyChange": "Enter a valid email",
+    "updateEmailButton": "Update Email",
+    "emailPlaceholder": "Email Address",
+    "manageTitle": "Manage your subscription on Rebill.",
+    "openCustomerPortal": "Open customer portal"
   }
 }

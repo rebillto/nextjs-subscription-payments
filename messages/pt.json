@@ -26,5 +26,24 @@
     "legal": "Legal",
     "privacyPolicy": "Política de Privacidade",
     "termsOfUse": "Termos de Uso"
+  },
+  "account": {
+    "updateSuccess": "Atualizado com sucesso.",
+    "errorUpdatingMetadata": "Erro ao atualizar os metadados do usuário.",
+    "pageTitle": "Conta",
+    "partneredWithRebill": "Parceiros da Rebill para uma faturação simplificada.",
+    "yourNameCardTitle": "Seu Nome",
+    "yourNameCardDescription": "Por favor, insira seu nome completo ou um nome de exibição com o qual você se sinta confortável.",
+    "yourNameCardMaxLength": "Máximo de 64 caracteres",
+    "updateNameButton": "Atualizar Nome",
+    "firstNamePlaceholder": "Nome",
+    "lastNamePlaceholder": "Sobrenome",
+    "yourEmailCardTitle": "Seu Email",
+    "yourEmailCardDescription": "Por favor, insira o endereço de e-mail que deseja usar para fazer login.",
+    "yourEmailCardVerifyChange": "Insira um e-mail válido",
+    "updateEmailButton": "Atualizar Email",
+    "emailPlaceholder": "Endereço de E-mail",
+    "manageTitle": "Gerencie sua assinatura na Rebill.",
+    "openCustomerPortal": "Abrir portal do cliente"
   }
 }
