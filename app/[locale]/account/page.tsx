@@ -1,7 +1,6 @@
 'use client';
 
 import ManageSubscriptionButton from './ManageSubscriptionButton';
-
 import Button from '@/components/ui/Button';
 import { useStore } from '@/contexts/defaultStore';
 import { useUser } from '@auth0/nextjs-auth0/client';
@@ -10,20 +9,70 @@ import { ReactNode, useEffect } from 'react';
 
 export default function Account() {
   const { user, isLoading } = useUser();
-  const { data } = useStore();
+  const { data, updateData } = useStore();
 
   useEffect(() => {
     if (!isLoading && (!user || !data?.userMetaData)) {
       return redirect('/');
     }
-  }, [user, isLoading, data])
+  }, [user, isLoading, data]);
 
-  const updateName = (formData: FormData) => {
+  const updateName = async (formData: FormData) => {
     const newName = formData.get('name') as string;
+    const lastName = formData.get('lastname') as string;
+    const userInfo = {
+      ...data?.userMetaData?.userInfo,
+      given_name: newName,
+      family_name: lastName
+    };
+
+    await fetch('/api/auth/user-metadata', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        auth0_user_id: user?.sub,
+        metadata: {
+          userInfo
+        }
+      })
+    })
+      .then(() => {
+        updateData({
+          userMetaData: { ...data?.userMetaData, userInfo }
+        });
+        window.alert('Name updated successfully.');
+      })
+      .catch((error) => console.error('error updating user metadata ', error));
   };
 
-  const updateEmail = (formData: FormData) => {
+  const updateEmail = async (formData: FormData) => {
     const newEmail = formData.get('email') as string;
+    const userInfo = {
+      ...data?.userMetaData?.userInfo,
+      email: newEmail
+    };
+
+    await fetch('/api/auth/user-metadata', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        auth0_user_id: user?.sub,
+        metadata: {
+          userInfo
+        }
+      })
+    })
+      .then(() => {
+        updateData({
+          userMetaData: { ...data?.userMetaData, userInfo }
+        });
+        window.alert('Email updated successfully.');
+      })
+      .catch((error) => console.error('error updating user metadata ', error));
   };
 
   return (
@@ -39,9 +88,7 @@ export default function Account() {
         </div>
       </div>
       <div className="p-4">
-        <HeadlessCard
-          footer={<ManageSubscriptionButton />}
-          />
+        {data?.userMetaData?.rebill_item_id && <HeadlessCard footer={<ManageSubscriptionButton />} />}
         <Card
           title="Your Name"
           description="Please enter your full name, or a display name you are comfortable with."
@@ -60,17 +107,29 @@ export default function Account() {
           }
         >
           <div className="mt-8 mb-4 text-xl font-semibold">
-            <form id="nameForm" onSubmit={(e) => {
-              e.preventDefault();
-              const formData = new FormData(e.target as HTMLFormElement); 
-              updateName(formData); 
-            }}>
+            <form
+              className="flex flex-col"
+              id="nameForm"
+              onSubmit={(e) => {
+                e.preventDefault();
+                const formData = new FormData(e.target as HTMLFormElement);
+                updateName(formData);
+              }}
+            >
               <input
                 type="text"
                 name="name"
-                className="w-1/2 p-3 rounded-md bg-zinc-800"
+                className="p-3 rounded-md bg-zinc-800 mb-4 md:w-1/2"
                 defaultValue={data?.userMetaData?.userInfo?.given_name ?? ''}
-                placeholder={data?.userMetaData?.userInfo?.given_name ?? ''}
+                placeholder="First Name"
+                maxLength={64}
+              />
+              <input
+                type="text"
+                name="lastname"
+                className="p-3 rounded-md bg-zinc-800 md:w-1/2"
+                defaultValue={data?.userMetaData?.userInfo?.family_name ?? ''}
+                placeholder="Last Name"
                 maxLength={64}
               />
             </form>
@@ -96,10 +155,13 @@ export default function Account() {
           }
         >
           <div className="mt-8 mb-4 text-xl font-semibold">
-            <form id="emailForm" onSubmit={(e) => {
-              e.preventDefault();
-              updateEmail(new FormData(e.target as HTMLFormElement)); 
-            }}>
+            <form
+              id="emailForm"
+              onSubmit={(e) => {
+                e.preventDefault();
+                updateEmail(new FormData(e.target as HTMLFormElement));
+              }}
+            >
               <input
                 type="text"
                 name="email"

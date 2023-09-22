@@ -1,11 +1,10 @@
 'use client';
 
 import Button from '@/components/ui/Button';
-
-import { useRouter } from 'next/navigation';
-import { useUser } from '@auth0/nextjs-auth0/client';
 import { useStore } from '@/contexts/defaultStore';
 import { getCustomerSession } from '@/helpers/getCustomerSession';
+import { useUser } from '@auth0/nextjs-auth0/client';
+import { useRouter } from 'next/navigation';
 
 export default function ManageSubscriptionButton() {
   const router = useRouter();
@@ -16,7 +15,7 @@ export default function ManageSubscriptionButton() {
     try {
       const url = await getCustomerSession(
         data?.userMetaData?.rebill_user_id
-      ).then(data => data?.url);
+      ).then((data) => data?.url);
       router.push(url);
     } catch (error) {
       if (error) return alert((error as Error).message);
