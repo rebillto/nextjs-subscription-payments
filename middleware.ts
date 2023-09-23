@@ -1,34 +1,15 @@
 import createMiddleware from 'next-intl/middleware';
-import { NextRequest, NextResponse } from 'next/server';
-
-const intlMiddleware = createMiddleware({
+ 
+export default createMiddleware({
   // A list of all locales that are supported
-  locales: ['en', 'es', 'pt'],
-
+  locales: ['en', 'de'],
+ 
   // If this locale is matched, pathnames work without a prefix (e.g. `/about`)
   defaultLocale: 'en'
 });
-
-export default async function middleware(req: NextRequest) {
-  const url = req.nextUrl;
-  const { pathname } = url;
-  if (pathname.startsWith(`/api/`) && !pathname.includes('webhooks')) {
-    const referer = req.headers.get('referer');
-    if (
-      !referer?.includes(process.env.NEXT_PUBLIC_SITE_URL as string) &&
-      (!pathname?.includes('/auth') ||
-        pathname?.includes('/auth/user-metadata'))
-    ) {
-      return NextResponse.json({ message: 'Unauthorized' }, { status: 401 });
-    }
-    return NextResponse.next();
-  } else if (pathname.startsWith(`/api/`) && pathname.includes('webhooks')) {
-    return NextResponse.next();
-  } else {
-    return intlMiddleware(req);
-  }
-}
-
+ 
 export const config = {
-  matcher: ['/((?!_next|fonts|examples|svg|[\\w-]+\\.\\w+).*)']
+  // Skip all paths that should not be internationalized. This example skips
+  // certain folders and all pathnames with a dot (e.g. favicon.ico)
+  matcher: ['/((?!api|_next|_vercel|.*\\..*).*)']
 };
