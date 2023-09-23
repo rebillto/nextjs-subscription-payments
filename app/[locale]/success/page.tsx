@@ -4,7 +4,7 @@ import { getSubscription } from '@/helpers/getSubscription';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
-export default async function SuccessPage() {
+export default function SuccessPage() {
   const router = useRouter();
   const searchParams = useSearchParams();
 
