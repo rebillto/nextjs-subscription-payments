@@ -67,6 +67,31 @@ export default function Pricing({ products }: Props) {
             });
           }
         } else {
+          let userInfo = {
+            family_name: user?.family_name ?? '',
+            given_name: user?.given_name ?? '',
+            email: user?.email ?? ''
+          };
+          await fetch('/api/auth/user-metadata', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              auth0_user_id: user?.sub,
+              metadata: {
+                userInfo
+              }
+            })
+          })
+            .then(() => {
+              updateData({
+                userMetaData: { userInfo }
+              });
+            })
+            .catch((error) =>
+              console.error('error updating user metadata ', error)
+            );
           setLoaded(true);
         }
       })
@@ -74,7 +99,7 @@ export default function Pricing({ products }: Props) {
   };
 
   useEffect(() => {
-    if (!data?.userMetaData && user?.sub && !isLoading) {
+    if (!data?.userMetaData?.userInfo && user?.sub && !isLoading) {
       getSubscriptions(user?.sub);
     }
   }, [data?.userMetaData, user?.sub, isLoading, locale]);

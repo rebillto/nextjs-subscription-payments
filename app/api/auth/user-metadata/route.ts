@@ -27,7 +27,7 @@ export async function POST(req: Request) {
     // Step 3: Update user metadata
     const metadataToUpdate = body?.metadata;
 
-    if (existingUserMetadata.user_metadata && metadataToUpdate) {
+    if (existingUserMetadata?.user_metadata) {
       for (const prop in metadataToUpdate) {
         if (
           existingUserMetadata.user_metadata.hasOwnProperty(prop) &&
@@ -51,7 +51,9 @@ export async function POST(req: Request) {
         Authorization: `Bearer ${accessToken}`
       },
       body: JSON.stringify({
-        user_metadata: existingUserMetadata.user_metadata
+        user_metadata: existingUserMetadata?.user_metadata
+          ? existingUserMetadata.user_metadata
+          : metadataToUpdate
       })
     });
 

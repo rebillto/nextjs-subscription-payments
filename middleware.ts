@@ -16,7 +16,8 @@ export default async function middleware(req: NextRequest) {
     const referer = req.headers.get('referer');
     if (
       !referer?.includes(process.env.NEXT_PUBLIC_SITE_URL as string) &&
-      (!referer?.includes('/auth') || referer?.includes('/auth/user-metadata'))
+      (!pathname?.includes('/auth') ||
+        pathname?.includes('/auth/user-metadata'))
     ) {
       return NextResponse.json({ message: 'Unauthorized' }, { status: 401 });
     }
