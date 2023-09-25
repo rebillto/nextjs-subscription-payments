@@ -263,40 +263,49 @@ function LogoCloud() {
       <p className="mt-24 text-xs uppercase text-zinc-400 text-center font-bold tracking-[0.3em]">
         {t('BroughtToYouBy')}
       </p>
-      <div className="flex flex-col justify-center items-center my-12 space-y-4 sm:mt-8 sm:space-y-0 md:mx-auto md:max-w-2xl sm:grid sm:gap-6 sm:grid-cols-4">
-        <div className="flex items-center justify-start">
+      <div className="flex flex-col justify-center items-center my-12 space-y-4 sm:mt-8 sm:space-y-0 md:mx-auto md:max-w-2xl sm:grid sm:gap-6 sm:grid-cols-5">
+        <div className="flex items-center justify-center">
           <a href="https://nextjs.org" aria-label="Next.js Link">
             <img
               src="/nextjs.svg"
               alt="Next.js Logo"
-              className="h-12 text-white"
+              className="h-8 text-white"
             />
           </a>
         </div>
-        <div className="flex items-center justify-start">
+        <div className="flex items-center justify-center">
           <a href="https://vercel.com" aria-label="Vercel.com Link">
             <img
               src="/vercel.svg"
               alt="Vercel.com Logo"
-              className="h-6 text-white"
+              className="h-8 text-white"
             />
           </a>
         </div>
-        <div className="flex items-center justify-start">
+        <div className="flex items-center justify-center">
           <a href="https://github.com" aria-label="github.com Link">
             <img
-              src="/github.svg"
+              src="/github.png"
               alt="github.com Logo"
               className="h-8 text-white"
             />
           </a>
         </div>
-        <div className="flex items-center justify-start">
+        <div className="flex items-center justify-center">
+          <a href="https://auth0.com" aria-label="auth0.com Link">
+            <img
+              src="/auth0.png"
+              alt="auth0.com Logo"
+              className="h-8 text-white"
+            />
+          </a>
+        </div>
+        <div className="flex items-center justify-center">
           <a href="https://rebill.com" aria-label="rebill.com Link">
             <img
               src="/rebill.png"
               alt="rebill.com Logo"
-              className="h-10 text-white"
+              className="h-8 text-white"
             />
           </a>
         </div>
