@@ -127,6 +127,7 @@ export default function Pricing({ products }: Props) {
       const { email, given_name, family_name } = data?.userMetaData?.userInfo;
       const organizationAlias =
         process?.env?.NEXT_PUBLIC_REBILL_ORGANIZATION_ALIAS;
+      setPriceIdLoading('');
       const payLink = `https://pay.rebill.com/${organizationAlias}/price/${price.id}?auth_id=${user?.sub}&lang=${locale}&email=${email}&firstName=${given_name}&lastName=${family_name}`;
       return router.push(payLink);
     }
