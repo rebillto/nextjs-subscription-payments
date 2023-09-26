@@ -93,7 +93,10 @@ Before using this script, you need to have the following:
 
    - Replace "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59" with "gatewayId": {yourGatewayId} in all item prices.
 
-3. Simply open a terminal and navigate to the directory `/fixtures` containing the script and JSON files. Run the script using the following command:
+3. Editing `uploadItems.js`:
+   To customize the behavior of the script further, open the `uploadItems.js` file and locate the variables you wish to modify, such as `priceLinkExpiration` and `currenciesAvailable`. You can change their values to meet your specific requirements.
+
+4. Simply open a terminal and navigate to the directory `/fixtures` containing the script and JSON files. Run the script using the following command:
 
    ```
    node uploadItems.js [REBILL_API_KEY] [SUCCESS_PAYMENT_URL]

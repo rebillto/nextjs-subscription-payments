@@ -303,7 +303,7 @@ function LogoCloud() {
         <div className="flex items-center justify-center">
           <a href="https://rebill.com" aria-label="rebill.com Link">
             <img
-              src="/rebill.png"
+              src="/rebill.svg"
               alt="rebill.com Logo"
               className="h-8 text-white"
             />

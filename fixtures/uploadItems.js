@@ -16,7 +16,8 @@ const responsesFilePath = 'responses.json';
     "USD": ["CARD"],
     "CLP": ["CARD", "REBILL_KHIPU"],
     "MXN": ["REBILL_TRANSFERNCIA_BANCARIA"],
-    "ARS": ["REBILL_TRANSFERENCIA_3_0", "CARD"]
+    "ARS": ["REBILL_TRANSFERENCIA_3_0", "CARD"],
+    "PEN": ["REBILL_PAGO_EFECTIVO"]
   };
 
   try {

@@ -113,7 +113,7 @@ export default function Footer() {
           <span className="text-white">Crafted by</span>
           <a href="https://rebill.com" aria-label="Rebill.com Link">
             <img
-              src="/rebill.png"
+              src="/rebill.svg"
               alt="Vercel.com Logo"
               className="inline-block h-6 ml-4 text-white"
             />
@@ -171,9 +171,7 @@ const CurrencySelector = () => {
         <option value="CLP">CLP $</option>
         <option value="COP">COP $</option>
         <option value="MXN">MXN $</option>
-        {/*         <option value="PEN">
-          PEN S/
-        </option> */}
+        <option value="PEN">PEN S/</option>
         <option value="UYU">UYU $</option>
         <option value="USD">USD $</option>
         {/*  <option value="BRL">
