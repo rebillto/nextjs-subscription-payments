@@ -158,32 +158,6 @@
         "repetitions": 2,
         "description": "Descripción de producto Hobby",
         "enabled": true
-      },
-      {
-        "type": "fixed",
-        "frequency": {
-          "type": "months",
-          "quantity": 1
-        },
-        "amount": "50",
-        "currency": "PEN",
-        "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
-        "repetitions": 2,
-        "description": "Descripción de producto Hobby",
-        "enabled": true
-      },
-       {
-        "type": "fixed",
-        "frequency": {
-          "type": "years",
-          "quantity": 1
-        },
-        "amount": "PEN",
-        "currency": "COP",
-        "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
-        "repetitions": 2,
-        "description": "Descripción de producto Hobby",
-        "enabled": true
       }
     ]
   },
@@ -346,32 +320,6 @@
         "repetitions": 2,
         "description": "Descripción de producto Hobby",
         "enabled": true
-      },
-      {
-        "type": "fixed",
-        "frequency": {
-          "type": "months",
-          "quantity": 1
-        },
-        "amount": "50",
-        "currency": "PEN",
-        "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
-        "repetitions": 2,
-        "description": "Descripción de producto Freelancer",
-        "enabled": true
-      },
-       {
-        "type": "fixed",
-        "frequency": {
-          "type": "years",
-          "quantity": 1
-        },
-        "amount": "PEN",
-        "currency": "COP",
-        "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
-        "repetitions": 2,
-        "description": "Descripción de producto Freelancer",
-        "enabled": true
       }
     ]
   },
@@ -529,32 +477,6 @@
           "quantity": 1
         },
         "amount": "500",
-        "currency": "COP",
-        "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
-        "repetitions": 2,
-        "description": "Descripción de producto Premium",
-        "enabled": true
-      },
-      {
-        "type": "fixed",
-        "frequency": {
-          "type": "months",
-          "quantity": 1
-        },
-        "amount": "50",
-        "currency": "PEN",
-        "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
-        "repetitions": 2,
-        "description": "Descripción de producto Premium",
-        "enabled": true
-      },
-       {
-        "type": "fixed",
-        "frequency": {
-          "type": "years",
-          "quantity": 1
-        },
-        "amount": "PEN",
         "currency": "COP",
         "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
         "repetitions": 2,

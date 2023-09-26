@@ -171,7 +171,7 @@ const CurrencySelector = () => {
         <option value="CLP">CLP $</option>
         <option value="COP">COP $</option>
         <option value="MXN">MXN $</option>
-        <option value="PEN">PEN S/</option>
+        {/* <option value="PEN">PEN S/</option> */}
         <option value="UYU">UYU $</option>
         <option value="USD">USD $</option>
         {/*  <option value="BRL">
