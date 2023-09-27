@@ -1,7 +1,7 @@
 [
   {
     "name": "Hobby",
-    "description": "Hobby product description",
+    "description": "Un plan básico para tus actividades de pasatiempo.",
     "prices": [
       {
         "type": "fixed",
@@ -9,11 +9,11 @@
           "type": "months",
           "quantity": 1
         },
-        "amount": "7000",
+        "amount": "35000",
         "currency": "ARS",
         "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
         "repetitions": 2,
-        "description": "Descripción de producto Hobby",
+        "description": "Plan Hobby (mensual)",
         "enabled": true
       },
        {
@@ -22,37 +22,37 @@
           "type": "years",
           "quantity": 1
         },
-        "amount": "70000",
+        "amount": "420027",
         "currency": "ARS",
         "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
         "repetitions": 2,
-        "description": "Descripción de producto Hobby",
+        "description": "Plan Hobby (anual)",
         "enabled": true
       },
       {
         "type": "fixed",
         "frequency": {
           "type": "months",
-          "quantity": 1
-        },
-        "amount": "10",
-        "currency": "USD",
-        "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
-        "repetitions": 2,
-        "description": "Hobby product description",
-        "enabled": true
-      },
-       {
-        "type": "fixed",
-        "frequency": {
-          "type": "years",
           "quantity": 1
         },
         "amount": "100",
         "currency": "USD",
         "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
         "repetitions": 2,
-        "description": "Hobby product description",
+        "description": "Hobby Plan (monthly)",
+        "enabled": true
+      },
+       {
+        "type": "fixed",
+        "frequency": {
+          "type": "years",
+          "quantity": 1
+        },
+        "amount": "1200",
+        "currency": "USD",
+        "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
+        "repetitions": 2,
+        "description": "Hobby Plan (annual)",
         "enabled": true
       },
       {
@@ -61,11 +61,11 @@
           "type": "months",
           "quantity": 1
         },
-        "amount": "50",
+        "amount": "90913",
         "currency": "CLP",
         "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
         "repetitions": 2,
-        "description": "Descripción de producto Hobby",
+        "description": "Plan Hobby (mensual)",
         "enabled": true
       },
        {
@@ -74,11 +74,11 @@
           "type": "years",
           "quantity": 1
         },
-        "amount": "500",
+        "amount": "1090956",
         "currency": "CLP",
         "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
         "repetitions": 2,
-        "description": "Descripción de producto Hobby",
+        "description": "Plan Hobby (anual)",
         "enabled": true
       },
       {
@@ -87,11 +87,11 @@
           "type": "months",
           "quantity": 1
         },
-        "amount": "50",
+        "amount": "1769",
         "currency": "MXN",
         "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
         "repetitions": 2,
-        "description": "Descripción de producto Hobby",
+        "description": "Plan Hobby (mensual)",
         "enabled": true
       },
        {
@@ -100,11 +100,11 @@
           "type": "years",
           "quantity": 1
         },
-        "amount": "500",
+        "amount": "21228",
         "currency": "MXN",
         "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
         "repetitions": 2,
-        "description": "Descripción de producto Hobby",
+        "description": "Plan Hobby (anual)",
         "enabled": true
       },
       {
@@ -113,11 +113,11 @@
           "type": "months",
           "quantity": 1
         },
-        "amount": "50",
+        "amount": "3833",
         "currency": "UYU",
         "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
         "repetitions": 2,
-        "description": "Descripción de producto Hobby",
+        "description": "Plan Hobby (mensual)",
         "enabled": true
       },
        {
@@ -126,11 +126,11 @@
           "type": "years",
           "quantity": 1
         },
-        "amount": "500",
+        "amount": "46000",
         "currency": "UYU",
         "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
         "repetitions": 2,
-        "description": "Descripción de producto Hobby",
+        "description": "Plan Hobby (anual)",
         "enabled": true
       },
       {
@@ -139,11 +139,11 @@
           "type": "months",
           "quantity": 1
         },
-        "amount": "50",
+        "amount": "410430",
         "currency": "COP",
         "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
         "repetitions": 2,
-        "description": "Descripción de producto Hobby",
+        "description": "Plan Hobby (mensual)",
         "enabled": true
       },
        {
@@ -152,18 +152,18 @@
           "type": "years",
           "quantity": 1
         },
-        "amount": "500",
+        "amount": "4925160",
         "currency": "COP",
         "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
         "repetitions": 2,
-        "description": "Descripción de producto Hobby",
+        "description": "Plan Hobby (anual)",
         "enabled": true
       }
     ]
   },
   {
     "name": "Freelancer",
-    "description": "Freelancer product description",
+    "description": "Un plan ideal para freelancers y profesionales independientes.",
     "prices": [
       {
         "type": "fixed",
@@ -171,11 +171,11 @@
           "type": "months",
           "quantity": 1
         },
-        "amount": "7000",
+        "amount": "42000",
         "currency": "ARS",
         "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
         "repetitions": 2,
-        "description": "Descripción de producto Hobby",
+        "description": "Plan Freelancer (mensual)",
         "enabled": true
       },
        {
@@ -184,11 +184,11 @@
           "type": "years",
           "quantity": 1
         },
-        "amount": "70000",
+        "amount": "504000",
         "currency": "ARS",
         "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
         "repetitions": 2,
-        "description": "Descripción de producto Hobby",
+        "description": "Plan Freelancer (anual)",
         "enabled": true
       },
       {
@@ -197,11 +197,11 @@
           "type": "months",
           "quantity": 1
         },
-        "amount": "10",
+        "amount": "120",
         "currency": "USD",
         "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
         "repetitions": 2,
-        "description": "Hobby product description",
+        "description": "Freelancer Plan (monthly)",
         "enabled": true
       },
        {
@@ -210,11 +210,11 @@
           "type": "years",
           "quantity": 1
         },
-        "amount": "100",
+        "amount": "1440",
         "currency": "USD",
         "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
         "repetitions": 2,
-        "description": "Hobby product description",
+        "description": "Freelancer Plan (annual)",
         "enabled": true
       },
       {
@@ -223,11 +223,11 @@
           "type": "months",
           "quantity": 1
         },
-        "amount": "50",
+        "amount": "109095",
         "currency": "CLP",
         "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
         "repetitions": 2,
-        "description": "Descripción de producto Hobby",
+        "description": "Plan Freelancer (mensual)",
         "enabled": true
       },
        {
@@ -236,11 +236,11 @@
           "type": "years",
           "quantity": 1
         },
-        "amount": "500",
+        "amount": "1309147",
         "currency": "CLP",
         "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
         "repetitions": 2,
-        "description": "Descripción de producto Hobby",
+        "description": "Plan Freelancer (anual)",
         "enabled": true
       },
       {
@@ -249,11 +249,11 @@
           "type": "months",
           "quantity": 1
         },
-        "amount": "50",
+        "amount": "2122",
         "currency": "MXN",
         "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
         "repetitions": 2,
-        "description": "Descripción de producto Hobby",
+        "description": "Plan Freelancer (mensual)",
         "enabled": true
       },
        {
@@ -262,11 +262,11 @@
           "type": "years",
           "quantity": 1
         },
-        "amount": "500",
+        "amount": "25472",
         "currency": "MXN",
         "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
         "repetitions": 2,
-        "description": "Descripción de producto Hobby",
+        "description": "Plan Freelancer (anual)",
         "enabled": true
       },
       {
@@ -275,11 +275,11 @@
           "type": "months",
           "quantity": 1
         },
-        "amount": "50",
+        "amount": "4600",
         "currency": "UYU",
         "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
         "repetitions": 2,
-        "description": "Descripción de producto Hobby",
+        "description": "Plan Freelancer (mensual)",
         "enabled": true
       },
        {
@@ -288,11 +288,11 @@
           "type": "years",
           "quantity": 1
         },
-        "amount": "500",
+        "amount": "55206",
         "currency": "UYU",
         "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
         "repetitions": 2,
-        "description": "Descripción de producto Hobby",
+        "description": "Plan Freelancer (anual)",
         "enabled": true
       },
       {
@@ -301,11 +301,11 @@
           "type": "months",
           "quantity": 1
         },
-        "amount": "50",
+        "amount": "492516",
         "currency": "COP",
         "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
         "repetitions": 2,
-        "description": "Descripción de producto Hobby",
+        "description": "Plan Freelancer (mensual)",
         "enabled": true
       },
        {
@@ -314,18 +314,18 @@
           "type": "years",
           "quantity": 1
         },
-        "amount": "500",
+        "amount": "5910192",
         "currency": "COP",
         "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
         "repetitions": 2,
-        "description": "Descripción de producto Hobby",
+        "description": "Plan Freelancer (anual)",
         "enabled": true
       }
     ]
   },
   {
     "name": "Premium",
-    "description": "Premium product description",
+    "description": "Nuestro plan premium con características exclusivas para usuarios avanzados.",
     "prices": [
       {
         "type": "fixed",
@@ -333,11 +333,11 @@
           "type": "months",
           "quantity": 1
         },
-        "amount": "7000",
+        "amount": "52494",
         "currency": "ARS",
         "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
         "repetitions": 2,
-        "description": "Descripción de producto Premium",
+        "description": "Plan Premium (mensual)",
         "enabled": true
       },
        {
@@ -346,11 +346,11 @@
           "type": "years",
           "quantity": 1
         },
-        "amount": "70000",
+        "amount": "629929",
         "currency": "ARS",
         "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
         "repetitions": 2,
-        "description": "Descripción de producto Premium",
+        "description": "Plan Premium (anual)",
         "enabled": true
       },
       {
@@ -359,11 +359,11 @@
           "type": "months",
           "quantity": 1
         },
-        "amount": "10",
+        "amount": "150",
         "currency": "USD",
         "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
         "repetitions": 2,
-        "description": "Premium product description",
+        "description": "Premium Plan (monthly)",
         "enabled": true
       },
        {
@@ -372,11 +372,11 @@
           "type": "years",
           "quantity": 1
         },
-        "amount": "100",
+        "amount": "1800",
         "currency": "USD",
         "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
         "repetitions": 2,
-        "description": "Premium product description",
+        "description": "Premium Plan (annual)",
         "enabled": true
       },
       {
@@ -385,11 +385,11 @@
           "type": "months",
           "quantity": 1
         },
-        "amount": "50",
+        "amount": "136369",
         "currency": "CLP",
         "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
         "repetitions": 2,
-        "description": "Descripción de producto Premium",
+        "description": "Plan Premium (mensual)",
         "enabled": true
       },
        {
@@ -398,11 +398,11 @@
           "type": "years",
           "quantity": 1
         },
-        "amount": "500",
+        "amount": "1636434",
         "currency": "CLP",
         "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
         "repetitions": 2,
-        "description": "Descripción de producto Premium",
+      "description": "Plan Premium (anual)",
         "enabled": true
       },
       {
@@ -411,11 +411,11 @@
           "type": "months",
           "quantity": 1
         },
-        "amount": "50",
+        "amount": "2653",
         "currency": "MXN",
         "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
         "repetitions": 2,
-        "description": "Descripción de producto Premium",
+        "description": "Plan Premium (mensual)",
         "enabled": true
       },
        {
@@ -424,11 +424,11 @@
           "type": "years",
           "quantity": 1
         },
-        "amount": "500",
+        "amount": "31847",
         "currency": "MXN",
         "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
         "repetitions": 2,
-        "description": "Descripción de producto Premium",
+        "description": "Plan Premium (anual)",
         "enabled": true
       },
       {
@@ -437,11 +437,11 @@
           "type": "months",
           "quantity": 1
         },
-        "amount": "50",
+        "amount": "5750",
         "currency": "UYU",
         "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
         "repetitions": 2,
-        "description": "Descripción de producto Premium",
+        "description": "Plan Premium (mensual)",
         "enabled": true
       },
        {
@@ -450,11 +450,11 @@
           "type": "years",
           "quantity": 1
         },
-        "amount": "500",
+        "amount": "69007",
         "currency": "UYU",
         "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
         "repetitions": 2,
-        "description": "Descripción de producto Premium",
+        "description": "Plan Premium (anual)",
         "enabled": true
       },
       {
@@ -463,11 +463,11 @@
           "type": "months",
           "quantity": 1
         },
-        "amount": "50",
+        "amount": "615645",
         "currency": "COP",
         "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
         "repetitions": 2,
-        "description": "Descripción de producto Premium",
+        "description": "Plan Premium (mensual)",
         "enabled": true
       },
        {
@@ -476,11 +476,11 @@
           "type": "years",
           "quantity": 1
         },
-        "amount": "500",
+        "amount": "7387740",
         "currency": "COP",
         "gatewayId": "a32a7858-3b3c-438f-8279-12810b4dbc59",
         "repetitions": 2,
-        "description": "Descripción de producto Premium",
+        "description": "Plan Premium (anual)",
         "enabled": true
       }
     ]
